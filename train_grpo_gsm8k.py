@@ -119,6 +119,7 @@ model = AutoModelForCausalLM.from_pretrained(
 ).to("cuda")
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 tokenizer.pad_token = tokenizer.eos_token
+tokenizer.padding_side = 'left'
 
 # use peft at your own risk; not working for me with multi-GPU training
 trainer = GRPOTrainer(
@@ -132,6 +133,5 @@ trainer = GRPOTrainer(
         correctness_reward_func],
     args=training_args,
     train_dataset=dataset,
-    #peft_config=peft_config
 )
 trainer.train()
