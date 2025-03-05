@@ -119,10 +119,16 @@ model = AutoModelForCausalLM.from_pretrained(
 ).to("cuda")
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 tokenizer.pad_token = tokenizer.eos_token
+tokenizer.padding_side = 'left'
+
+# Create a generation config to ensure padding_side is properly set
+generation_config = model.generation_config
+generation_config.padding_side = 'left'
 
 trainer = GRPOTrainer(
     model=model,
     processing_class=tokenizer,
+    generation_config=generation_config,
     reward_funcs=[
         xmlcount_reward_func,
         soft_format_reward_func,
