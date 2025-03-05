@@ -86,13 +86,8 @@ def xmlcount_reward_func(completions, **kwargs) -> list[float]:
     return [count_xml(c) for c in contents]
 
 model_name = "Qwen/Qwen2.5-0.5B-Instruct"
-
-if "Llama" in model_name:
-    output_dir = "outputs/Llama-1B-GRPO"
-    run_name = "Llama-1B-GRPO-gsm8k"
-else:
-    output_dir="outputs/Qwen-1.5B-GRPO"
-    run_name="Qwen-1.5B-GRPO-gsm8k"
+output_dir="outputs/Qwen2.5-0.5B-Instruct-GRPO"
+run_name="Qwen2.5-0.5B-Instruct-GRPO-gsm8k"
     
 training_args = GRPOConfig(
     output_dir=output_dir,
