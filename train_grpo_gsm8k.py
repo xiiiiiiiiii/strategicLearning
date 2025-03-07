@@ -98,8 +98,7 @@ training_args = GRPOConfig(
     weight_decay = 0.1,
     warmup_ratio = 0.1,
     lr_scheduler_type='cosine',
-    logging_steps=1,
-    bf16=True,
+    logging_steps=10,
     per_device_train_batch_size=16,
     gradient_accumulation_steps=4,
     num_generations=16,
@@ -110,6 +109,7 @@ training_args = GRPOConfig(
     max_grad_norm=0.1,
     report_to="wandb",
     log_on_each_node=False,
+    use_vllm=True, bf16=True)
 )
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
