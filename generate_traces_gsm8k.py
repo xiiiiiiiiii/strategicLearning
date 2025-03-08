@@ -33,12 +33,10 @@ def extract_xml_answer(text: str) -> str:
   
 def get_gsm8k_questions(split = "train") -> Dataset:
     data = load_dataset('openai/gsm8k', 'main')[split] # type: ignore
+    
+    # Format for trl's GRPOTrainer which expects 'prompt' to be a string
     data = data.map(lambda x: { # type: ignore
-        'prompt': [
-            {'role': 'system', 'content': SYSTEM_PROMPT},
-            {'role': 'user', 'content': x['question']}
-        ],
-        # 'trace': x['answer'],
+        'prompt': f"{SYSTEM_PROMPT}\n\nQuestion: {x['question']}",
         'answer': extract_hash_answer(x['answer'])
     }) # type: ignore
     return data # type: ignore
