@@ -4,14 +4,18 @@ from trl import GRPOConfig, GRPOTrainer
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import re
 
-SYSTEM_PROMPT = """
-Respond in the following format:
+SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
+
+1. Think step-by-step, breaking down the problem into simpler parts
+2. Show your calculations clearly
+3. Verify your solution matches the question requirements
+4. Format your response as follows:
 
 <reasoning>
-...
+[Your detailed step-by-step reasoning here]
 </reasoning>
 <answer>
-...
+[Your final numerical answer here, with no units or extra text]
 </answer>
 """
 
@@ -85,31 +89,31 @@ def xmlcount_reward_func(completions, **kwargs) -> list[float]:
     contents = [completion[0]["content"] for completion in completions]
     return [count_xml(c) for c in contents]
 
-model_name = "Qwen/Qwen2.5-0.5B-Instruct"
-output_dir="outputs/Qwen2.5-0.5B-Instruct-GRPO"
-run_name="Qwen2.5-0.5B-Instruct-GRPO-gsm8k"
+model_name = "agentica-org/DeepScaleR-1.5B-Preview"
+output_dir="outputs/DeepScaleR-1.5B-GRPO"
+run_name="DeepScaleR-1.5B-GRPO-gsm8k"
     
 training_args = GRPOConfig(
     output_dir=output_dir,
     run_name=run_name,
-    learning_rate=5e-6,
-    adam_beta1 = 0.9,
-    adam_beta2 = 0.99,
-    weight_decay = 0.1,
-    warmup_ratio = 0.1,
+    learning_rate=2e-6,  # Slightly lower learning rate for the larger model
+    adam_beta1=0.9,
+    adam_beta2=0.99,
+    weight_decay=0.1,
+    warmup_ratio=0.1,
     lr_scheduler_type='cosine',
     logging_steps=10,
-    per_device_train_batch_size=16,
-    gradient_accumulation_steps=4,
+    per_device_train_batch_size=8,  # Reduced batch size for larger model
+    gradient_accumulation_steps=8,  # Increased gradient accumulation to compensate
     num_generations=16,
     max_prompt_length=256,
-    max_completion_length=786,
+    max_completion_length=1024,  # Increased max completion length
     num_train_epochs=1,
     save_steps=10,
     max_grad_norm=0.1,
     report_to="wandb",
     log_on_each_node=False,
-    use_vllm=True, bf16=True
+    use_vllm=True
 )
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
@@ -131,7 +135,9 @@ trainer = GRPOTrainer(
         soft_format_reward_func,
         strict_format_reward_func,
         int_reward_func,
-        correctness_reward_func],
+        correctness_reward_func
+    ],
+    reward_weights=[0.1, 0.1, 0.1, 0.1, 0.6],  # Prioritize correctness
     args=training_args,
     train_dataset=dataset,
 )
