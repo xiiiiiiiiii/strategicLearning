@@ -92,7 +92,7 @@ class TraceGeneratorConfig:
     )
     batch_size: int = field(
         default=8, 
-        metadata={"help": "Number of prompts to process in parallel. Higher values are more efficient but require more memory. This is an optimization parameter and doesn't affect the final output."}
+        metadata={"help": "Number of prompts to process in parallel. Higher values are more efficient but require more memory. Has to be must be evenly divisible by the number of generations per prompt."}
     )
 
 class TraceGenerator(GRPOTrainer):
