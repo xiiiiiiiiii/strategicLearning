@@ -137,7 +137,6 @@ trainer = GRPOTrainer(
         int_reward_func,
         correctness_reward_func
     ],
-    reward_weights=[0.1, 0.1, 0.1, 0.1, 0.6],  # Prioritize correctness
     args=training_args,
     train_dataset=dataset,
 )

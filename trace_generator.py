@@ -24,7 +24,8 @@ from datasets import Dataset, IterableDataset
 from tqdm import tqdm
 from accelerate import Accelerator
 
-from grpo_trainer import GRPOTrainer, GRPOConfig, RewardFunc
+from trl import GRPOTrainer, GRPOConfig
+from typing import Callable as RewardFunc
 from trl.data_utils import maybe_apply_chat_template
 from trl.import_utils import is_vllm_available
 
@@ -52,10 +53,6 @@ class TraceGeneratorConfig:
     reward_funcs: Optional[List[Callable]] = field(
         default=None,
         metadata={"help": "List of reward functions to evaluate generated completions. Each function should accept parameters like 'completions', 'prompts', etc. and return a list of float rewards."}
-    )
-    reward_weights: Optional[List[float]] = field(
-        default=None,
-        metadata={"help": "Weights for each reward function. Must match the number of reward functions if provided."}
     )
     output_file: str = field(
         default="traces.jsonl",
@@ -114,7 +111,6 @@ class TraceGenerator(GRPOTrainer):
         config: Optional[TraceGeneratorConfig] = None,
         dataset: Optional[Union[Dataset, IterableDataset]] = None,
         processing_class: Optional[PreTrainedTokenizerBase] = None,
-        reward_processing_classes: Optional[Union[PreTrainedTokenizerBase, list[PreTrainedTokenizerBase]]] = None,
     ):
         """
         Initialize the TraceGenerator.
@@ -125,7 +121,6 @@ class TraceGenerator(GRPOTrainer):
             config: Configuration for the trace generator.
             dataset: The dataset to generate traces from.
             processing_class: The tokenizer for the model.
-            reward_processing_classes: The tokenizers for the reward models.
         """
         # Create a GRPOConfig from the TraceGeneratorConfig
         if config is None:
@@ -141,17 +136,15 @@ class TraceGenerator(GRPOTrainer):
         grpo_args.num_generations = config.num_generations_per_prompt
         grpo_args.temperature = config.temperature
         grpo_args.use_vllm = config.use_vllm
-        grpo_args.reward_weights = config.reward_weights
         grpo_args.log_completions = True
         
         # Initialize the parent class
         super().__init__(
             model=model,
+            processing_class=processing_class,
             reward_funcs=reward_funcs,
             args=grpo_args,
             train_dataset=dataset,
-            processing_class=processing_class,
-            reward_processing_classes=reward_processing_classes,
         )
         
         # Store the trace generator config

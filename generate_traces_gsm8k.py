@@ -4,6 +4,7 @@ import re
 from datasets import load_dataset, Dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from trace_generator import TraceGenerator, TraceGeneratorConfig
+from trl import GRPOTrainer, GRPOConfig
 
 SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
 
@@ -133,7 +134,6 @@ trace_generator = TraceGenerator(
         int_reward_func,
         correctness_reward_func
     ],
-    reward_weights=[0.1, 0.1, 0.1, 0.1, 0.6],  # Prioritize correctness
     config=config,
     dataset=dataset
 )
