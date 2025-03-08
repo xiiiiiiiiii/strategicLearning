@@ -98,6 +98,7 @@ output_file = os.path.join(data_dir, "gsm8k_traces.jsonl")
 # Configure the trace generator
 config = TraceGeneratorConfig(
     model_name_or_path=model_name,
+    dataset_name_or_path="openai/gsm8k",  # Add the required parameter
     output_file=output_file,
     num_samples=100,  # Adjust as needed
     num_generations_per_prompt=16,
