@@ -187,6 +187,13 @@ class TraceGenerator(GRPOTrainer):
         all_traces = []
         batch_size = self.trace_config.batch_size
         
+        # Open file for streaming if output_file is specified and this is the main process
+        output_file_handle = None
+        if output_file and accelerator.is_main_process:
+            # Create directory if it doesn't exist
+            os.makedirs(os.path.dirname(output_file) if os.path.dirname(output_file) else '.', exist_ok=True)
+            output_file_handle = open(output_file, 'w', encoding='utf-8')
+            
         # Process the dataset in batches
         for i in tqdm(range(0, len(dataset), batch_size), desc="Generating traces"):
             batch = dataset[i:i+batch_size]
@@ -204,25 +211,33 @@ class TraceGenerator(GRPOTrainer):
             # Get the original advantages which contain the normalized rewards
             rewards = processed_inputs["advantages"].cpu().numpy()
             
-            # Create trace entries
+            # Create trace entries and stream to file if specified
+            batch_traces = []
             for prompt, completion, reward in zip(prompts_text, completions_text, rewards):
                 trace = {
                     "prompt": prompt,
                     "completion": completion,
                     "reward": float(reward),
                 }
-                all_traces.append(trace)
-        
+                batch_traces.append(trace)
+                
+                # Stream save each trace if output file is specified
+                if output_file_handle and accelerator.is_main_process:
+                    output_file_handle.write(json.dumps(trace) + '\n')
+                    output_file_handle.flush()  # Ensure it's written immediately
+            
+            # Collect all traces for the return value
+            all_traces.extend(batch_traces)
+            
         # Gather traces from all processes if using distributed setup
         if accelerator.num_processes > 1:
             all_traces = accelerator.gather_for_metrics(all_traces)
         
+        # Close the output file if it was opened
+        if output_file_handle:
+            output_file_handle.close()
+            print(f"Saved {len(all_traces)} traces to {output_file}")
+        
         # Create a DataFrame from the traces
         traces_df = pd.DataFrame(all_traces)
-        
-        # Save to file if specified
-        if output_file and accelerator.is_main_process:
-            traces_df.to_json(output_file, orient="records", lines=True)
-            print(f"Saved {len(traces_df)} traces to {output_file}")
-        
         return traces_df

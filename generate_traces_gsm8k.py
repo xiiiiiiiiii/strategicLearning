@@ -1,7 +1,8 @@
 import torch
+import os
+import re
 from datasets import load_dataset, Dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
-import re
 from trace_generator import TraceGenerator, TraceGeneratorConfig
 
 SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
@@ -48,7 +49,7 @@ def correctness_reward_func(prompts, completions, answer, **kwargs) -> list[floa
     responses = [completion[0]['content'] for completion in completions]
     q = prompts[0][-1]['content']
     extracted_responses = [extract_xml_answer(r) for r in responses]
-    # print('-'*20, f"Question:\n{q}", f"\nAnswer:\n{answer[0]}", f"\nResponse:\n{responses[0]}", f"\nExtracted:\n{extracted_responses[0]}")
+    print('-'*20, f"Question:\n{q}", f"\nAnswer:\n{answer[0]}", f"\nResponse:\n{responses[0]}", f"\nExtracted:\n{extracted_responses[0]}")
     return [2.0 if r == a else 0.0 for r, a in zip(extracted_responses, answer)]
 
 def int_reward_func(completions, **kwargs) -> list[float]:
@@ -89,7 +90,9 @@ def xmlcount_reward_func(completions, **kwargs) -> list[float]:
     return [count_xml(c) for c in contents]
 
 model_name = "agentica-org/DeepScaleR-1.5B-Preview"
-output_file = "outputs/gsm8k_traces.jsonl"
+data_dir = "data"
+os.makedirs(data_dir, exist_ok=True)
+output_file = os.path.join(data_dir, "gsm8k_traces.jsonl")
 
 # Configure the trace generator
 config = TraceGeneratorConfig(
@@ -138,3 +141,4 @@ trace_generator = TraceGenerator(
 # Generate traces
 traces_df = trace_generator.generate_traces()
 print(f"Generated {len(traces_df)} traces")
+print(f"Traces saved to {output_file}")
