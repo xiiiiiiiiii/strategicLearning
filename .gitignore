@@ -1,0 +1,10 @@
+ # Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Training outputs
+outputs/
+
+# Weights & Biases logs
+wandb/
