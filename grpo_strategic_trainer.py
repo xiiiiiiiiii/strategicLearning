@@ -372,6 +372,7 @@ class GRPOStrategicTrainer(Trainer):
 
             if self.accelerator.is_main_process:
                 vllm_device = self.args.vllm_device
+                print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! vllm_device: {vllm_device} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                 if vllm_device == "auto":
                     if torch.cuda.device_count() == 1:
                         vllm_device = "cuda:0"  # particular case when training with onyl 1 GPU: share it
