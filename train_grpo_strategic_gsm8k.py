@@ -1,6 +1,7 @@
 import torch
 from datasets import load_dataset, Dataset
-from trl import GRPOConfig, GRPOTrainer
+from trl import GRPOConfig
+from grpo_strategic_trainer import GRPOStrategicTrainer
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import re
 
@@ -89,7 +90,7 @@ def xmlcount_reward_func(completions, **kwargs) -> list[float]:
     contents = [completion[0]["content"] for completion in completions]
     return [count_xml(c) for c in contents]
 
-model_name = "unsloth/DeepScaleR-1.5B-Preview-bnb-4bit"
+model_name = "agentica-org/DeepScaleR-1.5B-Preview"
 output_dir="outputs/DeepScaleR-1.5B-GRPO"
 run_name="DeepScaleR-1.5B-GRPO-gsm8k"
     
@@ -127,7 +128,7 @@ tokenizer.padding_side = 'left'
 # Set the model's generation config to use left padding
 model.generation_config.padding_side = 'left'
 
-trainer = GRPOTrainer(
+trainer = GRPOStrategicTrainer(
     model=model,
     processing_class=tokenizer,
     reward_funcs=[
