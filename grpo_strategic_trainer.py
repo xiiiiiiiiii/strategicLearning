@@ -373,20 +373,15 @@ class GRPOStrategicTrainer(Trainer):
             if self.accelerator.is_main_process:
                 vllm_device = self.args.vllm_device
                 print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! vllm_device: {vllm_device} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                # Handle special case for "all" GPUs via tensor parallelism
-                tensor_parallel_size = getattr(self.args, 'vllm_tensor_parallel_size', torch.cuda.device_count())
-                if vllm_device == "all_devices" or tensor_parallel_size > 1:
-                    # Check if tensor parallelism is configured or if vllm_device is set to "all"
-                    if vllm_device == "all_devices" and tensor_parallel_size != torch.cuda.device_count():
-                        raise ValueError(
-                          f"Requested vllm_device all but specified tensor parallelism ({tensor_parallel_size}) does not "
-                          f"match the number of available GPUs ({torch.cuda.device_count()})."
-                        )
-                    if vllm_device != "all_devices":
-                        raise ValueError(
-                          f"Did not set vllm_device to all_devices and tensor parallelism ({tensor_parallel_size}) is set "
-                          "to > 1. Using tensor_parallel_size>1 without vllm_device set to all_devices is not supported."
-                        )
+                # Handle special case for "all_devices" GPUs via tensor parallelism
+                tensor_parallel_size = getattr(self.args, 'vllm_tensor_parallel_size', 'NOT SET')
+                if vllm_device == "all_devices":
+                  if tensor_parallel_size != 'NOT SET':
+                      raise ValueError(
+                        f"It is not supported to set vllm_device to all_devices and specify vllm_tensor_parallel_size "
+                        "too, please don't set vllm_tensor_parallel_size if you set vllm_device to all_devices."
+                      )
+                  tensor_parallel_size = torch.cuda.device_count()
                 else:
                   if vllm_device == "auto":
                     if torch.cuda.device_count() == 1:
@@ -418,7 +413,7 @@ class GRPOStrategicTrainer(Trainer):
                 )
                 with world_size_patch, profiling_patch:
                     # If using tensor parallelism, ignore the vllm_device setting and use all GPUs
-                    if tensor_parallel_size > 1:
+                    if vllm_device == "all_devices":
                         self.llm = LLM(
                             model=model.name_or_path,
                             tensor_parallel_size=tensor_parallel_size,  # Use multiple GPUs
