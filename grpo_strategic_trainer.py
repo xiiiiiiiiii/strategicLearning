@@ -373,27 +373,37 @@ class GRPOStrategicTrainer(Trainer):
             if self.accelerator.is_main_process:
                 vllm_device = self.args.vllm_device
                 print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! vllm_device: {vllm_device} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                if vllm_device == "auto":
+                # Handle special case for "all" GPUs via tensor parallelism
+                if vllm_device == "all_devices":
+                    # Check if tensor parallelism is configured or if vllm_device is set to "all"
+                    tensor_parallel_size = getattr(self.args, 'vllm_tensor_parallel_size', torch.cuda.device_count())
+                    if tensor_parallel_size != torch.cuda.device_count():
+                        raise ValueError(
+                          f"Requested vllm_device all but specified tensor parallelism ({tensor_parallel_size}) does not "
+                          f"match the number of available GPUs ({torch.cuda.device_count()})."
+                        )
+                else:
+                  if vllm_device == "auto":
                     if torch.cuda.device_count() == 1:
                         vllm_device = "cuda:0"  # particular case when training with onyl 1 GPU: share it
                     else:
                         vllm_device = f"cuda:{self.accelerator.num_processes}"  # take the next GPU idx
-                # Check that the requested device is available
-                if vllm_device.split(":")[0] == "cuda" and int(vllm_device.split(":")[1]) >= torch.cuda.device_count():
-                    raise ValueError(
-                        f"The requested device for vllm ({vllm_device}) is not available. You are likely using vLLM "
-                        "without restricting the number of GPUs for training. Set the `--num_processes` argument to a "
-                        "value lower than the number of GPUs available on your machine—typically, reducing it by one "
-                        f"is sufficient. In your case: `--num_processes {torch.cuda.device_count() - 1}`."
-                    )
-                # Check that the requested device is not also used for training
-                if vllm_device in {f"cuda:{idx}" for idx in range(self.accelerator.num_processes)}:
-                    warnings.warn(
-                        f"The requested device {vllm_device} is also being used for training. For higher throughput "
-                        "and to avoid out-of-memory errors, it is recommended to use a dedicated device for vLLM. "
-                        "If this is intentional, you may ignore this warning but should adjust "
-                        "`vllm_gpu_memory_utilization` accordingly."
-                    )
+                  # Check that the requested device is available
+                  if vllm_device not in ["all", "auto"] and vllm_device.split(":")[0] == "cuda" and int(vllm_device.split(":")[1]) >= torch.cuda.device_count():
+                      raise ValueError(
+                          f"The requested device for vllm ({vllm_device}) is not available. You are likely using vLLM "
+                          "without restricting the number of GPUs for training. Set the `--num_processes` argument to a "
+                          "value lower than the number of GPUs available on your machine—typically, reducing it by one "
+                          f"is sufficient. In your case: `--num_processes {torch.cuda.device_count() - 1}`."
+                      )
+                  # Check that the requested device is not also used for training
+                  if vllm_device != "all" and vllm_device in {f"cuda:{idx}" for idx in range(self.accelerator.num_processes)}:
+                      warnings.warn(
+                          f"The requested device {vllm_device} is also being used for training. For higher throughput "
+                          "and to avoid out-of-memory errors, it is recommended to use a dedicated device for vLLM. "
+                          "If this is intentional, you may ignore this warning but should adjust "
+                          "`vllm_gpu_memory_utilization` accordingly."
+                      )
                 # vLLM is not compatible with accelerate. So we need to patch it to make sure we can (1) place the vLLM
                 # model on the desired device (world_size_patch) and (2) avoid a test that is not designed for our
                 # setting (profiling_patch).
@@ -402,17 +412,30 @@ class GRPOStrategicTrainer(Trainer):
                     "vllm.worker.worker.Worker._assert_memory_footprint_increased_during_profiling", return_value=None
                 )
                 with world_size_patch, profiling_patch:
-                    self.llm = LLM(
-                        model=model.name_or_path,
-                        device=vllm_device,
-                        gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
-                        dtype=self.args.vllm_dtype,
-                        # Automatic Prefix Caching caches the KV cache of existing queries, so that a new query can
-                        # directly reuse the KV cache if it shares the same prefix with one of the existing queries.
-                        # This is particularly useful here because we generate completions from the same prompts.
-                        enable_prefix_caching=True,
-                        max_model_len=self.args.vllm_max_model_len,
-                    )
+                    # If using tensor parallelism, ignore the vllm_device setting and use all GPUs
+                    if tensor_parallel_size > 1:
+                        self.llm = LLM(
+                            model=model.name_or_path,
+                            tensor_parallel_size=tensor_parallel_size,  # Use multiple GPUs
+                            gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
+                            dtype=self.args.vllm_dtype,
+                            enable_prefix_caching=True,
+                            max_model_len=self.args.vllm_max_model_len,
+                        )
+                        print(f"Using vLLM with tensor parallelism across {tensor_parallel_size} GPUs")
+                    else:
+                        # Original single-GPU implementation
+                        self.llm = LLM(
+                            model=model.name_or_path,
+                            device=vllm_device,
+                            gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
+                            dtype=self.args.vllm_dtype,
+                            # Automatic Prefix Caching caches the KV cache of existing queries, so that a new query can
+                            # directly reuse the KV cache if it shares the same prefix with one of the existing queries.
+                            # This is particularly useful here because we generate completions from the same prompts.
+                            enable_prefix_caching=True,
+                            max_model_len=self.args.vllm_max_model_len,
+                        )
                 self.sampling_params = SamplingParams(
                     temperature=args.temperature,
                     max_tokens=self.max_completion_length,
