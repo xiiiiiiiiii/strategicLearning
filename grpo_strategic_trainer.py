@@ -116,11 +116,8 @@ class RemoteRayLLM:
             temperature=temperature,
             max_tokens=max_tokens,
         )
-    def generate(self, **kwargs):
-        return self.llm.generate(
-            sampling_params=self.sampling_params,
-            **kwargs
-        )
+    def generate(self, all_prompts_text):
+        return self.llm.generate(all_prompts_text, sampling_params=self.sampling_params, use_tqdm=False)
     def load_model_weights(self, **kwargs):
         self.llm.llm_engine.model_executor.driver_worker.model_runner.model.load_weights(**kwargs)
 
@@ -393,6 +390,7 @@ class GRPOStrategicTrainer(Trainer):
             if self.accelerator.is_main_process:
                 vllm_device = self.args.vllm_device
                 print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! vllm_device: {vllm_device} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                ray.init(num_gpus=torch.cuda.device_count()) # Initialize Ray
                 # Handle special case for "all_devices" GPUs via tensor parallelism
                 if vllm_device == "all_devices":
                   if 'NOT SET' != getattr(self.args, 'vllm_tensor_parallel_size', 'NOT SET'):
@@ -400,7 +398,6 @@ class GRPOStrategicTrainer(Trainer):
                         f"It is not supported to set vllm_device to all_devices and specify vllm_tensor_parallel_size "
                         "too, please don't set vllm_tensor_parallel_size if you set vllm_device to all_devices."
                       )
-                  ray.init(num_gpus=torch.cuda.device_count()) # Initialize Ray
                 else:
                   if vllm_device == "auto":
                     if torch.cuda.device_count() == 1:
@@ -578,7 +575,7 @@ class GRPOStrategicTrainer(Trainer):
                 # arg min of self.llms_gen_calls
                 llm_index = min(range(len(self.llms_gen_calls)), key=self.llms_gen_calls.__getitem__)
                 self.llms_gen_calls[llm_index] += 1
-                outputs = ray.get(self.llms[llm_index].generate.remote(all_prompts_text, use_tqdm=False))
+                outputs = ray.get(self.llms[llm_index].generate.remote(all_prompts_text))
                 completion_ids = [out.token_ids for completions in outputs for out in completions.outputs]
             else:
                 completion_ids = [None] * len(all_prompts_text)
