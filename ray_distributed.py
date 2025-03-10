@@ -27,7 +27,7 @@ sampling_params = SamplingParams(temperature=0.8, top_p=0.95)
 tensor_parallel_size = 1
 
 # Set number of instances. Each instance will use tensor_parallel_size GPUs.
-num_instances = 1
+num_instances = 2
 
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 
@@ -113,8 +113,8 @@ def scheduling_strategy_fn():
     # One bundle per tensor parallel worker
     pg = ray.util.placement_group(
         [{
-            "GPU": 1,
-            "CPU": 1
+            "GPU": num_instances,
+            "CPU": num_instances
         }] * tensor_parallel_size,
         strategy="STRICT_PACK",
     )
@@ -143,14 +143,14 @@ ds = ds.map_batches(
     **resources_kwarg,
 )
 
-# Peek first 10 results.
-# NOTE: This is for local testing and debugging. For production use case,
-# one should write full result out as shown below.
-outputs = ds.take(limit=10)
-for output in outputs:
-    prompt = output["prompt"]
-    generated_text = output["generated_text"]
-    print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}")
+# # Peek first 10 results.
+# # NOTE: This is for local testing and debugging. For production use case,
+# # one should write full result out as shown below.
+# outputs = ds.take(limit=10)
+# for output in outputs:
+#     prompt = output["prompt"]
+#     generated_text = output["generated_text"]
+#     print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}")
 
 # Write inference output data out as Parquet files to S3.
 # Multiple files would be written to the output destination,
