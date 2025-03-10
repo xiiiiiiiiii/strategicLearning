@@ -51,7 +51,6 @@ from trl.trainer.grpo_config import GRPOConfig
 from trl.trainer.utils import generate_model_card, get_comet_experiment_url, pad, selective_log_softmax
 
 import ray
-ray.init() # Initialize Ray
 
 
 if is_peft_available():
@@ -397,6 +396,7 @@ class GRPOStrategicTrainer(Trainer):
                         f"It is not supported to set vllm_device to all_devices and specify vllm_tensor_parallel_size "
                         "too, please don't set vllm_tensor_parallel_size if you set vllm_device to all_devices."
                       )
+                  ray.init(num_gpus=torch.cuda.device_count()) # Initialize Ray
                 else:
                   if vllm_device == "auto":
                     if torch.cuda.device_count() == 1:
@@ -543,7 +543,7 @@ class GRPOStrategicTrainer(Trainer):
                 state_dict = unwrapped_model.state_dict()
             if self.accelerator.is_main_process:
                 for llm in self.llms:
-                    ray.get(llm.remote.load_model_weights(state_dict.items()))
+                    ray.get(llm.load_model_weights.remote(state_dict.items()))
             # Unmerge the adapter to restore the model to its original state.
             # This must be done after loading weights to ensure they correspond to the merged state.
             if is_peft_model(unwrapped_model):
