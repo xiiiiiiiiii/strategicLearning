@@ -115,8 +115,8 @@ def scheduling_strategy_fn():
     # One bundle per tensor parallel worker
     pg = ray.util.placement_group(
         [{
-            "GPU": 1,
-            "CPU": 1
+            "GPU": 2,
+            "CPU": 2
         }] * tensor_parallel_size,
         strategy="STRICT_PACK",
     )
@@ -132,7 +132,7 @@ resources_kwarg: dict[str, Any] = {}
 # Otherwise, we have to set num_gpus=0 and provide
 # a function that will create a placement group for
 # each instance.
-resources_kwarg["num_gpus"] = num_instances
+resources_kwarg["num_gpus"] = 1
 resources_kwarg["ray_remote_args_fn"] = scheduling_strategy_fn
 
 # Apply batch inference for all input data.
