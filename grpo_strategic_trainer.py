@@ -110,7 +110,7 @@ class RepeatRandomSampler(Sampler):
 
 
 # Define a class decorated with @ray.remote()
-@ray.remote
+@ray.remote(num_gpus=1)
 class RemoteRayLLM:
     def __init__(self, **kwargs):
         self.llm = LLM(**kwargs)
@@ -433,7 +433,7 @@ class GRPOStrategicTrainer(Trainer):
                     self.llms = [
                         RemoteRayLLM.remote(
                           model=model.name_or_path,
-                          device=f"cuda:{vllm_device_i}",
+                        #   device=f"cuda:{vllm_device_i}",
                           gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
                           dtype=self.args.vllm_dtype,
                           # Automatic Prefix Caching caches the KV cache of existing queries, so that a new query can
