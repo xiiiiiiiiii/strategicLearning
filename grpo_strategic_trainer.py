@@ -413,6 +413,7 @@ class GRPOStrategicTrainer(Trainer):
                 with world_size_patch, profiling_patch:
                     # If using tensor parallelism, ignore the vllm_device setting and use all GPUs
                     num_devices = torch.cuda.device_count() if vllm_device == "all_devices" else 1
+                    self.llms_gen_calls = [0] * num_devices
                     self.llms = [
                         LLM(
                           model=model.name_or_path,
@@ -557,7 +558,9 @@ class GRPOStrategicTrainer(Trainer):
             # Generate completions using vLLM: gather all prompts and use them in a single call in the main process
             all_prompts_text = gather_object(prompts_text)
             if self.accelerator.is_main_process:
-                llm_index = random.randint(0, len(self.llms) - 1) # Sample a random LLM to distribute the load.
+                # arg min of self.llms_gen_calls
+                llm_index = min(range(len(self.llms_gen_calls)), key=self.llms_gen_calls.__getitem__)
+                self.llms_gen_calls[llm_index] += 1
                 outputs = self.llms[llm_index].generate(all_prompts_text, sampling_params=self.sampling_params, use_tqdm=False)
                 completion_ids = [out.token_ids for completions in outputs for out in completions.outputs]
             else:
