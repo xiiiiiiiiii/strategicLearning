@@ -435,22 +435,20 @@ class GRPOStrategicTrainer(Trainer):
                     self.llms_gen_calls = [0] * num_devices
                     self.llms = [RemoteRayLLM.remote() for _ in range(num_devices)]
                     # Force wait for initialization.
-                    self.llms = [
+                    for remote_ray_llm in self.llms:
                         ray.get(remote_ray_llm.init_llm.remote(
-                          model=model.name_or_path,
-                        #   device=f"cuda:{vllm_device_i}",
-                          gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
-                          dtype=self.args.vllm_dtype,
-                          # Automatic Prefix Caching caches the KV cache of existing queries, so that a new query can
-                          # directly reuse the KV cache if it shares the same prefix with one of the existing queries.
-                          # This is particularly useful here because we generate completions from the same prompts.
-                          enable_prefix_caching=True,
-                          max_model_len=self.args.vllm_max_model_len,
-                          temperature=args.temperature,
-                          max_tokens=self.max_completion_length,
+                            model=model.name_or_path,
+                            # device=f"cuda:{vllm_device_i}",
+                            # gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
+                            dtype=self.args.vllm_dtype,
+                            # Automatic Prefix Caching caches the KV cache of existing queries, so that a new query can
+                            # directly reuse the KV cache if it shares the same prefix with one of the existing queries.
+                            # This is particularly useful here because we generate completions from the same prompts.
+                            enable_prefix_caching=True,
+                            max_model_len=self.args.vllm_max_model_len,
+                            temperature=args.temperature,
+                            max_tokens=self.max_completion_length,
                         ))
-                        for remote_ray_llm in self.llms
-                    ]
 
             self._last_loaded_step = 0  # tag to avoid useless loading during grad accumulation
 
