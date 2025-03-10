@@ -110,12 +110,17 @@ class RepeatRandomSampler(Sampler):
 
 @ray.remote(num_gpus=1)
 class RemoteRayLLM:
-    def __init__(self, **kwargs):
+    def __init__(self, temperature, max_tokens, **kwargs):
         self.llm = LLM(**kwargs)
-
+        self.sampling_params = SamplingParams(
+            temperature=temperature,
+            max_tokens=max_tokens,
+        )
     def generate(self, **kwargs):
-        return self.llm.generate(**kwargs)
-    
+        return self.llm.generate(
+            sampling_params=self.sampling_params,
+            **kwargs
+        )
     def load_model_weights(self, **kwargs):
         self.llm.llm_engine.model_executor.driver_worker.model_runner.model.load_weights(**kwargs)
 
@@ -440,13 +445,11 @@ class GRPOStrategicTrainer(Trainer):
                           # This is particularly useful here because we generate completions from the same prompts.
                           enable_prefix_caching=True,
                           max_model_len=self.args.vllm_max_model_len,
+                          temperature=args.temperature,
+                          max_tokens=self.max_completion_length,
                         )
                         for vllm_device_i in range(num_devices)
                     ]
-                self.sampling_params = SamplingParams(
-                    temperature=args.temperature,
-                    max_tokens=self.max_completion_length,
-                )
 
             self._last_loaded_step = 0  # tag to avoid useless loading during grad accumulation
 
@@ -575,11 +578,7 @@ class GRPOStrategicTrainer(Trainer):
                 # arg min of self.llms_gen_calls
                 llm_index = min(range(len(self.llms_gen_calls)), key=self.llms_gen_calls.__getitem__)
                 self.llms_gen_calls[llm_index] += 1
-                outputs = ray.get(
-                    self.llms[llm_index].generate.remote(
-                        all_prompts_text, sampling_params=self.sampling_params, use_tqdm=False
-                    )
-                )
+                outputs = ray.get(self.llms[llm_index].generate.remote(all_prompts_text, use_tqdm=False))
                 completion_ids = [out.token_ids for completions in outputs for out in completions.outputs]
             else:
                 completion_ids = [None] * len(all_prompts_text)
