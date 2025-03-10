@@ -110,7 +110,9 @@ class RepeatRandomSampler(Sampler):
 
 @ray.remote(num_gpus=1)
 class RemoteRayLLM:
-    def __init__(self, temperature, max_tokens, **kwargs):
+    def __init__(self):
+        return
+    def init_llm(self, temperature, max_tokens, **kwargs):
         self.llm = LLM(**kwargs)
         self.sampling_params = SamplingParams(
             temperature=temperature,
@@ -431,8 +433,10 @@ class GRPOStrategicTrainer(Trainer):
                     # If using tensor parallelism, ignore the vllm_device setting and use all GPUs
                     num_devices = torch.cuda.device_count() if vllm_device == "all_devices" else 1
                     self.llms_gen_calls = [0] * num_devices
+                    self.llms = [RemoteRayLLM.remote() for _ in range(num_devices)]
+                    # Force wait for initialization.
                     self.llms = [
-                        ray.get(RemoteRayLLM.remote(
+                        ray.get(remote_ray_llm.init_llm.remote(
                           model=model.name_or_path,
                         #   device=f"cuda:{vllm_device_i}",
                           gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
@@ -445,7 +449,7 @@ class GRPOStrategicTrainer(Trainer):
                           temperature=args.temperature,
                           max_tokens=self.max_completion_length,
                         ))
-                        for vllm_device_i in range(num_devices)
+                        for remote_ray_llm in self.llms
                     ]
 
             self._last_loaded_step = 0  # tag to avoid useless loading during grad accumulation
