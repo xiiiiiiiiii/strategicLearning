@@ -157,3 +157,4 @@ for output in outputs:
 # and each task would write one or more files separately.
 #
 # ds.write_parquet("s3://<your-output-bucket>")
+ds.write_json("output_data.jsonl")
