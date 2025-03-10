@@ -50,6 +50,9 @@ from trl.trainer.callbacks import SyncRefModelCallback
 from trl.trainer.grpo_config import GRPOConfig
 from trl.trainer.utils import generate_model_card, get_comet_experiment_url, pad, selective_log_softmax
 
+import ray
+ray.init() # Initialize Ray
+
 
 if is_peft_available():
     from peft import PeftConfig, get_peft_model
@@ -104,6 +107,19 @@ class RepeatRandomSampler(Sampler):
 
     def __len__(self):
         return self.num_samples * self.repeat_count
+
+
+# Define a class decorated with @ray.remote()
+@ray.remote
+class RemoteRayLLM:
+    def __init__(self, **kwargs):
+        self.llm = LLM(**kwargs)
+
+    def generate(self, **kwargs):
+        return self.llm.generate(**kwargs)
+    
+    def load_model_weights(self, **kwargs):
+        self.llm.llm_engine.model_executor.driver_worker.model_runner.model.load_weights(**kwargs)
 
 
 class GRPOStrategicTrainer(Trainer):
@@ -415,9 +431,9 @@ class GRPOStrategicTrainer(Trainer):
                     num_devices = torch.cuda.device_count() if vllm_device == "all_devices" else 1
                     self.llms_gen_calls = [0] * num_devices
                     self.llms = [
-                        LLM(
+                        RemoteRayLLM.remote(
                           model=model.name_or_path,
-                          device=vllm_device_i,
+                          device=f"cuda:{vllm_device_i}",
                           gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
                           dtype=self.args.vllm_dtype,
                           # Automatic Prefix Caching caches the KV cache of existing queries, so that a new query can
@@ -527,8 +543,7 @@ class GRPOStrategicTrainer(Trainer):
                 state_dict = unwrapped_model.state_dict()
             if self.accelerator.is_main_process:
                 for llm in self.llms:
-                  llm_model = llm.llm_engine.model_executor.driver_worker.model_runner.model
-                  llm_model.load_weights(state_dict.items())
+                    ray.get(llm.remote.load_model_weights(state_dict.items()))
             # Unmerge the adapter to restore the model to its original state.
             # This must be done after loading weights to ensure they correspond to the merged state.
             if is_peft_model(unwrapped_model):
@@ -561,7 +576,11 @@ class GRPOStrategicTrainer(Trainer):
                 # arg min of self.llms_gen_calls
                 llm_index = min(range(len(self.llms_gen_calls)), key=self.llms_gen_calls.__getitem__)
                 self.llms_gen_calls[llm_index] += 1
-                outputs = self.llms[llm_index].generate(all_prompts_text, sampling_params=self.sampling_params, use_tqdm=False)
+                outputs = ray.get(
+                    self.llms[llm_index].remote.generate(
+                        all_prompts_text, sampling_params=self.sampling_params, use_tqdm=False
+                    )
+                )
                 completion_ids = [out.token_ids for completions in outputs for out in completions.outputs]
             else:
                 completion_ids = [None] * len(all_prompts_text)
