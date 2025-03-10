@@ -108,7 +108,6 @@ class RepeatRandomSampler(Sampler):
         return self.num_samples * self.repeat_count
 
 
-# Define a class decorated with @ray.remote()
 @ray.remote(num_gpus=1)
 class RemoteRayLLM:
     def __init__(self, **kwargs):
@@ -577,7 +576,7 @@ class GRPOStrategicTrainer(Trainer):
                 llm_index = min(range(len(self.llms_gen_calls)), key=self.llms_gen_calls.__getitem__)
                 self.llms_gen_calls[llm_index] += 1
                 outputs = ray.get(
-                    self.llms[llm_index].remote.generate(
+                    self.llms[llm_index].generate.remote(
                         all_prompts_text, sampling_params=self.sampling_params, use_tqdm=False
                     )
                 )
