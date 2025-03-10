@@ -129,7 +129,12 @@ tokenizer.padding_side = 'left'
 # Set the model's generation config to use left padding
 model.generation_config.padding_side = 'left'
 
-def main():
+if __name__ == "__main__":
+    # Add multiprocessing support
+    from multiprocessing import freeze_support
+    freeze_support()
+    
+    # Initialize the trainer directly
     trainer = GRPOStrategicTrainer(
         model=model,
         processing_class=tokenizer,
@@ -144,9 +149,3 @@ def main():
         train_dataset=dataset,
     )
     trainer.train()
-
-if __name__ == "__main__":
-    # Add multiprocessing support for Windows
-    from multiprocessing import freeze_support
-    freeze_support()
-    main()
