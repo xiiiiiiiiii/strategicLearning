@@ -432,7 +432,7 @@ class GRPOStrategicTrainer(Trainer):
                     num_devices = torch.cuda.device_count() if vllm_device == "all_devices" else 1
                     self.llms_gen_calls = [0] * num_devices
                     self.llms = [
-                        RemoteRayLLM.remote(
+                        ray.get(RemoteRayLLM.remote(
                           model=model.name_or_path,
                         #   device=f"cuda:{vllm_device_i}",
                           gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
@@ -444,7 +444,7 @@ class GRPOStrategicTrainer(Trainer):
                           max_model_len=self.args.vllm_max_model_len,
                           temperature=args.temperature,
                           max_tokens=self.max_completion_length,
-                        )
+                        ))
                         for vllm_device_i in range(num_devices)
                     ]
 
