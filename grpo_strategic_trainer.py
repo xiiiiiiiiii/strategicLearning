@@ -438,7 +438,7 @@ class GRPOStrategicTrainer(Trainer):
                     for remote_ray_llm in self.llms:
                         ray.get(remote_ray_llm.init_llm.remote(
                             model=model.name_or_path,
-                            # device=f"cuda:{vllm_device_i}",
+                            device='cuda:0', # f"cuda:{vllm_device_i}",
                             # gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
                             dtype=self.args.vllm_dtype,
                             # Automatic Prefix Caching caches the KV cache of existing queries, so that a new query can
