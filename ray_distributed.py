@@ -157,4 +157,4 @@ ds = ds.map_batches(
 # and each task would write one or more files separately.
 #
 # ds.write_parquet("s3://<your-output-bucket>")
-ds.write_json("output_data.jsonl")
+ds.write_json("data/output_data.jsonl")
