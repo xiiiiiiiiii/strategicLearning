@@ -15,6 +15,7 @@
 import os
 import textwrap
 import warnings
+import random
 from collections import defaultdict
 from typing import Any, Callable, Optional, Sized, Union
 from unittest.mock import patch
@@ -374,14 +375,12 @@ class GRPOStrategicTrainer(Trainer):
                 vllm_device = self.args.vllm_device
                 print(f"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! vllm_device: {vllm_device} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                 # Handle special case for "all_devices" GPUs via tensor parallelism
-                tensor_parallel_size = getattr(self.args, 'vllm_tensor_parallel_size', 'NOT SET')
                 if vllm_device == "all_devices":
-                  if tensor_parallel_size != 'NOT SET':
+                  if 'NOT SET' != getattr(self.args, 'vllm_tensor_parallel_size', 'NOT SET'):
                       raise ValueError(
                         f"It is not supported to set vllm_device to all_devices and specify vllm_tensor_parallel_size "
                         "too, please don't set vllm_tensor_parallel_size if you set vllm_device to all_devices."
                       )
-                  tensor_parallel_size = torch.cuda.device_count()
                 else:
                   if vllm_device == "auto":
                     if torch.cuda.device_count() == 1:
@@ -413,29 +412,21 @@ class GRPOStrategicTrainer(Trainer):
                 )
                 with world_size_patch, profiling_patch:
                     # If using tensor parallelism, ignore the vllm_device setting and use all GPUs
-                    if vllm_device == "all_devices":
-                        self.llm = LLM(
-                            model=model.name_or_path,
-                            tensor_parallel_size=tensor_parallel_size,  # Use multiple GPUs
-                            gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
-                            dtype=self.args.vllm_dtype,
-                            enable_prefix_caching=True,
-                            max_model_len=self.args.vllm_max_model_len,
+                    num_devices = torch.cuda.device_count() if vllm_device == "all_devices" else 1
+                    self.llms = [
+                        LLM(
+                          model=model.name_or_path,
+                          device=vllm_device_i,
+                          gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
+                          dtype=self.args.vllm_dtype,
+                          # Automatic Prefix Caching caches the KV cache of existing queries, so that a new query can
+                          # directly reuse the KV cache if it shares the same prefix with one of the existing queries.
+                          # This is particularly useful here because we generate completions from the same prompts.
+                          enable_prefix_caching=True,
+                          max_model_len=self.args.vllm_max_model_len,
                         )
-                        print(f"Using vLLM with tensor parallelism across {tensor_parallel_size} GPUs")
-                    else:
-                        # Original single-GPU implementation
-                        self.llm = LLM(
-                            model=model.name_or_path,
-                            device=vllm_device,
-                            gpu_memory_utilization=self.args.vllm_gpu_memory_utilization,
-                            dtype=self.args.vllm_dtype,
-                            # Automatic Prefix Caching caches the KV cache of existing queries, so that a new query can
-                            # directly reuse the KV cache if it shares the same prefix with one of the existing queries.
-                            # This is particularly useful here because we generate completions from the same prompts.
-                            enable_prefix_caching=True,
-                            max_model_len=self.args.vllm_max_model_len,
-                        )
+                        for vllm_device_i in range(num_devices)
+                    ]
                 self.sampling_params = SamplingParams(
                     temperature=args.temperature,
                     max_tokens=self.max_completion_length,
@@ -534,8 +525,9 @@ class GRPOStrategicTrainer(Trainer):
             else:
                 state_dict = unwrapped_model.state_dict()
             if self.accelerator.is_main_process:
-                llm_model = self.llm.llm_engine.model_executor.driver_worker.model_runner.model
-                llm_model.load_weights(state_dict.items())
+                for llm in self.llms:
+                  llm_model = llm.llm_engine.model_executor.driver_worker.model_runner.model
+                  llm_model.load_weights(state_dict.items())
             # Unmerge the adapter to restore the model to its original state.
             # This must be done after loading weights to ensure they correspond to the merged state.
             if is_peft_model(unwrapped_model):
@@ -565,7 +557,8 @@ class GRPOStrategicTrainer(Trainer):
             # Generate completions using vLLM: gather all prompts and use them in a single call in the main process
             all_prompts_text = gather_object(prompts_text)
             if self.accelerator.is_main_process:
-                outputs = self.llm.generate(all_prompts_text, sampling_params=self.sampling_params, use_tqdm=False)
+                llm_index = random.randint(0, len(self.llms) - 1) # Sample a random LLM to distribute the load.
+                outputs = self.llms[llm_index].generate(all_prompts_text, sampling_params=self.sampling_params, use_tqdm=False)
                 completion_ids = [out.token_ids for completions in outputs for out in completions.outputs]
             else:
                 completion_ids = [None] * len(all_prompts_text)

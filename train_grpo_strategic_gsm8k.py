@@ -128,24 +128,19 @@ tokenizer.padding_side = 'left'
 
 # Set the model's generation config to use left padding
 model.generation_config.padding_side = 'left'
-
-if __name__ == "__main__":
-    # Add multiprocessing support
-    from multiprocessing import freeze_support
-    freeze_support()
     
-    # Initialize the trainer directly
-    trainer = GRPOStrategicTrainer(
-        model=model,
-        processing_class=tokenizer,
-        reward_funcs=[
-            xmlcount_reward_func,
-            soft_format_reward_func,
-            strict_format_reward_func,
-            int_reward_func,
-            correctness_reward_func
-        ],
-        args=training_args,
-        train_dataset=dataset,
-    )
-    trainer.train()
+# Initialize the trainer directly
+trainer = GRPOStrategicTrainer(
+    model=model,
+    processing_class=tokenizer,
+    reward_funcs=[
+        xmlcount_reward_func,
+        soft_format_reward_func,
+        strict_format_reward_func,
+        int_reward_func,
+        correctness_reward_func
+    ],
+    args=training_args,
+    train_dataset=dataset,
+)
+trainer.train()
