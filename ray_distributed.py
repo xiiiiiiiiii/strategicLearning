@@ -78,8 +78,7 @@ class LLMPredictor:
 
     def __init__(self):
         # Create an LLM.
-        self.llm = LLM(model=model,
-                       tensor_parallel_size=tensor_parallel_size)
+        self.llm = LLM(model=model, tensor_parallel_size=tensor_parallel_size)
 
     def __call__(self, batch: dict[str, np.ndarray]) -> dict[str, list]:
         # Generate texts from the prompts.
@@ -93,8 +92,11 @@ class LLMPredictor:
   #   'role': 'system'},
   #  {'content': 'Tina makes $18.00 an hour.  If she works more than 8 hours per shift, she is eligible for overtime, which is paid by your hourly wage + 1/2 your hourly wage.  If she works 10 hours every day for 5 days, how much money does she make?',
   #   'role': 'user'}]}]
-
+        print(f"Batch: {batch}")
         outputs = self.llm.generate(batch["question"], sampling_params)
+        print(f"outputs: {outputs}")
+        print()
+        print()
         prompt: list[str] = []
         generated_text: list[str] = []
         for output in outputs:
@@ -123,15 +125,15 @@ def scheduling_strategy_fn():
 
 
 resources_kwarg: dict[str, Any] = {}
-if tensor_parallel_size == 1:
-    # For tensor_parallel_size == 1, we simply set num_gpus=1.
-    resources_kwarg["num_gpus"] = 1
-else:
-    # Otherwise, we have to set num_gpus=0 and provide
-    # a function that will create a placement group for
-    # each instance.
-    resources_kwarg["num_gpus"] = 0
-    resources_kwarg["ray_remote_args_fn"] = scheduling_strategy_fn
+# if tensor_parallel_size == 1:
+#     # For tensor_parallel_size == 1, we simply set num_gpus=1.
+#     resources_kwarg["num_gpus"] = 1
+# else:
+# Otherwise, we have to set num_gpus=0 and provide
+# a function that will create a placement group for
+# each instance.
+resources_kwarg["num_gpus"] = 0
+resources_kwarg["ray_remote_args_fn"] = scheduling_strategy_fn
 
 # Apply batch inference for all input data.
 ds = ds.map_batches(
