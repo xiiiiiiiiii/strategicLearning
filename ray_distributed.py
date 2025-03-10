@@ -116,7 +116,7 @@ def scheduling_strategy_fn():
     pg = ray.util.placement_group(
         [{
             "GPU": num_instances,
-            "CPU": num_instances
+            "CPU": 1
         }] * tensor_parallel_size,
         strategy="STRICT_PACK",
     )
