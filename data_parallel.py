@@ -8,8 +8,9 @@ import os
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
 
-GPUs_per_dp_rank = 2
+GPUs_per_dp_rank = 1
 DP_size = 2
+model = "agentica-org/DeepScaleR-1.5B-Preview"
 
 
 def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
@@ -52,10 +53,7 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
                                      max_tokens=16 * (dp_rank + 1))
 
     # Create an LLM.
-    llm = LLM(model="ibm-research/PowerMoE-3b",
-              tensor_parallel_size=GPUs_per_dp_rank,
-              enforce_eager=True,
-              enable_expert_parallel=True)
+    llm = LLM(model=model, tensor_parallel_size=GPUs_per_dp_rank)
     outputs = llm.generate(prompts, sampling_params)
     # Print the outputs.
     for output in outputs:
