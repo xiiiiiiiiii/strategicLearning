@@ -139,7 +139,7 @@ resources_kwarg["ray_remote_args_fn"] = scheduling_strategy_fn
 ds = ds.map_batches(
     LLMPredictor,
     # Set the concurrency to the number of LLM instances.
-    concurrency=1 =, #num_instances,
+    concurrency=1, #num_instances,
     # Specify the batch size for inference.
     batch_size=32,
     **resources_kwarg,
