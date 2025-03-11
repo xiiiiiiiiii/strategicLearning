@@ -119,7 +119,6 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     # Create an LLM.
     llm = LLM(
         model=model,
-        device=f"cuda:{dp_rank}",
         tensor_parallel_size=GPUs_per_dp_rank
     )
     outputs = llm.generate(prompts, sampling_params)
