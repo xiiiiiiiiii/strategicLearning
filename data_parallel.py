@@ -24,7 +24,7 @@ sampling_params = SamplingParams(
 )
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 
-DEBUG_K = 0 # 0 if not debugging.
+DEBUG_K = 5 # 0 if not debugging.
 
 SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
 
