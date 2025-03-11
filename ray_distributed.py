@@ -21,13 +21,13 @@ assert Version(ray.__version__) >= Version(
     "2.22.0"), "Ray version must be at least 2.22.0"
 
 # Create a sampling params object.
-sampling_params = SamplingParams(temperature=1.0, top_p=0.95) #, max_tokens=32768)
+sampling_params = SamplingParams(temperature=1.0, top_p=0.95, max_tokens=32768)
 
 # Set tensor parallelism per instance.
 tensor_parallel_size = 1  # Don't split model across GPUs, it is small enough to fit into one GPU.
 
 # Set number of instances. Each instance will use tensor_parallel_size GPUs.
-num_instances = 2
+num_instances = 20
 
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 
@@ -117,7 +117,7 @@ def scheduling_strategy_fn():
         [{
             "GPU": 1,
             "CPU": 1
-        }] * (tensor_parallel_size),
+        }] * tensor_parallel_size,
         strategy="STRICT_PACK",
     )
     return dict(scheduling_strategy=PlacementGroupSchedulingStrategy(
