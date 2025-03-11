@@ -141,7 +141,7 @@ ds = ds.map_batches(
     # Set the concurrency to the number of LLM instances.
     concurrency=num_instances,
     # Specify the batch size for inference.
-    batch_size=32,
+    batch_size=1024, #32,
     **resources_kwarg,
 )
 
