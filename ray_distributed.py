@@ -111,7 +111,7 @@ class LLMPredictor:
 
 # For tensor_parallel_size > 1, we need to create placement groups for vLLM
 # to use. Every actor has to have its own placement group.
-[[{"GPU": 1, }] * (tensor_parallel_size * num_instances), [{"CPU": 1}]]
+[[{"GPU": 1, }] * (tensor_parallel_size * num_instances), [{"CPU": 1}] * 1]
 def scheduling_strategy_fn():
     # One bundle per tensor parallel worker
     pg = ray.util.placement_group(
