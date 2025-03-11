@@ -111,13 +111,11 @@ class LLMPredictor:
 
 # For tensor_parallel_size > 1, we need to create placement groups for vLLM
 # to use. Every actor has to have its own placement group.
+[[{"GPU": 1, }] * (tensor_parallel_size * num_instances), [{"CPU": 1}]]
 def scheduling_strategy_fn():
     # One bundle per tensor parallel worker
     pg = ray.util.placement_group(
-        [{
-            "GPU": 1,
-            "CPU": 1
-        }] * (tensor_parallel_size * num_instances),
+        [[{"GPU": 1, }] * (tensor_parallel_size * num_instances), [{"CPU": 1}]],
         strategy="STRICT_PACK",
     )
     return dict(scheduling_strategy=PlacementGroupSchedulingStrategy(
@@ -132,14 +130,14 @@ resources_kwarg: dict[str, Any] = {}
 # Otherwise, we have to set num_gpus=0 and provide
 # a function that will create a placement group for
 # each instance.
-resources_kwarg["num_gpus"] = 1
+resources_kwarg["num_gpus"] = 0
 resources_kwarg["ray_remote_args_fn"] = scheduling_strategy_fn
 
 # Apply batch inference for all input data.
 ds = ds.map_batches(
     LLMPredictor,
     # Set the concurrency to the number of LLM instances.
-    concurrency=1, #num_instances,
+    concurrency=num_instances,
     # Specify the batch size for inference.
     batch_size=32,
     **resources_kwarg,
