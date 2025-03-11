@@ -73,9 +73,9 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
                               GPUs_per_dp_rank))
     
     hf_dataset = get_gsm8k_questions()
-    prompts = hf_dataset['prompt'][0:100]
-    answers = hf_dataset['answer'][0:100]
-    trace = hf_dataset['trace'][0:100]
+    prompts = hf_dataset['prompt'][0:10]
+    answers = hf_dataset['answer'][0:10]
+    trace = hf_dataset['trace'][0:10]
 
     # Sample prompts.
     # prompts = [
