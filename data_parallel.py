@@ -4,13 +4,45 @@
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 import os
+import json
 
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
+from datasets import load_dataset, Dataset
 
 GPUs_per_dp_rank = 1
 DP_size = 2
 model = "agentica-org/DeepScaleR-1.5B-Preview"
+
+SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
+
+1. Think step-by-step, breaking down the problem into simpler parts
+2. Show your calculations clearly
+3. Verify your solution matches the question requirements
+4. Format your response as follows:
+
+<reasoning>
+[Your detailed step-by-step reasoning here]
+</reasoning>
+<answer>
+[Your final numerical answer here, with no units or extra text]
+</answer>
+"""
+
+def extract_hash_answer(text: str) -> str | None:
+    if "####" not in text:
+        return None
+    return text.split("####")[1].strip()
+
+# uncomment middle messages for 1-shot prompting
+def get_gsm8k_questions(split = "train") -> Dataset:
+    data = load_dataset('openai/gsm8k', 'main')[split] # type: ignore
+    data = data.map(lambda x: { # type: ignore
+        'prompt': f"{SYSTEM_PROMPT}\n\n{x['question']}",
+        'trace': x['answer'],
+        'answer': extract_hash_answer(x['answer'])
+    }) # type: ignore
+    return data # type: ignore
 
 
 def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
@@ -22,14 +54,19 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     os.environ["CUDA_VISIBLE_DEVICES"] = ",".join(
         str(i) for i in range(dp_rank * GPUs_per_dp_rank, (dp_rank + 1) *
                               GPUs_per_dp_rank))
+    
+    hf_dataset = get_gsm8k_questions()
+    prompts = hf_dataset['prompt']
+    answers = hf_dataset['answer']
+    trace = hf_dataset['trace']
 
     # Sample prompts.
-    prompts = [
-        "Hello, my name is",
-        "The president of the United States is",
-        "The capital of France is",
-        "The future of AI is",
-    ]
+    # prompts = [
+    #     "Hello, my name is",
+    #     "The president of the United States is",
+    #     "The capital of France is",
+    #     "The future of AI is",
+    # ]
 
     # with DP, each rank should process different prompts.
     # usually all the DP ranks process a full dataset,
@@ -37,7 +74,11 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     promts_per_rank = len(prompts) // dp_size
     start = dp_rank * promts_per_rank
     end = start + promts_per_rank
+
     prompts = prompts[start:end]
+    answers = answers[start:end]
+    trace = trace[start:end]
+
     if len(prompts) == 0:
         # if any rank has no prompts to process,
         # we need to set a placeholder prompt
@@ -55,12 +96,29 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     # Create an LLM.
     llm = LLM(model=model, tensor_parallel_size=GPUs_per_dp_rank)
     outputs = llm.generate(prompts, sampling_params)
+
+    assert len(outputs) == len(prompts)
+    assert len(outputs) == len(answers)
+    assert len(outputs) == len(trace)
     # Print the outputs.
-    for output in outputs:
-        prompt = output.prompt
-        generated_text = output.outputs[0].text
-        print(f"DP rank {dp_rank}, Prompt: {prompt!r}, "
-              f"Generated text: {generated_text!r}")
+    results = [
+        {
+            'prompt': prompt,
+            'output': ' '.join([o.text for o in output.outputs]),
+            'answer': answer,
+            'trace': trace,
+        }
+        for prompt, answer, trace, output in zip(prompts, answers, trace, outputs)
+    ]
+
+    # Debug print.
+    for i, result in enumerate(results[0:10]):
+        print(f"DP rank {dp_rank} result {i} Result: {result}")
+    
+    # Save list of dictionaries to a jsonl file
+    with open(f"data/data_parallel_results/{dp_rank}.jsonl", "w") as f:
+        for result in results:
+            f.write(json.dumps(result) + "\n")
 
 
 if __name__ == "__main__":
