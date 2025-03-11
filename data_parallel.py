@@ -9,11 +9,17 @@ import json
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
 from datasets import load_dataset, Dataset
+import torch
 
 GPUs_per_dp_rank = 1
-DP_size = 2
+DP_size = torch.cuda.device_count()
 
-sampling_params = SamplingParams(temperature=1.0, top_p=0.95, max_tokens=32767)
+sampling_params = SamplingParams(
+    n=20,
+    temperature=1.0,
+    top_p=0.95,
+    max_tokens=32767
+)
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 
 SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
@@ -67,9 +73,9 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
                               GPUs_per_dp_rank))
     
     hf_dataset = get_gsm8k_questions()
-    prompts = hf_dataset['prompt']
-    answers = hf_dataset['answer']
-    trace = hf_dataset['trace']
+    prompts = hf_dataset['prompt'][0:100]
+    answers = hf_dataset['answer'][0:100]
+    trace = hf_dataset['trace'][0:100]
 
     # Sample prompts.
     # prompts = [
@@ -116,21 +122,18 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     results = [
         {
             'prompt': prompt,
-            'output': ' '.join([o.text for o in output.outputs]),
             'answer': answer,
             'trace': trace,
+            'outputs': [
+                {
+                    'output':o.text,
+                    'extracted_answer': extract_xml_answer(o.text),
+                    'reward': correctness_reward_func(o.text, answer)
+                }
+                for o in output.outputs
+            ],
         }
         for prompt, answer, trace, output in zip(prompts, answers, trace, outputs)
-    ]
-
-    # Add more fields.
-    results = [
-        {
-            **result,
-            'extracted_answer': extract_xml_answer(result['output']),
-            'reward': correctness_reward_func(result['output'], result['answer'])
-        }
-        for result in results
     ]
 
     # Debug print.
