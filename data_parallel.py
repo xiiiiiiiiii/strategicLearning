@@ -29,6 +29,15 @@ SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each m
 </answer>
 """
 
+def extract_xml_answer(text: str) -> str:
+    answer = text.split("<answer>")[-1]
+    answer = answer.split("</answer>")[0]
+    return answer.strip()
+
+def correctness_reward_func(response: str, actual_answers: str) -> float:
+    extracted_answer = extract_xml_answer(response)
+    return 1.0 if extracted_answer == actual_answers else 0.0
+
 def extract_hash_answer(text: str) -> str | None:
     if "####" not in text:
         return None
@@ -100,7 +109,8 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     assert len(outputs) == len(prompts)
     assert len(outputs) == len(answers)
     assert len(outputs) == len(trace)
-    # Print the outputs.
+
+    
     results = [
         {
             'prompt': prompt,
@@ -109,6 +119,16 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
             'trace': trace,
         }
         for prompt, answer, trace, output in zip(prompts, answers, trace, outputs)
+    ]
+
+    # Add more fields.
+    results = [
+        {
+            **result,
+            'extracted_answer': extract_xml_answer(result['output']),
+            'reward': correctness_reward_func(result['output'], result['answer'])
+        }
+        for result in results
     ]
 
     # Debug print.
