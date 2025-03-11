@@ -45,7 +45,7 @@ def extract_last_boxed_value(text):
     matches = re.findall(r"\\boxed{([^}]+)}", text)
     
     # Return the last match if exists, otherwise None
-    return int(matches[-1]) if matches else None
+    return matches[-1] if matches else None
 
 
 def correctness_reward_func(response: str, actual_answers: str) -> float:
