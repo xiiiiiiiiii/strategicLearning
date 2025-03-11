@@ -12,6 +12,8 @@ from datasets import load_dataset, Dataset
 
 GPUs_per_dp_rank = 1
 DP_size = 2
+
+sampling_params = SamplingParams(temperature=1.0, top_p=0.95, max_tokens=32768)
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 
 SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
@@ -98,9 +100,9 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     # since we are doing data parallel, every rank can have different
     # sampling params. here we set different max_tokens for different
     # ranks for demonstration.
-    sampling_params = SamplingParams(temperature=0.8,
-                                     top_p=0.95,
-                                     max_tokens=16 * (dp_rank + 1))
+    # sampling_params = SamplingParams(temperature=0.8,
+    #                                  top_p=0.95,
+    #                                  max_tokens=16 * (dp_rank + 1))
 
     # Create an LLM.
     llm = LLM(model=model, tensor_parallel_size=GPUs_per_dp_rank)
