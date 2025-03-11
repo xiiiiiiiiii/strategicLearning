@@ -13,7 +13,7 @@ from datasets import load_dataset, Dataset
 GPUs_per_dp_rank = 1
 DP_size = 2
 
-sampling_params = SamplingParams(temperature=1.0, top_p=0.95, max_tokens=32768)
+sampling_params = SamplingParams(temperature=1.0, top_p=0.95, max_tokens=32767)
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 
 SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
