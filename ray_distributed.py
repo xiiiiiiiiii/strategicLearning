@@ -21,7 +21,7 @@ assert Version(ray.__version__) >= Version(
     "2.22.0"), "Ray version must be at least 2.22.0"
 
 # Create a sampling params object.
-sampling_params = SamplingParams(temperature=1.0, top_p=0.95, max_tokens=32768)
+sampling_params = SamplingParams(temperature=1.0, top_p=0.95) #, max_tokens=32768)
 
 # Set tensor parallelism per instance.
 tensor_parallel_size = 1  # Don't split model across GPUs, it is small enough to fit into one GPU.
@@ -115,8 +115,8 @@ def scheduling_strategy_fn():
     # One bundle per tensor parallel worker
     pg = ray.util.placement_group(
         [{
-            "GPU": 2,
-            "CPU": 2
+            "GPU": 1,
+            "CPU": 1
         }] * tensor_parallel_size,
         strategy="STRICT_PACK",
     )
@@ -133,7 +133,7 @@ resources_kwarg: dict[str, Any] = {}
 # a function that will create a placement group for
 # each instance.
 resources_kwarg["num_gpus"] = 1
-# resources_kwarg["ray_remote_args_fn"] = scheduling_strategy_fn
+resources_kwarg["ray_remote_args_fn"] = scheduling_strategy_fn
 
 # Apply batch inference for all input data.
 ds = ds.map_batches(
