@@ -22,6 +22,8 @@ sampling_params = SamplingParams(
 )
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 
+DEBUG_K = 5 # 0 if not debugging.
+
 SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
 
 1. Think step-by-step, breaking down the problem into simpler parts
@@ -73,9 +75,13 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
                               GPUs_per_dp_rank))
     
     hf_dataset = get_gsm8k_questions()
-    prompts = hf_dataset['prompt'][0:10]
-    answers = hf_dataset['answer'][0:10]
-    trace = hf_dataset['trace'][0:10]
+    prompts = hf_dataset['prompt']
+    answers = hf_dataset['answer']
+    trace = hf_dataset['trace']
+    if DEBUG_K > 0:
+        prompts = prompts[0:DEBUG_K]
+        answers = answers[0:DEBUG_K]
+        trace = trace[0:DEBUG_K]
 
     # Sample prompts.
     # prompts = [
@@ -111,7 +117,11 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     #                                  max_tokens=16 * (dp_rank + 1))
 
     # Create an LLM.
-    llm = LLM(model=model, tensor_parallel_size=GPUs_per_dp_rank)
+    llm = LLM(
+        model=model,
+        device=f"cuda:{dp_rank}",
+        tensor_parallel_size=GPUs_per_dp_rank
+    )
     outputs = llm.generate(prompts, sampling_params)
 
     assert len(outputs) == len(prompts)
