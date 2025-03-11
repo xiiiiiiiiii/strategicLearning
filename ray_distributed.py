@@ -132,14 +132,14 @@ resources_kwarg: dict[str, Any] = {}
 # Otherwise, we have to set num_gpus=0 and provide
 # a function that will create a placement group for
 # each instance.
-resources_kwarg["num_gpus"] = 2
+resources_kwarg["num_gpus"] = 1
 resources_kwarg["ray_remote_args_fn"] = scheduling_strategy_fn
 
 # Apply batch inference for all input data.
 ds = ds.map_batches(
     LLMPredictor,
     # Set the concurrency to the number of LLM instances.
-    concurrency=1, #num_instances,
+    concurrency=num_instances,
     # Specify the batch size for inference.
     batch_size=32,
     **resources_kwarg,
