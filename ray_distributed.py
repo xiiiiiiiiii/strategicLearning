@@ -117,7 +117,7 @@ def scheduling_strategy_fn():
         [{
             "GPU": 2,
             "CPU": 1
-        }] * (tensor_parallel_size), #  * num_instances),
+        }] * (tensor_parallel_size * num_instances),
         strategy="STRICT_PACK",
     )
     return dict(scheduling_strategy=PlacementGroupSchedulingStrategy(
