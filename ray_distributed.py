@@ -24,7 +24,7 @@ assert Version(ray.__version__) >= Version(
 sampling_params = SamplingParams(temperature=1.0, top_p=0.95, max_tokens=32768)
 
 # Set tensor parallelism per instance.
-tensor_parallel_size = 1
+tensor_parallel_size = 1  # Don't split model across GPUs, it is small enough to fit into one GPU.
 
 # Set number of instances. Each instance will use tensor_parallel_size GPUs.
 num_instances = 2
@@ -92,11 +92,11 @@ class LLMPredictor:
   #   'role': 'system'},
   #  {'content': 'Tina makes $18.00 an hour.  If she works more than 8 hours per shift, she is eligible for overtime, which is paid by your hourly wage + 1/2 your hourly wage.  If she works 10 hours every day for 5 days, how much money does she make?',
   #   'role': 'user'}]}]
-        print(f"Batch: {batch}")
+        # print(f"Batch: {batch}")
         outputs = self.llm.generate(batch["question"], sampling_params)
-        print(f"outputs: {outputs}")
-        print()
-        print()
+        # print(f"outputs: {outputs}")
+        # print()
+        # print()
         prompt: list[str] = []
         generated_text: list[str] = []
         for output in outputs:
