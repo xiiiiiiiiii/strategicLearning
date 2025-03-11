@@ -27,7 +27,7 @@ sampling_params = SamplingParams(temperature=1.0, top_p=0.95, max_tokens=32768)
 tensor_parallel_size = 1  # Don't split model across GPUs, it is small enough to fit into one GPU.
 
 # Set number of instances. Each instance will use tensor_parallel_size GPUs.
-num_instances = 20
+num_instances = 2
 
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 
