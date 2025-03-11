@@ -140,7 +140,7 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
             'outputs': [
                 {
                     'output':o.text,
-                    'extracted_answer': extract_xml_answer(o.text),
+                    'extracted_answer': extract_last_boxed_value(o.text),
                     'reward': correctness_reward_func(o.text, answer)
                 }
                 for o in output.outputs
