@@ -5,11 +5,13 @@
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 import os
 import json
+import re
 
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
 from datasets import load_dataset, Dataset
 import torch
+
 
 GPUs_per_dp_rank = 1
 DP_size = torch.cuda.device_count()
@@ -31,21 +33,23 @@ SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each m
 3. Verify your solution matches the question requirements
 4. Format your response as follows:
 
-<reasoning>
+<think>
 [Your detailed step-by-step reasoning here]
-</reasoning>
-<answer>
-[Your final numerical answer here, with no units or extra text]
-</answer>
+</think>
+[your summary of the solution]
+\\boxed{[Your final answer here, with no extra text]}
 """
 
-def extract_xml_answer(text: str) -> str:
-    answer = text.split("<answer>")[-1]
-    answer = answer.split("</answer>")[0]
-    return answer.strip()
+def extract_last_boxed_value(text):
+    # Find all boxed values in the text
+    matches = re.findall(r"\\boxed{([^}]+)}", text)
+    
+    # Return the last match if exists, otherwise None
+    return int(matches[-1]) if matches else None
+
 
 def correctness_reward_func(response: str, actual_answers: str) -> float:
-    extracted_answer = extract_xml_answer(response)
+    extracted_answer = extract_last_boxed_value(response)
     return 1.0 if extracted_answer == actual_answers else 0.0
 
 def extract_hash_answer(text: str) -> str | None:
