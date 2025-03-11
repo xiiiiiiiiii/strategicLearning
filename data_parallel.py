@@ -135,7 +135,10 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     for i, result in enumerate(results[0:10]):
         print(f"DP rank {dp_rank} result {i} Result: {result}")
     
-    # Save list of dictionaries to a jsonl file
+    # Create directory before writing
+    os.makedirs("data/data_parallel_results", exist_ok=True)
+    
+    # Now safely write to the file
     with open(f"data/data_parallel_results/{dp_rank}.jsonl", "w") as f:
         for result in results:
             f.write(json.dumps(result) + "\n")
