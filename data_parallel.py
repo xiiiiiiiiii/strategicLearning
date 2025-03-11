@@ -136,9 +136,9 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
         for prompt, answer, trace, output in zip(prompts, answers, trace, outputs)
     ]
 
-    # Debug print.
-    for i, result in enumerate(results[0:10]):
-        print(f"DP rank {dp_rank} result {i} Result: {result}")
+    # # Debug print.
+    # for i, result in enumerate(results[0:10]):
+    #     print(f"DP rank {dp_rank} result {i} Result: {result}")
     
     # Create directory before writing
     os.makedirs("data/data_parallel_results", exist_ok=True)
