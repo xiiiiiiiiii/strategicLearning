@@ -20,6 +20,7 @@ sampling_params = SamplingParams(
     n=20,
     temperature=1.0,
     top_p=0.95,
+    min_tokens=10,
     max_tokens=32767
 )
 model = "agentica-org/DeepScaleR-1.5B-Preview"
