@@ -165,14 +165,15 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
 
 
 if __name__ == "__main__":    
-    from multiprocessing import Process
+    spawn_ctx = multiprocessing.get_context('spawn')
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
     procs = []
     for i in range(DP_size):
-        proc = Process(target=main,
-                       args=(DP_size, i, dp_master_ip, dp_master_port,
-                             GPUs_per_dp_rank))
+        proc = spawn_ctx.Process(
+            target=main,
+            args=(DP_size, i, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
+        )
         proc.start()
         procs.append(proc)
     for proc in procs:
