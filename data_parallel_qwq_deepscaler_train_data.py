@@ -3,6 +3,10 @@
 # VLLM_USE_V1=1 python examples/offline_inference/data_parallel.py
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
+
+# Set the start method to 'spawn' before creating any processes
+multiprocessing.set_start_method('spawn', force=True)
+
 import os
 import json
 import re
@@ -26,7 +30,7 @@ sampling_params = SamplingParams(
 )
 model = "Qwen/QwQ-32B"
 
-DEBUG_K = 2 # 0 if not debugging.
+DEBUG_K = 6 # 0 if not debugging.
 
 SYSTEM_PROMPT = """You are a powerful math problem solving assistant.
 
@@ -160,10 +164,7 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
             f.write(json.dumps(result) + "\n")
 
 
-if __name__ == "__main__":
-    # Set the start method to 'spawn' before creating any processes
-    multiprocessing.set_start_method('spawn', force=True)
-    
+if __name__ == "__main__":    
     from multiprocessing import Process
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
