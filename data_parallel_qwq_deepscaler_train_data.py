@@ -4,6 +4,9 @@
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 
+import multiprocessing
+multiprocessing.set_start_method('spawn', force=True)
+
 import os
 import json
 import re
@@ -161,8 +164,6 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
 
 
 if __name__ == "__main__":    
-    import multiprocessing
-    multiprocessing.set_start_method('spawn', force=True)
     from multiprocessing import Process
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
