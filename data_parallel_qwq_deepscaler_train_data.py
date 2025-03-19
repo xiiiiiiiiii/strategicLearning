@@ -17,7 +17,7 @@ GPUs_per_dp_rank = 1
 DP_size = torch.cuda.device_count()
 
 sampling_params = SamplingParams(
-    n=20,
+    n=10,
     temperature=1.0,
     top_p=0.95,
     min_tokens=10,
@@ -51,11 +51,6 @@ def correctness_reward_func(response: str, actual_answers: str) -> float:
     extracted_answer = extract_last_boxed_value(response)
     return 1.0 if extracted_answer == actual_answers else 0.0
 
-def extract_hash_answer(text: str) -> str | None:
-    if "####" not in text:
-        return None
-    return text.split("####")[1].strip()
-
 
 def get_deepscaler_questions(split="train", num_samples=None) -> Dataset:
     """Load questions from DeepScaleR Preview Dataset with optional sample size."""
@@ -87,7 +82,7 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     hf_dataset = get_deepscaler_questions(num_samples=DEBUG_K)
     prompts = hf_dataset['prompt']
     answers = hf_dataset['answer']
-    trace = hf_dataset['trace']
+    trace = hf_dataset['solution']
 
     # Sample prompts.
     # prompts = [
