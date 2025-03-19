@@ -11,11 +11,10 @@ import re
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
 from datasets import load_dataset, Dataset
-import torch
 
 
 GPUs_per_dp_rank = 1
-DP_size = 2 # torch.cuda.device_count() will cause thread error
+DP_size = 1 # torch.cuda.device_count() will cause thread error
 
 sampling_params = SamplingParams(
     n=10,
@@ -72,6 +71,12 @@ def get_deepscaler_questions(split="train", num_samples=None) -> Dataset:
 
 
 def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
+    # Set CUDA_VISIBLE_DEVICES before any CUDA operations
+    device_id = dp_rank  # Use different device for each rank
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(device_id)
+    print(f"DP rank {dp_rank} using GPU {device_id}")
+    
+    # Then set other environment variables
     os.environ["VLLM_DP_RANK"] = str(dp_rank)
     os.environ["VLLM_DP_SIZE"] = str(dp_size)
     os.environ["VLLM_DP_MASTER_IP"] = dp_master_ip
