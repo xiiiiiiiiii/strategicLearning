@@ -4,10 +4,6 @@
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 
-# Set the start method to 'spawn' before creating any processes
-import multiprocessing
-multiprocessing.set_start_method('spawn', force=True)
-
 import os
 import json
 import re
@@ -19,7 +15,7 @@ import torch
 
 
 GPUs_per_dp_rank = 1
-DP_size = 2 # torch.cuda.device_count()
+DP_size = 2 # torch.cuda.device_count() will cause thread error
 
 sampling_params = SamplingParams(
     n=10,
@@ -166,12 +162,12 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
 
 
 if __name__ == "__main__":    
-    spawn_ctx = multiprocessing.get_context('spawn')
+    from multiprocessing import Process
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
     procs = []
     for i in range(DP_size):
-        proc = spawn_ctx.Process(
+        proc = Process(
             target=main,
             args=(DP_size, i, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
         )
