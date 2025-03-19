@@ -5,12 +5,12 @@
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 
 # Set the start method to 'spawn' before creating any processes
+import multiprocessing
 multiprocessing.set_start_method('spawn', force=True)
 
 import os
 import json
 import re
-import multiprocessing
 
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
