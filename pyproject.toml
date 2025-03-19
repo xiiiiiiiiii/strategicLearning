@@ -4,4 +4,12 @@ version = "0.1.0"
 description = "Strategic learning for AI training"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "accelerate>=1.5.2",
+    "datasets>=3.4.1",
+    "torch>=2.6.0",
+    "transformers>=4.49.0",
+    "trl>=0.15.2",
+    "vllm>=0.8.1",
+    "wandb>=0.19.8",
+]
