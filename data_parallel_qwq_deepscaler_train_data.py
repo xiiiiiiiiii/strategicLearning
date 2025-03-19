@@ -28,7 +28,8 @@ sampling_params = SamplingParams(
     min_tokens=10,
     max_tokens=32767
 )
-model = "Qwen/QwQ-32B"
+# model = "Qwen/QwQ-32B"
+model = "agentica-org/DeepScaleR-1.5B-Preview"
 
 DEBUG_K = 6 # 0 if not debugging.
 
