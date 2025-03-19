@@ -27,18 +27,16 @@ model = "agentica-org/DeepScaleR-1.5B-Preview"
 
 DEBUG_K = 5 # 0 if not debugging.
 
-SYSTEM_PROMPT = """You are a powerful math problem solving assistant. For each math problem:
+SYSTEM_PROMPT = """You are a powerful math problem solving assistant.
 
-1. Think step-by-step, breaking down the problem into simpler parts
-2. Show your calculations clearly
-3. Verify your solution matches the question requirements
-4. Format your response as follows:
+Think step by step and output the final answer within \boxed{}
 
+Format your response as follows:
 <think>
 [Your detailed step-by-step reasoning here]
 </think>
 [your summary of the solution]
-\\boxed{[Your final answer here, with no extra text]}
+\boxed{[Your final answer here, with no extra text]}
 """
 
 def extract_last_boxed_value(text):
@@ -60,13 +58,13 @@ def extract_hash_answer(text: str) -> str | None:
 
 # uncomment middle messages for 1-shot prompting
 def get_gsm8k_questions(split = "train") -> Dataset:
-    data = load_dataset('openai/gsm8k', 'main')[split] # type: ignore
-    data = data.map(lambda x: { # type: ignore
+    data = load_dataset('openai/gsm8k', 'main')[split]
+    data = data.map(lambda x: {
         'prompt': f"{SYSTEM_PROMPT}\n\n{x['question']}",
         'trace': x['answer'],
         'answer': extract_hash_answer(x['answer'])
-    }) # type: ignore
-    return data # type: ignore
+    })
+    return data
 
 
 def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
