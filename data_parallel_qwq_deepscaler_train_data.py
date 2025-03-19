@@ -6,6 +6,7 @@
 import os
 import json
 import re
+import multiprocessing
 
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
@@ -14,7 +15,7 @@ import torch
 
 
 GPUs_per_dp_rank = 1
-DP_size = 1 # torch.cuda.device_count()
+DP_size = torch.cuda.device_count()
 
 sampling_params = SamplingParams(
     n=10,
@@ -160,6 +161,9 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
 
 
 if __name__ == "__main__":
+    # Set the start method to 'spawn' before creating any processes
+    multiprocessing.set_start_method('spawn', force=True)
+    
     from multiprocessing import Process
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
