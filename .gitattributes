@@ -1,0 +1,2 @@
+DeepScaleR-eval/deepscaler_eval_logs/** filter=lfs diff=lfs merge=lfs -text
+DeepScaleR-eval/deepscaler_eval_logs filter=lfs diff=lfs merge=lfs -text
