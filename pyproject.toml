@@ -1,0 +1,7 @@
+[project]
+name = "strategiclearning"
+version = "0.1.0"
+description = "Strategic learning for AI training"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
