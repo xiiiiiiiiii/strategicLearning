@@ -14,6 +14,7 @@ import re
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
 from datasets import load_dataset, Dataset
+import torch
 
 
 GPUs_per_dp_rank = 1
