@@ -4,9 +4,6 @@
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 
-import multiprocessing
-multiprocessing.set_start_method('spawn', force=True)
-
 import os
 import json
 import re
@@ -14,11 +11,11 @@ import re
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
 from datasets import load_dataset, Dataset
-# import torch
+import torch
 
 
 GPUs_per_dp_rank = 1
-DP_size = 1 # torch.cuda.device_count() will cause thread error
+DP_size = torch.cuda.device_count()
 
 sampling_params = SamplingParams(
     n=10,
@@ -27,10 +24,10 @@ sampling_params = SamplingParams(
     min_tokens=10,
     max_tokens=32767
 )
-# model = "Qwen/QwQ-32B"
-model = "agentica-org/DeepScaleR-1.5B-Preview"
+model = "Qwen/QwQ-32B"
+# model = "agentica-org/DeepScaleR-1.5B-Preview"
 
-DEBUG_K = 6 # 0 if not debugging.
+DEBUG_K = 5 # 0 if not debugging.
 
 SYSTEM_PROMPT = """You are a powerful math problem solving assistant.
 
@@ -165,16 +162,14 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
 
 
 if __name__ == "__main__":    
-    # spawn_ctx = multiprocessing.get_context('spawn')
-    import torch.multiprocessing as mp
+    from multiprocessing import Process
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
     procs = []
     for i in range(DP_size):
-        proc = mp.Process(
-            target=main,
-            args=(DP_size, i, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
-        )
+        proc = Process(target=main,
+                       args=(DP_size, i, dp_master_ip, dp_master_port,
+                             GPUs_per_dp_rank))
         proc.start()
         procs.append(proc)
     for proc in procs:
