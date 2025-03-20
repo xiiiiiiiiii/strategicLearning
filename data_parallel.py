@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # usage:
-# VLLM_USE_V1=1 python examples/offline_inference/data_parallel.py
+# VLLM_USE_V1=1 uv run data_parallel.py
+# from https://docs.vllm.ai/en/latest/getting_started/examples/data_parallel.html
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 import os
