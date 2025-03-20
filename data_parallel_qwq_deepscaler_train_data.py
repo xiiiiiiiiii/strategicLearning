@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # usage:
 # VLLM_USE_V1=1 uv run data_parallel_qwq_deepscaler_train_data.py
-# VLLM_LOG_LEVEL=DEBUG VLLM_VERBOSE=TRUE
+# VLLM_LOG_LEVEL=DEBUG VLLM_VERBOSE=TRUE VLLM_USE_V1=1 uv run data_parallel_qwq_deepscaler_train_data.py
 # from https://docs.vllm.ai/en/latest/getting_started/examples/data_parallel.html
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
