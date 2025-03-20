@@ -29,18 +29,6 @@ run_name = "DeepScaleR_results"
 
 DEBUG_K = 5 # 0 if not debugging.
 
-SYSTEM_PROMPT = """You are a powerful math problem solving assistant.
-
-Think step by step and output the final answer within \boxed{}
-
-Format your response as follows:
-<think>
-[Your detailed step-by-step reasoning here]
-</think>
-[your summary of the solution]
-\boxed{[Your final answer here, with no extra text]}
-"""
-
 def extract_last_boxed_value(text):
     # Find all boxed values in the text
     matches = re.findall(r"\\boxed{([^}]+)}", text)
@@ -61,8 +49,11 @@ def extract_hash_answer(text: str) -> str | None:
 # uncomment middle messages for 1-shot prompting
 def get_gsm8k_questions(split = "train") -> Dataset:
     data = load_dataset('openai/gsm8k', 'main')[split]
+
+    # As done in DeepScaleR paper.
+    SYSTEM_PROMPT = "Let's think step by step and output the final answer within \\boxed{}."    
     data = data.map(lambda x: {
-        'prompt': f"{SYSTEM_PROMPT}\n\n{x['question']}",
+        'prompt': f"{x['problem']} {SYSTEM_PROMPT}",
         'trace': x['answer'],
         'answer': extract_hash_answer(x['answer'])
     })

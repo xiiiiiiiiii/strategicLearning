@@ -33,18 +33,6 @@ run_name = "QwQ-32B-results"
 
 DEBUG_K = 5 # 0 if not debugging.
 
-SYSTEM_PROMPT = """You are a powerful math problem solving assistant.
-
-Think step by step and output the final answer within \boxed{}
-
-Format your response as follows:
-<think>
-[Your detailed step-by-step reasoning here]
-</think>
-[your summary of the solution]
-\boxed{[Your final answer here, with no extra text]}
-"""
-
 def extract_last_boxed_value(text):
     # Find all boxed values in the text
     matches = re.findall(r"\\boxed{([^}]+)}", text)
@@ -66,8 +54,10 @@ def get_deepscaler_questions(split="train", num_samples=None) -> Dataset:
         # Randomly sample the specified number of examples
         data = data.shuffle(seed=42).select(range(min(num_samples, len(data))))
     
+    # As done in DeepScaleR paper.
+    SYSTEM_PROMPT = "Let's think step by step and output the final answer within \\boxed{}."    
     data = data.map(lambda x: {
-        'prompt': f"{SYSTEM_PROMPT}\n\n{x['problem']}"
+        'prompt': f"{x['problem']} {SYSTEM_PROMPT}"
     })
     return data
 
