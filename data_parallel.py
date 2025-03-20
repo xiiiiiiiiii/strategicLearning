@@ -156,7 +156,7 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     os.makedirs("data/data_parallel_results", exist_ok=True)
     
     # Now safely write to the file
-    with open(f"data/data_parallel_results/{dp_rank}.jsonl", "w") as f:
+    with open(f"data/data_parallel_results/{model}/{dp_rank}.jsonl", "w") as f:
         for result in results:
             f.write(json.dumps(result) + "\n")
 
