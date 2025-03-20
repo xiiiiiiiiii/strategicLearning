@@ -18,7 +18,7 @@ from datasets import load_dataset, Dataset
 
 
 GPUs_per_dp_rank = 1
-DP_size = 2 # torch.cuda.device_count() will cause thread error
+DP_size = 1 # torch.cuda.device_count() will cause thread error
 
 sampling_params = SamplingParams(
     n=10,
