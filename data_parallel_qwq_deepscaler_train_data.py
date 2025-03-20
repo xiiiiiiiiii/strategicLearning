@@ -119,6 +119,10 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
         tensor_parallel_size=GPUs_per_dp_rank,
         enforce_eager=True
     )
+
+    debug_output = llm.generate(["Hello, my name is"], sampling_params)
+    print(f"Test output: {debug_output}")
+
     outputs = llm.generate(prompts, sampling_params)
 
     assert len(outputs) == len(prompts)
