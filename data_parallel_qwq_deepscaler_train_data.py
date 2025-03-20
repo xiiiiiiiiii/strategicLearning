@@ -21,7 +21,7 @@ from transformers import AutoTokenizer
 GPUs_per_dp_rank = 2
 print(f"GPUs_per_dp_rank: {GPUs_per_dp_rank}")
 print(f"torch.cuda.device_count(): {torch.cuda.device_count()}")
-DP_size = int(torch.cuda.device_count() / GPUs_per_dp_rank)
+DP_size = torch.cuda.device_count() // GPUs_per_dp_rank
 print(f"DP_size: {DP_size}")
 
 sampling_params = SamplingParams(
