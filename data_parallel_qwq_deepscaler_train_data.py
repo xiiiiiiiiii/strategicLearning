@@ -116,9 +116,10 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     # Create an LLM.
     llm = LLM(
         model=model,
-        tensor_parallel_size=GPUs_per_dp_rank
+        tensor_parallel_size=GPUs_per_dp_rank,
+        enforce_eager=True
     )
-    outputs = llm.generate(prompts, sampling_params, batch_size=2)
+    outputs = llm.generate(prompts, sampling_params)
 
     assert len(outputs) == len(prompts)
     assert len(outputs) == len(answers)
