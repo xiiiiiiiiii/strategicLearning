@@ -4,8 +4,8 @@
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 
-# import multiprocessing
-# multiprocessing.set_start_method('spawn', force=True)
+import multiprocessing
+multiprocessing.set_start_method('spawn', force=True)
 
 import os
 import json
