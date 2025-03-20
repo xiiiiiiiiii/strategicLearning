@@ -14,6 +14,7 @@ from datasets import load_dataset, Dataset
 import torch
 
 
+# Needs at least 2 H100 GPUs with 80GB each.
 GPUs_per_dp_rank = 2
 DP_size = 1 # not enough memory on H100 to use torch.cuda.device_count().
 
