@@ -4,8 +4,8 @@
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 
-import multiprocessing
-multiprocessing.set_start_method('spawn', force=True)
+# import multiprocessing
+# multiprocessing.set_start_method('spawn', force=True)
 
 import os
 import json
@@ -165,12 +165,13 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
 
 
 if __name__ == "__main__":    
-    spawn_ctx = multiprocessing.get_context('spawn')
+    # spawn_ctx = multiprocessing.get_context('spawn')
+    import torch.multiprocessing as mp
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
     procs = []
     for i in range(DP_size):
-        proc = spawn_ctx.Process(
+        proc = mp.Process(
             target=main,
             args=(DP_size, i, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
         )
