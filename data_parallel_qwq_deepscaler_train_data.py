@@ -6,6 +6,8 @@
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 
+# Too slow on QwQ 32B model, will use outside Groq API.
+
 import os
 import json
 import re
