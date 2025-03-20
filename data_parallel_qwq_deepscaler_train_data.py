@@ -117,45 +117,66 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     llm = LLM(
         model=model,
         tensor_parallel_size=GPUs_per_dp_rank,
-        enforce_eager=True
     )
 
-    outputs = llm.generate(prompts, sampling_params)
-
-    assert len(outputs) == len(prompts)
-    assert len(outputs) == len(answers)
-    assert len(outputs) == len(trace)
-
-    
-    results = [
-        {
-            'prompt': prompt,
-            'answer': answer,
-            'trace': trace,
-            'outputs': [
-                {
-                    'output':o.text,
-                    'extracted_answer': extract_last_boxed_value(o.text),
-                    'reward': correctness_reward_func(o.text, answer)
-                }
-                for o in output.outputs
-            ],
-        }
-        for prompt, answer, trace, output in zip(prompts, answers, trace, outputs)
-    ]
-
-    # # Debug print.
-    # for i, result in enumerate(results[0:10]):
-    #     print(f"DP rank {dp_rank} result {i} Result: {result}")
-    
-    # Create directory before writing
+    # Create directory for saving results
     folder = f"data/{run_name}"
     os.makedirs(folder, exist_ok=True)
     
-    # Now safely write to the file
-    with open(f"{folder}/{dp_rank}.jsonl", "w") as f:
-        for result in results:
-            f.write(json.dumps(result) + "\n")
+    # Process one prompt at a time and save incrementally
+    results_file = f"{folder}/{dp_rank}.jsonl"
+    
+    # Track completed prompts for progress info
+    total_prompts = len(prompts)
+    completed = 0
+    
+    with open(results_file, "w") as f:
+        for i, (prompt, answer, trace_item) in enumerate(zip(prompts, answers, trace)):
+            prompt_id = i + start  # Include global ID for tracking
+            print(f"Processing prompt {i+1}/{total_prompts} (global ID: {prompt_id})")
+            
+            try:
+                # Process just one prompt at a time
+                output = llm.generate([prompt], sampling_params)
+                
+                # Create result for this prompt
+                result = {
+                    'prompt': prompt,
+                    'answer': answer,
+                    'trace': trace_item,
+                    'prompt_id': prompt_id,
+                    'outputs': [
+                        {
+                            'output': o.text,
+                            'extracted_answer': extract_last_boxed_value(o.text),
+                            'reward': correctness_reward_func(o.text, answer)
+                        }
+                        for o in output[0].outputs
+                    ],
+                }
+                
+                # Save this single result to file immediately
+                f.write(json.dumps(result) + "\n")
+                f.flush()  # Ensure it's written to disk
+                
+                completed += 1
+                print(f"✓ Completed {completed}/{total_prompts} prompts")
+                
+            except Exception as e:
+                # Save error information if a prompt fails
+                error_result = {
+                    'prompt': prompt,
+                    'answer': answer,
+                    'trace': trace_item,
+                    'prompt_id': prompt_id,
+                    'error': str(e),
+                    'outputs': []
+                }
+                f.write(json.dumps(error_result) + "\n")
+                f.flush()
+                print(f"✗ Error processing prompt {i+1}: {e}")
+    
+    print(f"Rank {dp_rank} completed processing {completed}/{total_prompts} prompts")
 
 
 if __name__ == "__main__":
