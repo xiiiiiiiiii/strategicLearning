@@ -14,7 +14,6 @@ from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
 from datasets import load_dataset, Dataset
 import torch
-from transformers import AutoTokenizer
 
 
 # Needs at least 2 H100 GPUs with 80GB each.
@@ -25,7 +24,7 @@ DP_size = torch.cuda.device_count() // GPUs_per_dp_rank
 print(f"DP_size: {DP_size}")
 
 sampling_params = SamplingParams(
-    n=10,
+    n=5,
     temperature=1.0,
     top_p=0.95,
     min_tokens=10,
@@ -114,16 +113,12 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     #                                  top_p=0.95,
     #                                  max_tokens=16 * (dp_rank + 1))
 
-    # Initialize the tokenizer and model
-    tokenizer = AutoTokenizer.from_pretrained(model)
-    generate_kwargs = {"eos_token_id": tokenizer.eos_token_id}
-
     # Create an LLM.
     llm = LLM(
         model=model,
         tensor_parallel_size=GPUs_per_dp_rank
     )
-    outputs = llm.generate(prompts, sampling_params, **generate_kwargs)
+    outputs = llm.generate(prompts, sampling_params, batch_size=2)
 
     assert len(outputs) == len(prompts)
     assert len(outputs) == len(answers)
