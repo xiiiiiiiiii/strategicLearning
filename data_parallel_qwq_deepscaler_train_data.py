@@ -26,7 +26,7 @@ sampling_params = SamplingParams(
     max_tokens=32767
 )
 model = "Qwen/QwQ-32B"
-run_name = "QwQ-32B"
+run_name = "QwQ-32B-results"
 # model = "agentica-org/DeepScaleR-1.5B-Preview"
 
 DEBUG_K = 5 # 0 if not debugging.
@@ -155,10 +155,11 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     #     print(f"DP rank {dp_rank} result {i} Result: {result}")
     
     # Create directory before writing
-    os.makedirs("data/data_parallel_results", exist_ok=True)
+    folder = f"data/{run_name}"
+    os.makedirs(folder, exist_ok=True)
     
     # Now safely write to the file
-    with open(f"data/data_parallel_results/{run_name}/{dp_rank}.jsonl", "w") as f:
+    with open(f"{folder}/{dp_rank}.jsonl", "w") as f:
         for result in results:
             f.write(json.dumps(result) + "\n")
 
