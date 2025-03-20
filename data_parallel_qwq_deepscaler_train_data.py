@@ -24,11 +24,11 @@ DP_size = torch.cuda.device_count() // GPUs_per_dp_rank
 print(f"DP_size: {DP_size}")
 
 sampling_params = SamplingParams(
-    n=5,
+    n=3,
     temperature=1.0,
     top_p=0.95,
     min_tokens=10,
-    max_tokens=1024
+    max_tokens=32767
 )
 model = "Qwen/QwQ-32B"
 run_name = "QwQ-32B-results"
