@@ -14,8 +14,8 @@ from datasets import load_dataset, Dataset
 import torch
 
 
-GPUs_per_dp_rank = 1
-DP_size = torch.cuda.device_count()
+GPUs_per_dp_rank = 2
+DP_size = 1 # not enough memory on H100 to use torch.cuda.device_count().
 
 sampling_params = SamplingParams(
     n=10,
