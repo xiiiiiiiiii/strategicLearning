@@ -28,7 +28,7 @@ sampling_params = SamplingParams(
     temperature=1.0,
     top_p=0.95,
     min_tokens=10,
-    max_tokens=32767
+    max_tokens=8192
 )
 model = "Qwen/QwQ-32B"
 run_name = "QwQ-32B-results"
