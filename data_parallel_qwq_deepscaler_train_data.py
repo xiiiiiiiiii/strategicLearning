@@ -164,16 +164,22 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
             f.write(json.dumps(result) + "\n")
 
 
-if __name__ == "__main__":    
-    from multiprocessing import Process
+if __name__ == "__main__":
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
-    procs = []
-    for i in range(DP_size):
-        proc = Process(target=main,
-                       args=(DP_size, i, dp_master_ip, dp_master_port,
-                             GPUs_per_dp_rank))
-        proc.start()
-        procs.append(proc)
-    for proc in procs:
-        proc.join()
+
+    # Debug.
+    main(DP_size, 0, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
+    
+    # from multiprocessing import Process
+    # dp_master_ip = "127.0.0.1"
+    # dp_master_port = get_open_port()
+    # procs = []
+    # for i in range(DP_size):
+    #     proc = Process(target=main,
+    #                    args=(DP_size, i, dp_master_ip, dp_master_port,
+    #                          GPUs_per_dp_rank))
+    #     proc.start()
+    #     procs.append(proc)
+    # for proc in procs:
+    #     proc.join()
