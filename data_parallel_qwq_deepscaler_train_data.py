@@ -65,10 +65,7 @@ def get_deepscaler_questions(split="train", num_samples=None) -> Dataset:
         data = data.shuffle(seed=42).select(range(min(num_samples, len(data))))
     
     data = data.map(lambda x: {
-        'prompt': [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": x['problem']}
-        ]
+        'prompt': f"{SYSTEM_PROMPT}\n\n{x['problem']}"
     })
     return data
 
@@ -170,7 +167,7 @@ if __name__ == "__main__":
 
     # Debug.
     main(DP_size, 0, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
-    
+
     # from multiprocessing import Process
     # dp_master_ip = "127.0.0.1"
     # dp_master_port = get_open_port()
