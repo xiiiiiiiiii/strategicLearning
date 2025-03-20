@@ -53,7 +53,7 @@ def get_gsm8k_questions(split = "train") -> Dataset:
     # As done in DeepScaleR paper.
     SYSTEM_PROMPT = "Let's think step by step and output the final answer within \\boxed{}."    
     data = data.map(lambda x: {
-        'prompt': f"{x['problem']} {SYSTEM_PROMPT}",
+        'prompt': f"{x['question']} {SYSTEM_PROMPT}",
         'trace': x['answer'],
         'answer': extract_hash_answer(x['answer'])
     })
