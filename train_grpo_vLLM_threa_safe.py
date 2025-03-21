@@ -1,8 +1,8 @@
-# train_grpo.py
-from datasets import load_dataset
-from trl import GRPOConfig, GRPOTrainer
 
 def main():
+    from datasets import load_dataset
+    from trl import GRPOConfig, GRPOTrainer
+
     dataset = load_dataset("trl-lib/tldr", split="train")
 
     # Define the reward function, which rewards completions that are close to 20 characters
