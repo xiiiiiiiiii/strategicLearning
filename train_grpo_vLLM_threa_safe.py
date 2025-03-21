@@ -1,0 +1,26 @@
+# train_grpo.py
+from datasets import load_dataset
+from trl import GRPOConfig, GRPOTrainer
+
+def main():
+    dataset = load_dataset("trl-lib/tldr", split="train")
+
+    # Define the reward function, which rewards completions that are close to 20 characters
+    def reward_len(completions, **kwargs):
+        return [-abs(20 - len(completion)) for completion in completions]
+
+    training_args = GRPOConfig(output_dir="Qwen2-0.5B-GRPO", logging_steps=10, use_vllm=True, bf16=True)
+    trainer = GRPOTrainer(
+        model="Qwen/Qwen2-0.5B-Instruct",
+        reward_funcs=reward_len,
+        args=training_args,
+        train_dataset=dataset,
+    )
+    
+    trainer.train()
+
+# Add this critical line to fix the multiprocessing issue
+if __name__ == "__main__":
+    import multiprocessing
+    multiprocessing.set_start_method('spawn')  # Ensure spawn method is used
+    main()
