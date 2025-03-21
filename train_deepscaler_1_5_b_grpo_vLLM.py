@@ -40,8 +40,14 @@ output_dir="outputs/DeepScaleR_1_5_B_GRPO_tweak"
 run_name="DeepScaleR_1_5_B_GRPO_tweak"
 
 def load_jsonl(file_path):
+    SYSTEM_PROMPT = "Let's think step by step and output the final answer within \\boxed{}."
     with open(file_path, 'r') as f:
-        return [json.loads(line) for line in f]
+        data = [json.loads(line) for line in f]
+        data = [{
+            'prompt': f"{x['problem']} {SYSTEM_PROMPT}",
+            **x
+        } for x in data]
+        return data
 
 # Load the data
 dataset = load_jsonl("./DeepScaleR-eval/grpo_tweak_dataset.jsonl")
