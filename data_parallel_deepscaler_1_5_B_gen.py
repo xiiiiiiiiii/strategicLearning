@@ -6,8 +6,6 @@
 # we need to have a launcher to create multiple data parallel
 # ranks. And each rank will create a vLLM instance to process its own prompts.
 
-# Too slow on QwQ 32B model, will use outside Groq API.
-
 import os
 import json
 import re
@@ -31,9 +29,6 @@ sampling_params = SamplingParams(
 )
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 run_name = "DeepScaleR_1_5_B_results"
-
-DEBUG_K = 5 # 0 if not debugging.
-
 
 
 def remove_boxed(s):
@@ -233,16 +228,16 @@ if __name__ == "__main__":
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
 
-    # # Debug without multiprocessing.
-    # main(DP_size, 0, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
+    # Debug without multiprocessing.
+    main(DP_size, 0, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
 
-    from multiprocessing import Process
-    procs = []
-    for i in range(DP_size):
-        proc = Process(target=main,
-                       args=(DP_size, i, dp_master_ip, dp_master_port,
-                             GPUs_per_dp_rank))
-        proc.start()
-        procs.append(proc)
-    for proc in procs:
-        proc.join()
+    # from multiprocessing import Process
+    # procs = []
+    # for i in range(DP_size):
+    #     proc = Process(target=main,
+    #                    args=(DP_size, i, dp_master_ip, dp_master_port,
+    #                          GPUs_per_dp_rank))
+    #     proc.start()
+    #     procs.append(proc)
+    # for proc in procs:
+    #     proc.join()
