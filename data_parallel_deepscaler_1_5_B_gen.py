@@ -29,8 +29,8 @@ sampling_params = SamplingParams(
 )
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 run_name = "DeepScaleR_1_5_B_results"
-# dataset_to_gen = "./DeepScaleR-eval/tweak_dataset.jsonl"
-dataset_to_gen = "./DeepScaleR-eval/ripe_dataset.jsonl"
+dataset_to_gen = "./DeepScaleR-eval/tweak_dataset.jsonl"
+# dataset_to_gen = "./DeepScaleR-eval/ripe_dataset.jsonl"
 
 
 def remove_boxed(s):
