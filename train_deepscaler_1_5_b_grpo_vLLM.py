@@ -1,4 +1,16 @@
 
+# Steps to run:
+
+# 1 - set accelerate config:
+# accelerate config
+
+# 2 - set wandb key to monitor training:
+# export WANDB_API_KEY=...
+
+# 3 - run the script, use num_processes = (num_total_gpus - 1) processes if using vLLM.
+# accelerate launch --num_processes 1 train_deepscaler_1_5_b_grpo_vLLM.py 
+
+
 import json
 import torch
 from datasets import load_dataset
