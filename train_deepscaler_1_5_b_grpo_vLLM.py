@@ -103,9 +103,16 @@ def last_boxed_only_string(string):
 def extract_solution(text):
     return remove_boxed(last_boxed_only_string(text))
 
-def correctness_reward_func(response: str, actual_answers: str) -> float:
+def single_correctness_reward_func(response: str, actual_answers: str) -> float:
     extracted_answer = extract_solution(response)
     return 1.0 if extracted_answer == actual_answers else 0.0
+
+def correctness_reward_func(prompts, completions, answer, **kwargs) -> list[float]:
+    responses = [completion[0]['content'] for completion in completions]
+    # q = prompts[0][-1]['content']
+    extracted_responses = [extract_solution(r) for r in responses]
+    # print('-'*20, f"Question:\n{q}", f"\nAnswer:\n{answer[0]}", f"\nResponse:\n{responses[0]}", f"\nExtracted:\n{extracted_responses[0]}")
+    return [1.0 if r == a else 0.0 for r, a in zip(extracted_responses, answer)]
 
 
 training_args = GRPOConfig(
