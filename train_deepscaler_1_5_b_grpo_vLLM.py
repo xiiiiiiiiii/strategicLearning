@@ -108,6 +108,7 @@ def single_correctness_reward_func(response: str, actual_answers: str) -> float:
     return 1.0 if extracted_answer == actual_answers else 0.0
 
 def correctness_reward_func(prompts, completions, answer, **kwargs) -> list[float]:
+    print(f"completions: {completions}")
     responses = [completion[0]['content'] for completion in completions]
     # q = prompts[0][-1]['content']
     extracted_responses = [extract_solution(r) for r in responses]
