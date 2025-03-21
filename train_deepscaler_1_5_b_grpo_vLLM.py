@@ -3,6 +3,24 @@
 
 # 1 - set accelerate config:
 # accelerate config
+# example input and output.
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------In which compute environment are you running?
+# This machine                                                                                                                                                            
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------Which type of machine are you using?                                                                                                                                    
+# multi-GPU                                                                                                                                                               
+# How many different machines will you use (use more than 1 for multi-node training)? [1]:                                                                                
+# Should distributed operations be checked while running for errors? This can avoid timeout issues but will be slower. [yes/NO]:                                          
+# Do you wish to optimize your script with torch dynamo?[yes/NO]:                                                                                                         
+# Do you want to use DeepSpeed? [yes/NO]:                                                                                                                                 
+# Do you want to use FullyShardedDataParallel? [yes/NO]:                                                                                                                  
+# Do you want to use TensorParallel? [yes/NO]:                                                                                                                            
+# Do you want to use Megatron-LM ? [yes/NO]:                                                                                                                              
+# How many GPU(s) should be used for distributed training? [1]:2                                                                                                          
+# What GPU(s) (by id) should be used for training on this machine as a comma-seperated list? [all]:                                                                       
+# Would you like to enable numa efficiency? (Currently only supported on NVIDIA hardware). [yes/NO]: 
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------Do you wish to use mixed precision?
+# no                                                                                                                                                                      
+# accelerate configuration saved at /home/user/.cache/huggingface/accelerate/default_config.yaml  
 
 # 2 - set wandb key to monitor training:
 # export WANDB_API_KEY=...
@@ -93,14 +111,14 @@ training_args = GRPOConfig(
     weight_decay=0.1,
     warmup_ratio=0.1,
     lr_scheduler_type='cosine',
-    logging_steps=10,
+    logging_steps=1,
     per_device_train_batch_size=8,  # Reduced batch size for larger model
     gradient_accumulation_steps=1,  # Increased gradient accumulation to compensate
-    num_generations=8,
+    num_generations=32,
     max_prompt_length=256,
     max_completion_length=1024,  # Increased max completion length
     num_train_epochs=1,
-    save_steps=10,
+    save_steps=1,
     max_grad_norm=0.1,
     report_to="wandb",
     log_on_each_node=False,
