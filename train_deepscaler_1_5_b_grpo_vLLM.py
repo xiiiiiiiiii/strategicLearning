@@ -16,6 +16,7 @@ def load_jsonl(file_path):
 # Load the data
 dataset = load_jsonl("./DeepScaleR-eval/grpo_tweak_dataset.jsonl")
 print(f"Loaded {len(dataset)} records")
+print(f"First record: {dataset[0]}")
 
 def remove_boxed(s):
     if s is None:

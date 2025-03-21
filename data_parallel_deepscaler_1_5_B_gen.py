@@ -29,6 +29,8 @@ sampling_params = SamplingParams(
 )
 model = "agentica-org/DeepScaleR-1.5B-Preview"
 run_name = "DeepScaleR_1_5_B_results"
+# dataset_to_gen = "./DeepScaleR-eval/tweak_dataset.jsonl"
+dataset_to_gen = "./DeepScaleR-eval/ripe_dataset.jsonl"
 
 
 def remove_boxed(s):
@@ -123,7 +125,7 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     
     # Load the data
     # dataset = get_deepscaler_questions(num_samples=DEBUG_K)
-    dataset = load_jsonl("./DeepScaleR-eval/tweak_dataset.jsonl")
+    dataset = load_jsonl(dataset_to_gen)
     print(f"Loaded {len(dataset)} records")
     prompts = [x['prompt'] for x in dataset]
     answers = [x['answer'] for x in dataset]
