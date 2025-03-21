@@ -106,8 +106,14 @@ def correctness_reward_func(response: str, actual_answers: str) -> float:
 #     return data
 
 def load_jsonl(file_path):
+    SYSTEM_PROMPT = "Let's think step by step and output the final answer within \\boxed{}."
     with open(file_path, 'r') as f:
-        return [json.loads(line) for line in f]
+        data = [json.loads(line) for line in f]
+        data = [{
+            'prompt': f"{x['problem']} {SYSTEM_PROMPT}",
+            **x
+        } for x in data]
+        return data
 
 
 def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
