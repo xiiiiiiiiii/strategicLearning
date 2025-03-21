@@ -9,3 +9,4 @@ outputs/
 # Weights & Biases logs
 wandb/
 .DS_Store
+/DeepScaleR-eval/.ipynb_checkpoints
