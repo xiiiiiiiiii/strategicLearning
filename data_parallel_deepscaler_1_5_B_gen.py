@@ -21,7 +21,7 @@ GPUs_per_dp_rank = 1
 DP_size = torch.cuda.device_count()
 
 sampling_params = SamplingParams(
-    n=32,
+    n=10,
     temperature=1.0,
     top_p=0.95,
     min_tokens=10,
@@ -164,7 +164,7 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     llm = LLM(
         model=model,
         tensor_parallel_size=GPUs_per_dp_rank,
-        enforce_eager=True
+        # enforce_eager=True
     )
 
     # Create directory for saving results
