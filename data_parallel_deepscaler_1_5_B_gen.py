@@ -229,16 +229,16 @@ if __name__ == "__main__":
     dp_master_ip = "127.0.0.1"
     dp_master_port = get_open_port()
 
-    # Debug without multiprocessing.
-    main(DP_size, 0, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
+    # # Debug without multiprocessing.
+    # main(DP_size, 0, dp_master_ip, dp_master_port, GPUs_per_dp_rank)
 
-    # from multiprocessing import Process
-    # procs = []
-    # for i in range(DP_size):
-    #     proc = Process(target=main,
-    #                    args=(DP_size, i, dp_master_ip, dp_master_port,
-    #                          GPUs_per_dp_rank))
-    #     proc.start()
-    #     procs.append(proc)
-    # for proc in procs:
-    #     proc.join()
+    from multiprocessing import Process
+    procs = []
+    for i in range(DP_size):
+        proc = Process(target=main,
+                       args=(DP_size, i, dp_master_ip, dp_master_port,
+                             GPUs_per_dp_rank))
+        proc.start()
+        procs.append(proc)
+    for proc in procs:
+        proc.join()
