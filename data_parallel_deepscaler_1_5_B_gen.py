@@ -21,7 +21,7 @@ GPUs_per_dp_rank = 1
 DP_size = torch.cuda.device_count()
 
 sampling_params = SamplingParams(
-    n=10,
+    n=32,
     temperature=1.0,
     top_p=0.95,
     min_tokens=10,
