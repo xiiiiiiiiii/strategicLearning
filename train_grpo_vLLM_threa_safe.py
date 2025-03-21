@@ -21,6 +21,6 @@ def main():
 
 # Add this critical line to fix the multiprocessing issue
 if __name__ == "__main__":
-    import multiprocessing
-    multiprocessing.set_start_method('spawn')  # Ensure spawn method is used
+    # import multiprocessing
+    # multiprocessing.set_start_method('spawn')  # Ensure spawn method is used
     main()
