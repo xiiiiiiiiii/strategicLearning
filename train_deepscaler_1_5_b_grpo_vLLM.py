@@ -124,21 +124,21 @@ training_args = GRPOConfig(
     log_on_each_node=False,
     use_vllm=True
 )
-# model = AutoModelForCausalLM.from_pretrained(
-#     model_name,
-#     torch_dtype=torch.bfloat16,
-#     device_map=None
-# ).to("cuda")
-# tokenizer = AutoTokenizer.from_pretrained(model_name)
-# tokenizer.pad_token = tokenizer.eos_token
-# tokenizer.padding_side = 'left'
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype=torch.bfloat16,
+    device_map=None
+).to("cuda")
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+tokenizer.pad_token = tokenizer.eos_token
+tokenizer.padding_side = 'left'
 
-# # Set the model's generation config to use left padding
-# model.generation_config.padding_side = 'left'
+# Set the model's generation config to use left padding
+model.generation_config.padding_side = 'left'
 
 trainer = GRPOTrainer(
-    model=model_name, #model,
-    # processing_class=tokenizer,
+    model=model,
+    processing_class=tokenizer,
     reward_funcs=correctness_reward_func,
     args=training_args,
     train_dataset=dataset,
