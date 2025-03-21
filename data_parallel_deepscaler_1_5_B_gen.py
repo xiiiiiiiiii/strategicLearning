@@ -124,8 +124,8 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     # dataset = get_deepscaler_questions(num_samples=DEBUG_K)
     dataset = load_jsonl("./DeepScaleR-eval/tweak_dataset.jsonl")
     print(f"Loaded {len(dataset)} records")
-    prompts = dataset['prompt']
-    answers = dataset['answer']
+    prompts = [x['prompt'] for x in dataset]
+    answers = [x['answer'] for x in dataset]
 
     # Sample prompts.
     # prompts = [
