@@ -164,6 +164,7 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     llm = LLM(
         model=model,
         tensor_parallel_size=GPUs_per_dp_rank,
+        eager=True
     )
 
     # Create directory for saving results
