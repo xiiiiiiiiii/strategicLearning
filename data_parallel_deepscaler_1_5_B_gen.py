@@ -23,7 +23,7 @@ GPUs_per_dp_rank = 1
 DP_size = torch.cuda.device_count()
 
 sampling_params = SamplingParams(
-    n=3,
+    n=64,
     temperature=1.0,
     top_p=0.95,
     min_tokens=10,
@@ -90,20 +90,24 @@ def correctness_reward_func(response: str, actual_answers: str) -> float:
     return 1.0 if extracted_answer == actual_answers else 0.0
 
 
-def get_deepscaler_questions(split="train", num_samples=None) -> Dataset:
-    """Load questions from DeepScaleR Preview Dataset with optional sample size."""
-    data = load_dataset('agentica-org/DeepScaleR-Preview-Dataset', split=split)
+# def get_deepscaler_questions(split="train", num_samples=None) -> Dataset:
+#     """Load questions from DeepScaleR Preview Dataset with optional sample size."""
+#     data = load_dataset('agentica-org/DeepScaleR-Preview-Dataset', split=split)
     
-    if num_samples is not None:
-        # Randomly sample the specified number of examples
-        data = data.shuffle(seed=42).select(range(min(num_samples, len(data))))
+#     if num_samples is not None:
+#         # Randomly sample the specified number of examples
+#         data = data.shuffle(seed=42).select(range(min(num_samples, len(data))))
     
-    # As done in DeepScaleR paper.
-    SYSTEM_PROMPT = "Let's think step by step and output the final answer within \\boxed{}."    
-    data = data.map(lambda x: {
-        'prompt': f"{x['problem']} {SYSTEM_PROMPT}"
-    })
-    return data
+#     # As done in DeepScaleR paper.
+#     SYSTEM_PROMPT = "Let's think step by step and output the final answer within \\boxed{}."    
+#     data = data.map(lambda x: {
+#         'prompt': f"{x['problem']} {SYSTEM_PROMPT}"
+#     })
+#     return data
+
+def load_jsonl(file_path):
+    with open(file_path, 'r') as f:
+        return [json.loads(line) for line in f]
 
 
 def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
@@ -116,9 +120,12 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
         str(i) for i in range(dp_rank * GPUs_per_dp_rank, (dp_rank + 1) *
                               GPUs_per_dp_rank))
     
-    hf_dataset = get_deepscaler_questions(num_samples=DEBUG_K)
-    prompts = hf_dataset['prompt']
-    answers = hf_dataset['answer']
+    # Load the data
+    # dataset = get_deepscaler_questions(num_samples=DEBUG_K)
+    dataset = load_jsonl("./DeepScaleR-eval/tweak_dataset.jsonl")
+    print(f"Loaded {len(dataset)} records")
+    prompts = dataset['prompt']
+    answers = dataset['answer']
 
     # Sample prompts.
     # prompts = [
