@@ -129,7 +129,7 @@ training_args = GRPOConfig(
     max_grad_norm=0.1,
     report_to="wandb",
     log_on_each_node=False,
-    use_vllm=True
+    # use_vllm=True
 )
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
