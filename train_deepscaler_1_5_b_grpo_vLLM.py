@@ -56,25 +56,13 @@ print(f"Loaded {len(dataset)} records")
 def remove_boxed(s):
     if s is None:
         return None
-    
-    if "\\boxed " in s:
-        left = "\\boxed "
-        if s[:len(left)] != left:
-            print(f"s[:len(left)] = {s[:len(left)]} != {left}")
-            assert s[:len(left)] == left
-        if s[-1] != "}":
-            print(f"s[-1] = {s[-1]} != '}}'")
-            assert s[-1] == "}"
-        return s[len(left):-1]
 
     left = "\\boxed{"
 
     if s[:len(left)] != left:
-        print(f"s[:len(left)] = {s[:len(left)]} != {left}")
-        assert s[:len(left)] == left
+        return None
     if s[-1] != "}":
-        print(f"s[-1] = {s[-1]} != '}}'")
-        assert s[-1] == "}"
+        return None
 
     return s[len(left):-1]
 
@@ -135,7 +123,7 @@ training_args = GRPOConfig(
     gradient_accumulation_steps=16,  # Increased gradient accumulation to compensate
     num_generations=2,
     max_prompt_length=1024,
-    max_completion_length=1024,  # Increased max completion length
+    max_completion_length=2048,  # Increased max completion length
     num_train_epochs=16,
     save_steps=1,
     max_grad_norm=0.1,
