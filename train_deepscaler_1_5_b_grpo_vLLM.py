@@ -59,13 +59,22 @@ def remove_boxed(s):
     
     if "\\boxed " in s:
         left = "\\boxed "
-        assert s[:len(left)] == left
-        return s[len(left):]
+        if s[:len(left)] != left:
+            print(f"s[:len(left)] = {s[:len(left)]} != {left}")
+            assert s[:len(left)] == left
+        if s[-1] != "}":
+            print(f"s[-1] = {s[-1]} != '}}'")
+            assert s[-1] == "}"
+        return s[len(left):-1]
 
     left = "\\boxed{"
 
-    assert s[:len(left)] == left
-    assert s[-1] == "}"
+    if s[:len(left)] != left:
+        print(f"s[:len(left)] = {s[:len(left)]} != {left}")
+        assert s[:len(left)] == left
+    if s[-1] != "}":
+        print(f"s[-1] = {s[-1]} != '}}'")
+        assert s[-1] == "}"
 
     return s[len(left):-1]
 
