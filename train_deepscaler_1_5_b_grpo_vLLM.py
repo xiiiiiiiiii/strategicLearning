@@ -131,9 +131,9 @@ training_args = GRPOConfig(
     warmup_ratio=0.1,
     lr_scheduler_type='cosine',
     logging_steps=1,
-    per_device_train_batch_size=1,  # Reduced batch size for larger model
+    per_device_train_batch_size=2,  # Reduced batch size for larger model
     gradient_accumulation_steps=16,  # Increased gradient accumulation to compensate
-    num_generations=7,
+    num_generations=2,
     max_prompt_length=256,
     max_completion_length=1024,  # Increased max completion length
     num_train_epochs=16,
@@ -147,7 +147,7 @@ model = AutoModelForCausalLM.from_pretrained(
     model_name,
     # torch_dtype=torch.bfloat16,
     device_map=None
-).to("cuda")
+) #.to("cuda")
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = 'left'
