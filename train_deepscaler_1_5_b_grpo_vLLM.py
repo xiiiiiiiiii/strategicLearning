@@ -109,6 +109,7 @@ def correctness_reward_func(prompts, completions, answer, **kwargs) -> list[floa
     return rewards
 
 
+# total steps: (num_samples * num_train_epochs) / gradient_accumulation_steps
 training_args = GRPOConfig(
     output_dir=output_dir,
     run_name=run_name,
@@ -120,7 +121,7 @@ training_args = GRPOConfig(
     lr_scheduler_type='cosine',
     logging_steps=1,
     per_device_train_batch_size=2,  # Reduced batch size for larger model
-    gradient_accumulation_steps=2,  # Increased gradient accumulation to compensate
+    gradient_accumulation_steps=8,  # Increased gradient accumulation to compensate
     num_generations=2,
     max_prompt_length=1024,
     max_completion_length=1024,  # Increased max completion length
