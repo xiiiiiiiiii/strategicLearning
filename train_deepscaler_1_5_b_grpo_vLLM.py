@@ -132,9 +132,9 @@ training_args = GRPOConfig(
     lr_scheduler_type='cosine',
     logging_steps=1,
     per_device_train_batch_size=1,  # Reduced batch size for larger model
-    gradient_accumulation_steps=1,  # Increased gradient accumulation to compensate
+    gradient_accumulation_steps=16,  # Increased gradient accumulation to compensate
     num_generations=7,
-    max_prompt_length=1024,
+    max_prompt_length=256,
     max_completion_length=1024,  # Increased max completion length
     num_train_epochs=16,
     save_steps=1,
@@ -145,7 +145,7 @@ training_args = GRPOConfig(
 )
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
-    torch_dtype=torch.bfloat16,
+    # torch_dtype=torch.bfloat16,
     device_map=None
 ).to("cuda")
 tokenizer = AutoTokenizer.from_pretrained(model_name)
