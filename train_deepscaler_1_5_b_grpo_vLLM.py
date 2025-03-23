@@ -29,7 +29,7 @@
 # NCCL_DEBUG=INFO CUDA_VISIBLE_DEVICES=7 trl vllm-serve --model "agentica-org/DeepScaleR-1.5B-Preview"
 
 # 4 - in second terminal session, run the script, use num_processes = (num_total_gpus - 1) processes if using vLLM.
-# CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 accelerate launch --num_processes 7 train_deepscaler_1_5_b_grpo_vLLM.py 
+# accelerate launch --num_processes 7 train_deepscaler_1_5_b_grpo_vLLM.py 
 
 
 import json
