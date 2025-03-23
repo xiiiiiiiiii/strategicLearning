@@ -15,7 +15,7 @@
       "stage3_gather_16bit_weights_on_model_save": false
   }, 
   "gradient_clipping": 0.1, 
-  "steps_per_print": inf, 
+  "steps_per_print": 1, 
   "fp16": {
       "enabled": false
   }, 
