@@ -113,6 +113,7 @@ def correctness_reward_func(prompts, completions, answer, **kwargs) -> list[floa
 
 
 # total steps: (num_samples * num_train_epochs) / gradient_accumulation_steps
+# per_device_train_batch_size * num_generations should be divisible by num_processes.
 training_args = GRPOConfig(
     output_dir=output_dir,
     run_name=run_name,
