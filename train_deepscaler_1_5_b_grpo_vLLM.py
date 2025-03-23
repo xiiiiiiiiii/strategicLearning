@@ -26,6 +26,7 @@
 # export WANDB_API_KEY=...
 
 # 3 - in first terminal session, start vLLM server on last CUDA device id, for 8 GPUs on a node, would be CUDA_VISIBLE_DEVICES=7 vllm serve --model your_model_name --tensor-parallel-size 1
+# CUDA_VISIBLE_DEVICES=7 trl vllm-serve --model "agentica-org/DeepScaleR-1.5B-Preview"
 # NCCL_DEBUG=INFO CUDA_VISIBLE_DEVICES=7 trl vllm-serve --model "agentica-org/DeepScaleR-1.5B-Preview"
 
 # 4 - in second terminal session, run the script, use num_processes = (num_total_gpus - 1) processes if using vLLM.
