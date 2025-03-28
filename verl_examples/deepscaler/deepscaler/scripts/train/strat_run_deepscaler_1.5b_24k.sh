@@ -11,7 +11,7 @@ export MODEL_PATH="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
 
 # Need to specify custom reward function.
 
-# Train over a single node, 8 A100-80GB GPUs.
+# Train over a single node, with 4 H100-80GB GPUs.
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
     data.train_files=./train.parquet \
