@@ -39,8 +39,8 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.temperature=0.6 \
     actor_rollout_ref.rollout.val_temperature=0.6 \
     actor_rollout_ref.rollout.gpu_memory_utilization=0.85 \
-    actor_rollout_ref.rollout.n=8 \
-    actor_rollout_ref.rollout.n_val=8 \
+    actor_rollout_ref.rollout.n=2 \
+    actor_rollout_ref.rollout.n_val=2 \
     actor_rollout_ref.ref.fsdp_config.param_offload=True \
     algorithm.kl_ctrl.kl_coef=0.001 \
     trainer.critic_warmup=0 \
@@ -48,7 +48,7 @@ python3 -m verl.trainer.main_ppo \
     trainer.project_name='deepscaler' \
     trainer.experiment_name='deepscaler-1.5b-8k' \
     +trainer.val_before_train=True \
-    trainer.n_gpus_per_node=8 \
+    trainer.n_gpus_per_node=2 \
     trainer.nnodes=1 \
     trainer.save_freq=20 \
     trainer.test_freq=20 \
