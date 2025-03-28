@@ -35,7 +35,6 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.tensor_model_parallel_size=1 \
     actor_rollout_ref.rollout.name=vllm \
     actor_rollout_ref.rollout.temperature=0.6 \
-    actor_rollout_ref.rollout.val_temperature=0.6 \
     actor_rollout_ref.rollout.gpu_memory_utilization=0.85 \
     actor_rollout_ref.rollout.n=2 \
     actor_rollout_ref.rollout.n_val=2 \
@@ -53,5 +52,6 @@ python3 -m verl.trainer.main_ppo \
     trainer.default_hdfs_dir=null \
     trainer.total_epochs=30 "${@:1}"
 
-# doesn't work on verl version v0.2.0.
+# doesn't work on verl version v0.2.0
 # actor_rollout_ref.actor.fsdp_config.grad_offload=False \ 
+# actor_rollout_ref.rollout.val_temperature=0.6 \
