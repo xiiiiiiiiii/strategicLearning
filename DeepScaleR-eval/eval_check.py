@@ -1,11 +1,8 @@
 import os
 import pandas as pd
 import glob
-import json
-import re
 import argparse
 from pathlib import Path
-import matplotlib.pyplot as plt
 import numpy as np
 
 def remove_boxed(s):
