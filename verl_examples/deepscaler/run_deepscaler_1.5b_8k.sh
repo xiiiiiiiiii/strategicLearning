@@ -37,7 +37,6 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.temperature=0.6 \
     actor_rollout_ref.rollout.gpu_memory_utilization=0.85 \
     actor_rollout_ref.rollout.n=2 \
-    actor_rollout_ref.rollout.n_val=2 \
     actor_rollout_ref.ref.fsdp_config.param_offload=True \
     algorithm.kl_ctrl.kl_coef=0.001 \
     trainer.critic_warmup=0 \
@@ -55,3 +54,4 @@ python3 -m verl.trainer.main_ppo \
 # doesn't work on verl version v0.2.0
 # actor_rollout_ref.actor.fsdp_config.grad_offload=False \ 
 # actor_rollout_ref.rollout.val_temperature=0.6 \
+# actor_rollout_ref.rollout.n_val=2 \
