@@ -17,6 +17,7 @@ python3 -m verl.trainer.main_ppo \
     data.val_batch_size=128 \
     data.max_prompt_length=1024 \
     data.max_response_length=8192 \
+    data.num_workers=2 \
     actor_rollout_ref.model.path=$MODEL_PATH  \
     custom_reward_function.path=deepscaler_math_reward.py \
     custom_reward_function.name=deepscaler_reward_fn \
