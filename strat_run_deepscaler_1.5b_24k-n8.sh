@@ -18,7 +18,7 @@ export VLLM_ATTENTION_BACKEND=XFORMERS
 # Train over a single node, with 4 H100-80GB GPUs.
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
-    data.train_files=./train_${index}.parquet \
+    data.train_files=./train.parquet \
     data.val_files=./aime.parquet \
     data.train_batch_size=16 \
     data.val_batch_size=16 \
