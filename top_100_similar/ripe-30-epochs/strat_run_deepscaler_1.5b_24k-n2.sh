@@ -15,11 +15,11 @@ export VLLM_ATTENTION_BACKEND=XFORMERS
 
 # Need to specify custom reward function.
 
-# Train over a single node, with 2 H100-80GB GPUs.
+# Train over a single node, with 4 H100-80GB GPUs.
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
     data.train_files=./train.parquet \
-    data.val_files=./aime.parquet \
+    data.val_files=../../data/aime.parquet \
     data.train_batch_size=16 \
     data.val_batch_size=16 \
     data.max_prompt_length=1024 \
