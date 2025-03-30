@@ -9,12 +9,23 @@
 import os
 import json
 import re
+import argparse
 
 from vllm import LLM, SamplingParams
 from vllm.utils import get_open_port
 from datasets import load_dataset, Dataset
 import torch
 
+
+# Parse command line arguments
+parser = argparse.ArgumentParser(description="Run DeepScaleR with data parallel processing")
+parser.add_argument("--model", type=str, default="agentica-org/DeepScaleR-1.5B-Preview", 
+                    help="Model name or path")
+parser.add_argument("--run_name", type=str, default="finetune_DeepScaleR_1_5_B_results", 
+                    help="Name for the run (output directory)")
+parser.add_argument("--dataset", type=str, default="./DeepScaleR-eval/ripe_dataset.jsonl", 
+                    help="Path to the dataset file")
+args = parser.parse_args()
 
 # Needs at least 2 H100 GPUs with 80GB each.
 GPUs_per_dp_rank = 1
@@ -27,11 +38,10 @@ sampling_params = SamplingParams(
     min_tokens=10,
     max_tokens=32767
 )
-model =  "xiiiiiiiiii/deepscaler-finetune-v0-0-0"
-# model = "agentica-org/DeepScaleR-1.5B-Preview"
-run_name = "finetune_DeepScaleR_1_5_B_results"
-# dataset_to_gen = "./DeepScaleR-eval/tweak_dataset.jsonl"
-dataset_to_gen = "./DeepScaleR-eval/ripe_dataset.jsonl"
+
+model = args.model
+run_name = args.run_name
+dataset_to_gen = args.dataset
 
 
 def remove_boxed(s):
