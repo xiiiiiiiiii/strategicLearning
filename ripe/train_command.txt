@@ -1,1 +1,0 @@
-../strat_run_deepscaler_1.5b_24k-n2.sh

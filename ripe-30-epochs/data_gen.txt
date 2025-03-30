@@ -1,0 +1,2 @@
+../DeepScaleR-eval/match_gen_analysis.py --input_folder ../data/DeepScaleR_1_5_B_results/ --output_file_path ./grpo.jsonl --min_accuracy_included 0.001 --max_accuracy_included 0.8
+python ../gen_tweak_dataset.py
