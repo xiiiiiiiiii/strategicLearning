@@ -94,7 +94,7 @@ def load_all_jsonl_to_dataframe(folder_path):
 def main():
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Evaluate DeepScaleR output on mathematical problems')
-    parser.add_argument('--folder_path', type=str, default="../data/deepscaler_eval_check/",
+    parser.add_argument('--folder_path', type=str, default="../data/deepscaler_aime_sample_eval_check/",
                         help='Path to the folder containing JSONL files with model outputs')
     args = parser.parse_args()
     

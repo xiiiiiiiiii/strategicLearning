@@ -1,4 +1,4 @@
 DeepScaleR-eval/deepscaler_eval_logs/** filter=lfs diff=lfs merge=lfs -text
 DeepScaleR-eval/deepscaler_eval_logs filter=lfs diff=lfs merge=lfs -text
-data/deepscaler_eval_check/**/* filter=lfs diff=lfs merge=lfs -text
+data/deepscaler_aime_sample_eval_check/**/* filter=lfs diff=lfs merge=lfs -text
 data/top_87_ripe_0_DeepScaleR_1_5_B_results/**/* filter=lfs diff=lfs merge=lfs -text
