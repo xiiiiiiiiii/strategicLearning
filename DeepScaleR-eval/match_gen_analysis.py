@@ -97,7 +97,7 @@ def pass_at_k(n, c, k):
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Analyze model performance and create tweak dataset')
-    parser.add_argument('--input_folder', type=str, default="../data/DeepScaleR_1_5_B_results/",
+    parser.add_argument('--input_folder', type=str, default="../data/top_87_ripe_0_DeepScaleR_1_5_B_results/",
                         help='Path to folder containing JSONL result files')
     parser.add_argument('--output_file_path', type=str, default="./grpo_tweak_dataset.jsonl",
                         help='Output file name for the tweak dataset (full path)')

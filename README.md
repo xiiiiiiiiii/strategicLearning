@@ -24,7 +24,7 @@ Heads up: repo uses git lfs to handle large data files!
 ### Generated Data
 - **deepscaler_eval_logs**: DeepScaler 1.5B Eval data from Deepscaler team itself.
 - **deepscaler_eval_check**: Sample check of AIME problem reasoning traces.
-- **DeepScaleR_1_5_B_results**: Reasoning traces generated with Deepscaler 1.5B using vLLM.
+- **top_87_ripe_0_DeepScaleR_1_5_B_results**: Reasoning traces generated with Deepscaler 1.5B using vLLM for first ripe question of AIME24.
 
 ## Server Setup
 
