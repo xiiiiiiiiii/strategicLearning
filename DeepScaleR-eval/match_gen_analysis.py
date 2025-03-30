@@ -6,9 +6,7 @@ import pandas as pd
 import glob
 import json
 import numpy as np
-
-# Output file name
-OUTPUT_FILE = "grpo_tweak_dataset.jsonl"
+import argparse
 
 def load_all_jsonl_to_dataframe(folder_path):
     """Load all JSONL files from a folder into a pandas DataFrame."""
@@ -101,15 +99,28 @@ def main():
     parser = argparse.ArgumentParser(description='Analyze model performance and create tweak dataset')
     parser.add_argument('--input_folder', type=str, default="../data/DeepScaleR_1_5_B_results/",
                         help='Path to folder containing JSONL result files')
+    parser.add_argument('--output_file_path', type=str, default="./grpo_tweak_dataset.jsonl",
+                        help='Output file name for the tweak dataset (full path)')
+    parser.add_argument('--min_accuracy_included', type=float, default=0.001,
+                        help='Minimum accuracy threshold (exclusive) for problems to include (0.0-1.0)')
+    parser.add_argument('--max_accuracy_included', type=float, default=0.8,
+                        help='Maximum accuracy threshold (inclusive) for problems to include (0.0-1.0)')
+    parser.add_argument('--min_count_generations_per_question', type=float, default=32,
+                        help='Minimum number of generations per question')
     args = parser.parse_args()
+    
+    # Validate accuracy thresholds
+    if not 0 <= args.min_accuracy_included <= 1:
+        parser.error("--min_accuracy_included must be between 0 and 1 inclusive")
+    if not 0 <= args.max_accuracy_included <= 1:
+        parser.error("--max_accuracy_included must be between 0 and 1 inclusive")
+    if args.min_accuracy_included > args.max_accuracy_included:
+        parser.error("--min_accuracy_included must be less than or equal to --max_accuracy_included")
     
     # Load data
     folder_path = args.input_folder
     combined_data = load_all_jsonl_to_dataframe(folder_path)
-    
-    # Check unique questions and answers
-    check = combined_data.copy()[['prompt', 'answer']].drop_duplicates()
-    
+
     # Transform for analysis
     df = combined_data.copy()
     df['question_text'] = df['prompt']
@@ -134,35 +145,46 @@ def main():
         )
     )
     
-    print(f"len(perf): {len(perf)}")
-    
     perf[f'pass@{k}'] = perf.apply(
         lambda x: pass_at_k(x['count'], x['sum_reward'], k), 
         axis=1
     )
     
+    # Calculate minimum count of generations across all questions
+    min_count = perf['count'].min()
+    assert(min_count >= args.min_count_generations_per_question)
+
     # Categorize problems
     total = len(perf)
-    print(f"total: {total}")
+    print(f"\ntotal: {total}")
     
     # Too hard
-    too_hard = perf[(perf['accuracy'] == 0.0)]
+    too_hard = perf[(perf['accuracy'] < args.min_accuracy_included)]
     total_too_hard = len(too_hard)
     print(f"total_too_hard: {total_too_hard}")
     
     # Ripe for improvement
-    ripe = perf[(perf['accuracy'] <= 0.8) & (perf['accuracy'] > 0.0)]
+    ripe = perf[(perf['accuracy'] <= args.max_accuracy_included) & (perf['accuracy'] >= args.min_accuracy_included)]
     total_ripe = len(ripe)
     print(f"total_ripe: {total_ripe}")
     
     # Not worth improving
-    already_done = perf[(perf['accuracy'] >= 0.8)]
-    total_already_done = len(already_done)
-    print(f"total_already_done: {total_already_done}")
+    too_easy = perf[(perf['accuracy'] > args.max_accuracy_included)]
+    total_too_easy = len(too_easy)
+    print(f"total_too_easy: {total_too_easy}")
     
     # Verification
-    check_total = total_too_hard + total_ripe + total_already_done
+    check_total = total_too_hard + total_ripe + total_too_easy
     assert(total == check_total)
+
+    print("\nSelected questions:\n")
+    for _, r in ripe.reset_index().iterrows():
+        print(f"Question: {r['question_text']}")
+        print(f"Answer: {r['ground_truth']}")
+        print(f"Accuracy: {r['accuracy']}")
+        print(f"Count: {r['count']}")
+        print(f"Pass@1: {r['pass@1']}")
+        print("--------------------------------\n")
     
     # Create tweak dataset
     tweak_dataset = [
@@ -174,16 +196,16 @@ def main():
     ]
     
     # Create directory if it doesn't exist
-    dirname = os.path.dirname(OUTPUT_FILE)
+    dirname = os.path.dirname(args.output_file_path)
     if len(dirname.strip()) > 0:
         os.makedirs(dirname, exist_ok=True)
     
     # Save to JSONL file
-    with open(OUTPUT_FILE, 'w') as f:
+    with open(args.output_file_path, 'w') as f:
         for item in tweak_dataset:
             f.write(json.dumps(item) + '\n')
     
-    print(f"Saved {len(tweak_dataset)} records to {OUTPUT_FILE}")
+    print(f"Saved {len(tweak_dataset)} records to {args.output_file_path}")
 
 if __name__ == "__main__":
     main()
