@@ -128,7 +128,10 @@ def main():
     df.drop(['source_file'], axis=1, inplace=True)
     
     df = df.explode('outputs')
-    df['response'] = df['outputs'].apply(lambda x: x['output'])
+    df['response'] = df['outputs'].apply(lambda x: x['output'] if isinstance(x, dict) else None)
+    len_no_output = len(df[df.response.isna()])
+    assert(len_no_output <= 3)
+    df = df[df.response.notna()]
     df['extracted_solution'] = df['response'].apply(lambda x: extract_solution(x))
     df['response_word_count'] = df['response'].astype(str).str.split().str.len()
     df['reward'] = (df['extracted_solution'] == df['ground_truth'].astype(str)).astype(float)
