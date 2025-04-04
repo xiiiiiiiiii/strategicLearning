@@ -23,7 +23,7 @@ parser.add_argument("--model", type=str, default="Qwen/QwQ-32B",
                     help="Model name or path")
 parser.add_argument("--run_name", type=str, default="finetune_QwQ-32B_results", 
                     help="Name for the run (output directory)")
-parser.add_argument("--dataset", type=str, default="./QwQ-32B-eval/ripe_dataset.jsonl", 
+parser.add_argument("--dataset", type=str, default="./DeepScaleR-eval/ripe_dataset.jsonl", 
                     help="Path to the dataset file")
 args = parser.parse_args()
 
