@@ -41,7 +41,7 @@ sampling_params = SamplingParams(
 
 rope_scaling_params = {
     "rope_scaling": {
-        "type": "yarn",
+        "rope_type": "yarn",
         "factor": 4.0,
         "original_max_position_embeddings": 32768
     }
