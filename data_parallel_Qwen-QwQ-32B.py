@@ -39,6 +39,14 @@ sampling_params = SamplingParams(
     max_tokens=32767
 )
 
+rope_scaling_params = {
+    "rope_scaling": {
+        "type": "yarn",
+        "factor": 4.0,
+        "original_max_position_embeddings": 32768
+    }
+}
+
 model = args.model
 run_name = args.run_name
 dataset_to_gen = args.dataset
@@ -177,6 +185,7 @@ def main(dp_size, dp_rank, dp_master_ip, dp_master_port, GPUs_per_dp_rank):
     llm = LLM(
         model=model,
         tensor_parallel_size=GPUs_per_dp_rank,
+        **rope_scaling_params
         # enforce_eager=True
     )
 
