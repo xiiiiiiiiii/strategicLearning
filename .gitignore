@@ -10,3 +10,4 @@ outputs/
 wandb/
 .DS_Store
 /DeepScaleR-eval/.ipynb_checkpoints
+.env
