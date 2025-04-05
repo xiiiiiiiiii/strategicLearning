@@ -39,6 +39,7 @@ def make_map_fn(split: str):
     def process_fn(example: Dict[str, Any], idx: int) -> Optional[Dict[str, Any]]:
         question = example.pop('problem')
         answer = example.pop('answer')
+        teacher_trace = example.pop('teacher_trace')
 
         data = {
             "data_source": "",
@@ -52,8 +53,10 @@ def make_map_fn(split: str):
                 "ground_truth": answer
             },
             "extra_info": {
+                'answer': teacher_trace,
+                'index': idx,
+                'question': question,
                 'split': split,
-                'index': idx
             }
         }
         return data
@@ -79,7 +82,7 @@ def load_dataset(dataset_file_path: str) -> List[Dict[str, Any]]:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Process datasets for DeepScaler training')
-    parser.add_argument('--dataset_file_path', default='./grpo.jsonl',
+    parser.add_argument('--dataset_file_path', default='./teacher_finetune_tweak_dataset.jsonl',
                        help='Path to the dataset file')
     args = parser.parse_args()
 
