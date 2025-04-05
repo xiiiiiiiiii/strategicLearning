@@ -13,7 +13,6 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     data.response_key=extra_info \
     +data.prompt_dict_keys=['question'] \
     +data.response_dict_keys=['answer'] \
-    data.micro_batch_size_per_gpu=4 \
     model.partial_pretrain=$MODEL_PATH  \
     trainer.default_local_dir=./model_save_path \
     trainer.project_name='deepscaler-finetune' \
@@ -21,3 +20,5 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     trainer.total_epochs=2 \
     trainer.logger=['console','wandb'] \
     trainer.default_hdfs_dir=null
+
+# data.micro_batch_size_per_gpu=4 \
