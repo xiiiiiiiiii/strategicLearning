@@ -8,7 +8,7 @@ nproc_per_node=1
 torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
      -m verl.trainer.fsdp_sft_trainer \
     data.train_files=./train.parquet \
-    data.val_files=../../data/aime.parquet \
+    data.val_files=./train.parquet \
     data.prompt_key=extra_info \
     data.response_key=extra_info \
     +data.prompt_dict_keys=['question'] \
