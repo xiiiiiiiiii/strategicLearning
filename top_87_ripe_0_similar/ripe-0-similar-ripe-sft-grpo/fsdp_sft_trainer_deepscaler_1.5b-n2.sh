@@ -18,7 +18,7 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     +data.prompt_dict_keys=['question'] \
     +data.response_dict_keys=['answer'] \
     model.partial_pretrain="${MODEL_PATH}" \
-    model.max_position_embeddings=131072 \
+    +model.max_position_embeddings=131072 \
     trainer.default_local_dir=./model_save_path \
     trainer.project_name='deepscaler-finetune' \
     trainer.experiment_name="${EXPERIMENT_NAME}" \
