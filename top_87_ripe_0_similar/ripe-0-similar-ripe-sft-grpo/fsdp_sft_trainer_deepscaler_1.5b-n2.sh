@@ -21,7 +21,7 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     trainer.default_local_dir=./model_save_path \
     trainer.project_name='deepscaler-finetune' \
     trainer.experiment_name="${EXPERIMENT_NAME}" \
-    trainer.total_epochs=10 \
+    trainer.total_epochs=100 \
     trainer.logger=['console','wandb'] \
     ulysses_sequence_parallel_size=2 \
     use_remove_padding=true \
