@@ -15,7 +15,7 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     data.response_key=extra_info \
     +data.prompt_dict_keys=['question'] \
     +data.response_dict_keys=['answer'] \
-    model.partial_pretrain="agentica-org/DeepScaleR-1.5B-Preview" \
+    model.partial_pretrain=agentica-org/DeepScaleR-1.5B-Preview \
     trainer.default_local_dir=./model_save_path \
     trainer.project_name='deepscaler-finetune' \
     trainer.experiment_name="${EXPERIMENT_NAME}" \
