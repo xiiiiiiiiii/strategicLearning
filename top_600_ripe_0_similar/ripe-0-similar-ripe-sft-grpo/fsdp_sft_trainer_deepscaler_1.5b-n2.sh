@@ -10,7 +10,6 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     data.train_files=./train.parquet \
     data.val_files=./train.parquet \
     data.max_length=24576 \
-    data.train_batch_size=1 \
     data.micro_batch_size=1 \
     data.prompt_key=extra_info \
     data.response_key=extra_info \
@@ -23,3 +22,5 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     trainer.total_epochs=10 \
     trainer.logger=['console','wandb'] \
     trainer.default_hdfs_dir=null
+
+# data.train_batch_size=1 \
