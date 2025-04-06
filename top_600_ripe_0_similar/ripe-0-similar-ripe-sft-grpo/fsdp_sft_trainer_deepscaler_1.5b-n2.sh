@@ -23,7 +23,6 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     trainer.experiment_name="${EXPERIMENT_NAME}" \
     trainer.total_epochs=10 \
     trainer.logger=['console','wandb'] \
+    ulysses_sequence_parallel_size=2 \
+    use_remove_padding=true \
     trainer.default_hdfs_dir=null
-
-    # ulysses_sequence_parallel_size=2 \
-    # use_remove_padding=true \
