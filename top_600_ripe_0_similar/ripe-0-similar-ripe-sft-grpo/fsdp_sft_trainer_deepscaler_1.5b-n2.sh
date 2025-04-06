@@ -12,7 +12,7 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     data.max_length=24576 \
     data.train_batch_size=2 \
     data.micro_batch_size=2 \
-    data.micro_batch_size_per_gpu=2 \
+    data.micro_batch_size_per_gpu=1 \
     data.prompt_key=extra_info \
     data.response_key=extra_info \
     +data.prompt_dict_keys=['question'] \
