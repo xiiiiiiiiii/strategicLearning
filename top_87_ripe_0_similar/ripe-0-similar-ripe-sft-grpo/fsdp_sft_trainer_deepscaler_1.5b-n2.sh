@@ -18,12 +18,11 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     +data.prompt_dict_keys=['question'] \
     +data.response_dict_keys=['answer'] \
     model.partial_pretrain="${MODEL_PATH}" \
-    +model.max_position_embeddings=131072 \
     trainer.default_local_dir=./model_save_path \
     trainer.project_name='deepscaler-finetune' \
     trainer.experiment_name="${EXPERIMENT_NAME}" \
     trainer.total_epochs=100 \
     trainer.logger=['console','wandb'] \
-    ulysses_sequence_parallel_size=2 \
+    ulysses_sequence_parallel_size=4 \
     use_remove_padding=true \
     trainer.default_hdfs_dir=null
