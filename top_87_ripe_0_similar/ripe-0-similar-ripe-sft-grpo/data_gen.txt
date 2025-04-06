@@ -1,0 +1,1 @@
+python ../../gen_sft_grpo_tweak_dataset.py --dataset_file_path ../../DeepScaleR-eval/top_87_teacher_finetune_tweak_dataset.jsonl
