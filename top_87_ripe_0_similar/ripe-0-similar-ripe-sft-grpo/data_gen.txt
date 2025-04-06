@@ -1,1 +1,7 @@
 python ../../gen_sft_grpo_tweak_dataset.py --dataset_file_path ../../DeepScaleR-eval/top_87_teacher_finetune_tweak_dataset.jsonl
+
+# To run validation on data with latest vllm installed:
+uv run ../../data_parallel_deepscaler_1_5_B_gen.py --model ./model_save_path/global_step_50/ --dataset ../../DeepScaleR-eval/ripe_dataset.jsonl
+
+# To view stats on vllm generated validation on data:
+uv run ../../DeepScaleR-eval/eval_check.py --folder_path ./data/finetune_DeepScaleR_1_5_B_results/
