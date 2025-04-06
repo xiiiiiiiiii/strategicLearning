@@ -3,7 +3,7 @@
 MODEL_PATH="agentica-org/DeepScaleR-1.5B-Preview"
 EXPERIMENT_NAME="deepscaler-sft-1.5b"
 
-nproc_per_node=1
+nproc_per_node=2
 
 torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
      -m verl.trainer.fsdp_sft_trainer \
