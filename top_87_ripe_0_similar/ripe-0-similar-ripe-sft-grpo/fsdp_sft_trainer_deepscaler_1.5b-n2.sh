@@ -1,4 +1,5 @@
-# Tested with 2 & 4 GPUs ??? TODO: check 4 GPUs.
+# Tested with 4 GPUs.
+# ulysses_sequence_parallel_size should be equal on number of GPUs on the node.
 
 MODEL_PATH="agentica-org/DeepScaleR-1.5B-Preview"
 EXPERIMENT_NAME="deepscaler-sft-1.5b"
