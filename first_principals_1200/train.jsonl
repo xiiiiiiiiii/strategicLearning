@@ -1,0 +1,1216 @@
+{"problem": "A list of five positive integers has all of the following properties:\n\n$\\bullet$  The only integer in the list that occurs more than once is $8,$\n\n$\\bullet$  its median is $9,$ and\n\n$\\bullet$  its average (mean) is $10.$\n\nWhat is the largest possible integer that could appear in the list? Let's think step by step and output the final answer within \\boxed{}.", "answer": "15"}
+{"problem": "A list of five positive integers has mean $12$ and range $18$. The mode and median are both $8$. How many different values are possible for the second largest element of the list? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "A list of integers has mode 32 and mean 22. The smallest number in the list is 10. The median  m of the list is a member of the list. If the list member  m were replaced by  m+10, the mean and median of the new list would be 24 and  m+10, respectively. If  m were instead replaced by  m-8, the median of the new list would be  m-4. What is  m? Let's think step by step and output the final answer within \\boxed{}.", "answer": "20"}
+{"problem": "A list of seven positive integers has a median of 4 and a mean of 10. What is the maximum possible value of the list's largest element? Let's think step by step and output the final answer within \\boxed{}.", "answer": "52"}
+{"problem": "A list of seven positive integers has a median of 5 and a mean of 15. What is the maximum possible value of the list's largest element? Let's think step by step and output the final answer within \\boxed{}.", "answer": "87"}
+{"problem": "A repunit is a positive integer, all of whose digits are 1s. Let $a_{1}<a_{2}<a_{3}<\\ldots$ be a list of all the positive integers that can be expressed as the sum of distinct repunits. Compute $a_{111}$. Let's think step by step and output the final answer within \\boxed{}.", "answer": "1223456"}
+{"problem": "Carolyn and Paul are playing a game starting with a list of the integers $1$ to $n.$ The rules of the game are:\n\n$\\bullet$  Carolyn always has the first turn.\n\n$\\bullet$  Carolyn and Paul alternate turns.\n\n$\\bullet$  On each of her turns, Carolyn must remove one number from the list such that this number has at least one positive divisor other than itself remaining in the list.\n\n$\\bullet$  On each of his turns, Paul must remove from the list all of the positive divisors of the number that Carolyn has just removed, and he can optionally choose one additional number that is a multiple of any divisor he is removing.\n\n$\\bullet$  If Carolyn cannot remove any more numbers, then Paul removes the rest of the numbers.\n\nFor example, if $n=8,$ a possible sequence of moves could be considered.\n\nSuppose that $n=8$ and Carolyn removes the integer $4$ on her first turn. Determine the sum of the numbers that Carolyn removes. Let's think step by step and output the final answer within \\boxed{}.", "answer": "12"}
+{"problem": "Daniel writes over a board, from top to down, a list of positive integer numbers less or equal to 10. Next to each number of Daniel's list, Martin writes the number of times exists this number into the Daniel's list making a list with the same length. If we read the Martin's list from down to top, we get the same\r\nlist of numbers that Daniel wrote from top to down. Find the greatest length of the Daniel's list can have. Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "Find the largest positive integer $k{}$ for which there exists a convex polyhedron $\\mathcal{P}$ with 2022 edges, which satisfies the following properties:\n[list]\n[*]The degrees of the vertices of $\\mathcal{P}$ don\u2019t differ by more than one, and\n[*]It is possible to colour the edges of $\\mathcal{P}$ with $k{}$ colours such that for every colour $c{}$, and every pair of vertices $(v_1, v_2)$ of $\\mathcal{P}$, there is a monochromatic path between $v_1$ and $v_2$ in the colour $c{}$.\n[/list]\n[i]Viktor Simjanoski, Macedonia[/i] Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "Let $(b_1, b_2, ... b_{12})$ be a list of the 12 integers from 4 to 15 inclusive such that for each $2 \\le i \\le 12$, either $b_i + 1$ or $b_i - 1$ or both appear somewhere before $b_i$ in the list. How many such lists are there? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2048"}
+{"problem": "Let (b_1, b_2, ... b_7) be a list of the first 7 odd positive integers such that for each 2 \u2264 i \u2264 7, either b_i + 2 or b_i - 2 (or both) must appear before b_i in the list. How many such lists are there? Let's think step by step and output the final answer within \\boxed{}.", "answer": "64"}
+{"problem": "Suppose that $k \\geq 2$ is a positive integer. An in-shuffle is performed on a list with $2 k$ items to produce a new list of $2 k$ items in the following way: - The first $k$ items from the original are placed in the odd positions of the new list in the same order as they appeared in the original list. - The remaining $k$ items from the original are placed in the even positions of the new list, in the same order as they appeared in the original list. For example, an in-shuffle performed on the list $P Q R S T U$ gives the new list $P S Q T R U$. A second in-shuffle now gives the list $P T S R Q U$. Ping has a list of the 66 integers from 1 to 66, arranged in increasing order. He performs 1000 in-shuffles on this list, recording the new list each time. In how many of these 1001 lists is the number 47 in the 24th position? Let's think step by step and output the final answer within \\boxed{}.", "answer": "83"}
+{"problem": "The arithmetic mean of seven numbers is 42. If three new numbers \\( x, y, \\) and \\( z \\) are added to the list, the mean of the ten-member list becomes 50. What is the mean of \\( x, y, \\) and \\( z \\)? Let's think step by step and output the final answer within \\boxed{}.", "answer": "\\frac{206}{3}"}
+{"problem": "There are five positive integers that are common divisors of each number in the list $$36, 72, -24, 120, 96.$$ Find the sum of these five positive integers. Let's think step by step and output the final answer within \\boxed{}.", "answer": "16"}
+{"problem": "There are many ways in which the list \\(0,1,2,3,4,5,6,7,8,9\\) can be separated into groups. For example, this list could be separated into the four groups \\(\\{0,3,4,8\\}\\), \\(\\{1,2,7\\}\\), \\{6\\}, and \\{5,9\\}. The sum of the numbers in each of these four groups is \\(15\\), \\(10\\), \\(6\\), and \\(14\\), respectively. In how many ways can the list \\(0,1,2,3,4,5,6,7,8,9\\) be separated into at least two groups so that the sum of the numbers in each group is the same? Let's think step by step and output the final answer within \\boxed{}.", "answer": "32"}
+{"problem": "What is the median of the following list of $4040$ numbers?\n\\[1, 2, 3, \\ldots, 2020, 1^2, 2^2, 3^2, \\ldots, 2020^2\\] Let's think step by step and output the final answer within \\boxed{}.", "answer": "1976.5"}
+{"problem": "What is the median of the list 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.5"}
+{"problem": "What is the average of the list 10, 6, 3, 8, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 10, 1, 7, 7, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "45"}
+{"problem": "How many modes are there in 9, 2, 1, 7, 1, 5, 5, 7, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 1, 1, 1, 3, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 9 in the list of numbers 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 5, 6, 8, 5, 10, 8, 4, 10, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is the average of the list 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 10, 3, 9, 10, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "38"}
+{"problem": "How many modes are there in 10, 5, 6, 2, 7, 10, 10, 6, 9, 7, 5, 1, 6, 7, 6, 2, 5, 4, 2, 9, 9, 5, 7, 3, 2, 10, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 4, 4, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 5 in the list of numbers 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 4, 5, 4, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 3, 6, 8, 6, 5, 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 8, 2, 3, 7, 7, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "37"}
+{"problem": "How many modes are there in 4, 1, 6, 7, 7, 4, 1, 3, 4, 7, 9, 1, 2, 3, 3, 7, 4, 1, 3, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 7, 9, 6, 5, 8, 10, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 2 in the list of numbers 2, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 1, 2, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 7, 7, 7, 4, 4, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 5, 10, 10, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "38"}
+{"problem": "How many modes are there in 8, 10, 2, 3, 2, 7, 7, 10, 7, 5, 3, 8, 3, 2, 3, 2, 7, 9, 5, 8, 8, 7, 2, 4, 7, 8, 10, 7, 10, 3, 8, 2, 5, 3, 3, 5, 10, 2, 8, 5, 5, 10, 10, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 5, 7, 3, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 5 in the list of numbers 8, 10, 3, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 4, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 5, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "14"}
+{"problem": "How many modes are there in 10, 3, 8, 5, 6, 4, 1, 4, 8, 9, 6, 6, 10, 6, 3, 8, 4, 10, 3, 3, 8, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 2, 3, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 8 in the list of numbers 2, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 2, 3, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 2, 10, 4, 5, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 7, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "20"}
+{"problem": "How many modes are there in 1, 3, 3, 9, 9, 6, 1, 2, 9, 4, 1, 6, 1, 3, 8, 4, 2, 6, 2, 4, 6, 2, 3, 4, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 3, 1, 1, 8, 1, 6, 5, 2, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 6 in the list of numbers 8, 6, 9, 6, 6, 6, 6, 10, 4, 1, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the median of the list 8, 10, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.5"}
+{"problem": "What is the average of the list 2, 2, 5, 2, 8, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 3, 6, 10, 6, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "34"}
+{"problem": "How many modes are there in 2, 1, 6, 10, 7, 5, 3, 7, 1, 10, 6, 4, 3, 5, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 10, 5, 9, 1, 2, 6, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 7 in the list of numbers 7, 7, 2, 7, 5, 1, 7, 7, 7, 7, 7, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the median of the list 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.5"}
+{"problem": "What is the average of the list 2, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 8, 4, 8, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "27"}
+{"problem": "How many modes are there in 10, 7, 7, 10, 7, 3, 1, 10, 9, 10, 4, 7, 3, 7, 1, 9, 9, 10, 10, 4, 3, 2, 4, 7, 9, 4, 3, 3, 1, 9, 4, 1, 1, 9, 4, 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 5, 9, 5, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 7 in the list of numbers 1, 4, 8, 7, 7, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 4, 4, 6, 1, 6, 9, 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 5, 3, 8, 9, 4, 10, 4, 4, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "55"}
+{"problem": "How many modes are there in 6, 1, 4, 10, 7, 9, 3, 7, 7, 6, 6, 7, 2, 6, 7, 6, 6, 6, 6, 7, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 6, 2, 5, 2, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 8 in the list of numbers 8, 3, 7, 8, 9, 2, 6, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 10, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 3, 8, 10, 7, 9, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 5, 3, 9, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "26"}
+{"problem": "How many modes are there in 6, 6, 7, 6, 5, 4, 2, 4, 2, 9, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 8, 8, 3, 9, 6, 7, 8, 8, 8, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 3 in the list of numbers 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 7, 8, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 1, 4, 4, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 7, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "17"}
+{"problem": "How many modes are there in 9, 3, 9, 5, 8, 3, 6, 8, 7, 6, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 4, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 3 in the list of numbers 2, 9, 8, 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 7, 8, 3, 5, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is the average of the list 3, 4, 5, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many modes are there in 7, 2, 2, 1, 10, 9, 5, 7, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 7, 1, 4, 1, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 3 in the list of numbers 1, 2, 5, 7, 10, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 7, 1, 5, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many modes are there in 8, 4, 1, 2, 3, 4, 10, 7, 9, 10, 3, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 2, 10, 4, 10, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 3 in the list of numbers 3, 3, 2, 7, 3, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 7, 7, 10, 8, 2, 10, 5, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 5, 1, 10, 2, 1, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many modes are there in 8, 8, 2, 3, 6, 7, 5, 5, 2, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 5, 3, 10, 6, 8, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 2 in the list of numbers 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 9, 10, 2, 9, 4, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 5, 7, 8, 3, 8, 8, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 7, 5, 6, 4, 10, 6, 8, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "62"}
+{"problem": "How many modes are there in 10, 1, 9, 7, 7, 4, 4, 7, 5, 7, 8, 9, 8, 2, 8, 7, 6, 10, 4, 5, 5, 9, 5, 10, 5, 9, 10, 8, 10, 9, 4, 4, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 1, 3, 2, 4, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 10 in the list of numbers 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 1, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.5"}
+{"problem": "What is the average of the list 10, 3, 10, 5, 4, 9, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 7, 3, 3, 1, 5, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "21"}
+{"problem": "How many modes are there in 3, 3, 9, 9, 7, 2, 1, 8, 7, 9, 10, 6, 6, 3, 8, 6, 1, 1, 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 5, 6, 5, 10, 3, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 8 in the list of numbers 8, 6, 7, 9, 4, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is the average of the list 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 7, 9, 9, 2, 6, 5, 2, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "49"}
+{"problem": "How many modes are there in 1, 5, 2, 7, 5, 10, 4, 6, 7, 2, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 8, 7, 5, 6, 2, 1, 2, 2, 3, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 5 in the list of numbers 6, 4, 7, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 2, 3, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 3, 2, 5, 8, 10, 10, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many modes are there in 1, 1, 10, 10, 10, 4, 6, 6, 4, 1, 1, 6, 9, 10, 4, 6, 1, 10, 5, 6, 8, 4, 4, 4, 3, 4, 6, 1, 10, 1, 10, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 9, 9, 10, 9, 6, 9, 3, 1, 2, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 5 in the list of numbers 10, 3, 5, 1, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is the average of the list 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 7, 8, 7, 6, 3, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "39"}
+{"problem": "How many modes are there in 3, 5, 8, 2, 1, 2, 3, 5, 2, 3, 5, 5, 10, 10, 8, 6, 2, 6, 7, 8, 7, 6, 8, 6, 10, 7, 7, 10, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 9, 3, 7, 1, 5, 5, 2, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 5 in the list of numbers 2, 7, 8, 3, 6, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 7, 10, 8, 2, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 6, 10, 6, 1, 10, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 2, 10, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "24"}
+{"problem": "How many modes are there in 3, 6, 3, 10, 3, 10, 10, 10, 3, 1, 3, 10, 4, 4, 10, 1, 3, 2, 6, 5, 10, 4, 1, 1, 10, 1, 7, 5, 5, 10, 5, 4, 1, 6, 4, 6, 5, 3, 6, 6, 5, 4, 6, 3, 1, 1, 5, 5, 5, 1, 10, 3, 6, 4, 4, 4, 5, 3, 6, 4, 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 3, 10, 7, 3, 3, 6, 3, 3, 8, 3, 5, 3, 3, 2, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 4 in the list of numbers 6, 9, 7, 8, 2, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 1, 1, 10, 7, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 3, 5, 1, 7, 3, 4, 5, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 1, 5, 6, 1, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "21"}
+{"problem": "How many modes are there in 6, 10, 2, 8, 5, 6, 1, 10, 7, 7, 8, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 1, 6, 8, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 3 in the list of numbers 1, 8, 4, 5, 7, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 4, 2, 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.5"}
+{"problem": "What is the average of the list 10, 2, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 5, 6, 5, 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "30"}
+{"problem": "How many modes are there in 1, 6, 6, 5, 7, 3, 7, 1, 6, 7, 6, 1, 6, 1, 7, 3, 6, 3, 7, 7, 1, 1, 9, 8, 1, 3, 4, 7, 3, 2, 3, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 7, 3, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 5 in the list of numbers 2, 3, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 1, 4, 3, 9, 3, 9, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.5"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 3, 2, 5, 7, 4, 2, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "30"}
+{"problem": "How many modes are there in 6, 2, 10, 10, 10, 6, 7, 10, 4, 5, 1, 6, 6, 5, 5, 5, 6, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 6, 9, 7, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 1 in the list of numbers 10, 1, 9, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 8, 6, 10, 5, 1, 10, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is the average of the list 6, 9, 1, 3, 1, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 1, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many modes are there in 2, 7, 4, 5, 1, 10, 4, 5, 7, 1, 2, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 3, 2, 4, 6, 7, 10, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 2 in the list of numbers 5, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 3, 4, 1, 9, 2, 8, 5, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 10, 9, 4, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "39"}
+{"problem": "How many modes are there in 2, 4, 1, 8, 6, 9, 10, 9, 4, 5, 10, 6, 3, 5, 1, 3, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "What is mode of 8, 1, 6, 9, 9, 9, 4, 9, 9, 9, 3, 9, 9, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 6 in the list of numbers 4, 9, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 9, 4, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.5"}
+{"problem": "What is the average of the list 9, 5, 4, 1, 5, 6, 2, 4, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 4, 4, 10, 8, 9, 7, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "52"}
+{"problem": "How many modes are there in 7, 7, 7, 8, 3, 9, 9, 1, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 5, 8, 3, 8, 8, 7, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 5 in the list of numbers 2, 10, 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 7, 2, 8, 4, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 7, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 4, 2, 6, 5, 9, 2, 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "33"}
+{"problem": "How many modes are there in 7, 7, 3, 7, 7, 5, 7, 7, 6, 3, 7, 5, 5, 5, 10, 5, 5, 7, 9, 7, 5, 3, 3, 3, 3, 4, 5, 3, 3, 3, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 3, 3, 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 8 in the list of numbers 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 5, 1, 4, 4, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 7, 3, 2, 6, 2, 1, 1, 10, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 6, 7, 9, 10, 4, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "43"}
+{"problem": "How many modes are there in 1, 9, 9, 2, 7, 2, 1, 4, 4, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 1, 7, 3, 1, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 9 in the list of numbers 8, 5, 7, 9, 9, 9, 9, 9, 6, 1, 9, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 8, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many modes are there in 4, 5, 4, 4, 3, 5, 8, 8, 2, 8, 2, 5, 4, 1, 5, 8, 3, 3, 2, 4, 5, 3, 2, 5, 8, 3, 2, 4, 8, 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 4, 5, 5, 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 8 in the list of numbers 5, 1, 10, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.5"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 5, 2, 3, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "21"}
+{"problem": "How many modes are there in 9, 1, 5, 7, 8, 1, 2, 7, 9, 1, 2, 2, 8, 9, 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 9, 1, 9, 7, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 10 in the list of numbers 6, 7, 10, 5, 9, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 3, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 10, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 4, 6, 2, 1, 2, 4, 4, 2, 10, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "43"}
+{"problem": "How many modes are there in 6, 4, 6, 2, 10, 9, 9, 9, 7, 2, 2, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 2, 9, 8, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 6 in the list of numbers 6, 10, 8, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 8, 8, 10, 5, 10, 6, 1, 10, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.0"}
+{"problem": "What is the average of the list 9, 9, 2, 6, 9, 8, 3, 5, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 4, 8, 2, 5, 1, 4, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "27"}
+{"problem": "How many modes are there in 9, 8, 6, 2, 2, 7, 5, 2, 7, 3, 9, 5, 8, 4, 8, 5, 9, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 4, 9, 4, 10, 6, 4, 1, 4, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 3 in the list of numbers 1, 3, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 2, 1, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 10, 2, 7, 8, 3, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 7, 7, 2, 2, 5, 9, 8, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "50"}
+{"problem": "How many modes are there in 6, 9, 10, 8, 6, 10, 7, 5, 6, 10, 7, 5, 5, 7, 7, 5, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 5, 5, 9, 5, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 4 in the list of numbers 4, 1, 4, 3, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 6, 6, 7, 3, 8, 8, 1, 7, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 2, 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 6, 4, 5, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "17"}
+{"problem": "How many modes are there in 9, 1, 10, 9, 10, 4, 1, 9, 1, 4, 9, 10, 3, 1, 10, 4, 8, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 5, 9, 9, 6, 10, 9, 9, 9, 9, 9, 2, 4, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 10 in the list of numbers 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 1, 3, 8, 10, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 1, 9, 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 1, 4, 8, 7, 4, 5, 8, 4, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "49"}
+{"problem": "How many modes are there in 6, 4, 9, 4, 10, 4, 9, 4, 5, 9, 4, 5, 9, 8, 9, 9, 5, 2, 5, 5, 5, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 7, 10, 2, 3, 5, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 2 in the list of numbers 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 7, 5, 8, 5, 2, 7, 3, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 1, 6, 3, 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "13"}
+{"problem": "How many modes are there in 2, 5, 7, 6, 2, 5, 7, 4, 2, 6, 6, 10, 4, 4, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 4, 7, 1, 8, 1, 1, 2, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 4 in the list of numbers 7, 1, 5, 8, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 3, 10, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.5"}
+{"problem": "What is the average of the list 2, 3, 8, 9, 5, 1, 1, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 2, 9, 6, 6, 5, 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "43"}
+{"problem": "How many modes are there in 1, 4, 2, 6, 2, 6, 4, 3, 7, 9, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 5, 5, 5, 6, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 3 in the list of numbers 2, 9, 10, 3, 3, 3, 1, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 2, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 4, 6, 9, 8, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 4, 1, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many modes are there in 4, 3, 3, 4, 1, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 7, 10, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 7 in the list of numbers 7, 5, 7, 7, 3, 7, 2, 4, 6, 7, 7, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 5, 10, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "What is the average of the list 8, 1, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "15"}
+{"problem": "How many modes are there in 4, 7, 2, 5, 5, 2, 4, 1, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 5, 4, 3, 3, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 6 in the list of numbers 6, 6, 5, 6, 6, 6, 1, 8, 6, 6, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the median of the list 3, 3, 10, 3, 1, 5, 4, 10, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 2, 1, 4, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "18"}
+{"problem": "How many modes are there in 8, 3, 3, 4, 10, 1, 8, 2, 4, 8, 10, 3, 4, 10, 9, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 6, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 2 in the list of numbers 2, 2, 10, 2, 2, 2, 5, 4, 7, 2, 8, 2, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the median of the list 6, 8, 7, 4, 3, 9, 5, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.5"}
+{"problem": "What is the average of the list 2, 3, 7, 1, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 4, 2, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "23"}
+{"problem": "How many modes are there in 1, 8, 1, 8, 8, 4, 3, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 10, 7, 1, 2, 5, 9, 2, 2, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 6 in the list of numbers 9, 6, 6, 8, 6, 5, 4, 3, 2, 6, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 7, 5, 1, 6, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.5"}
+{"problem": "What is the average of the list 10, 7, 5, 5, 2, 7, 9, 7, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 7, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "21"}
+{"problem": "How many modes are there in 3, 4, 9, 4, 7, 3, 9, 3, 1, 1, 4, 7, 8, 9, 1, 7, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 2, 4, 2, 1, 2, 10, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 2 in the list of numbers 9, 8, 7, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 2, 3, 3, 4, 9, 10, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.5"}
+{"problem": "What is the average of the list 9, 8, 5, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many modes are there in 7, 1, 9, 5, 1, 10, 2, 7, 5, 5, 9, 6, 1, 9, 3, 9, 7, 7, 10, 10, 8, 5, 10, 4, 1, 4, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 10, 1, 6, 7, 5, 6, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 8 in the list of numbers 4, 9, 5, 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 2, 1, 7, 7, 9, 2, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 9, 5, 4, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "30"}
+{"problem": "How many modes are there in 10, 6, 4, 5, 10, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 10, 1, 7, 9, 8, 4, 3, 5, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 7 in the list of numbers 9, 1, 2, 6, 3, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 10, 5, 8, 9, 9, 9, 2, 8, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 5, 10, 1, 3, 5, 9, 5, 6, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "58"}
+{"problem": "How many modes are there in 10, 9, 8, 1, 9, 5, 5, 5, 10, 10, 5, 6, 9, 6, 8, 6, 6, 5, 1, 3, 3, 8, 1, 3, 5, 2, 3, 10, 8, 1, 1, 10, 9, 8, 5, 9, 3, 2, 6, 10, 1, 8, 9, 2, 1, 6, 2, 3, 3, 2, 2, 2, 8, 6, 9, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is mode of 7, 7, 7, 7, 7, 10, 8, 7, 5, 7, 2, 7, 1, 9, 7, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 5 in the list of numbers 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 1, 8, 3, 6, 6, 8, 2, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many modes are there in 8, 3, 8, 7, 9, 2, 2, 7, 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 1, 7, 4, 5, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 10 in the list of numbers 6, 9, 3, 5, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 4, 10, 7, 7, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is the average of the list 5, 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many modes are there in 9, 7, 7, 3, 10, 1, 3, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 3, 10, 3, 5, 3, 7, 9, 8, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 1 in the list of numbers 1, 1, 4, 3, 1, 1, 7, 1, 1, 6, 1, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "What is the median of the list 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 10, 6, 9, 4, 8, 8, 7, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 5, 1, 1, 5, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "16"}
+{"problem": "How many modes are there in 6, 1, 1, 9, 10, 6, 6, 8, 1, 1, 8, 9, 8, 4, 5, 3, 7, 9, 8, 6, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 9, 9, 8, 1, 9, 4, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 3 in the list of numbers 3, 3, 7, 3, 6, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 6, 9, 3, 6, 3, 1, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 7, 10, 4, 2, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 5, 3, 4, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "19"}
+{"problem": "How many modes are there in 3, 3, 7, 7, 10, 5, 2, 2, 1, 7, 3, 3, 2, 7, 2, 10, 10, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 4, 2, 5, 2, 9, 3, 2, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 7 in the list of numbers 6, 4, 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 2, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 8, 7, 5, 3, 1, 4, 2, 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "35"}
+{"problem": "How many modes are there in 2, 3, 3, 10, 2, 3, 2, 5, 10, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 7, 5, 9, 9, 9, 10, 4, 3, 9, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 6 in the list of numbers 5, 8, 4, 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 6, 10, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 8, 5, 9, 6, 5, 4, 9, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 6, 6, 2, 9, 7, 4, 6, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "49"}
+{"problem": "How many modes are there in 5, 4, 1, 6, 7, 10, 2, 7, 7, 10, 10, 10, 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 9, 10, 1, 5, 3, 2, 9, 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 6 in the list of numbers 7, 4, 5, 6, 3, 6, 6, 6, 6, 8, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 1, 6, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is the average of the list 7, 3, 8, 6, 7, 5, 5, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 4, 10, 4, 5, 10, 9, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "52"}
+{"problem": "How many modes are there in 8, 7, 3, 8, 9, 9, 5, 2, 8, 9, 2, 9, 2, 7, 7, 8, 5, 2, 7, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 9, 6, 1, 6, 7, 6, 6, 5, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 9 in the list of numbers 2, 9, 9, 10, 4, 9, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 8, 1, 6, 4, 10, 4, 2, 5, 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 3, 2, 3, 3, 10, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 7, 4, 7, 3, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "28"}
+{"problem": "How many modes are there in 2, 10, 2, 4, 2, 4, 1, 6, 4, 7, 4, 5, 6, 4, 6, 6, 2, 6, 9, 7, 5, 8, 5, 2, 5, 5, 7, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 2, 5, 8, 1, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 8 in the list of numbers 9, 2, 3, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 2, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "12"}
+{"problem": "How many modes are there in 3, 3, 3, 3, 2, 8, 4, 4, 2, 4, 8, 4, 6, 8, 1, 9, 2, 2, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 1, 9, 1, 1, 10, 1, 5, 1, 2, 1, 1, 1, 1, 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 4 in the list of numbers 10, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 10, 10, 6, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 9, 6, 3, 4, 8, 8, 2, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 6, 6, 7, 3, 5, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "44"}
+{"problem": "How many modes are there in 2, 10, 9, 8, 1, 3, 5, 8, 1, 7, 10, 5, 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 5, 3, 1, 10, 8, 7, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 8 in the list of numbers 9, 5, 7, 1, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 1, 9, 7, 7, 5, 3, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 5, 9, 1, 9, 8, 8, 7, 10, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 4, 7, 6, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "24"}
+{"problem": "How many modes are there in 8, 7, 8, 1, 7, 7, 10, 4, 7, 7, 4, 2, 8, 2, 4, 2, 8, 10, 5, 4, 10, 4, 2, 2, 10, 10, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 4, 6, 6, 3, 6, 6, 8, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 8 in the list of numbers 4, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 5, 4, 10, 2, 3, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 6, 8, 9, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "29"}
+{"problem": "How many modes are there in 2, 5, 3, 10, 4, 6, 3, 7, 7, 5, 6, 4, 2, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 10, 10, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 2 in the list of numbers 5, 4, 3, 9, 8, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 7, 2, 5, 1, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 6, 4, 2, 10, 7, 2, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 6, 1, 6, 6, 2, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "27"}
+{"problem": "How many modes are there in 5, 10, 8, 10, 4, 1, 1, 8, 1, 10, 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 1, 4, 4, 4, 6, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 3 in the list of numbers 8, 9, 3, 3, 3, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 1, 4, 4, 3, 1, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 1, 9, 1, 8, 9, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 6, 7, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "25"}
+{"problem": "How many modes are there in 7, 4, 10, 4, 8, 10, 2, 8, 8, 8, 4, 4, 6, 2, 6, 2, 7, 7, 6, 7, 10, 3, 10, 2, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 7, 5, 5, 2, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 2 in the list of numbers 5, 2, 10, 4, 7, 2, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 2, 1, 2, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 10, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 1, 6, 4, 2, 10, 5, 8, 2, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "51"}
+{"problem": "How many modes are there in 3, 7, 7, 8, 8, 10, 4, 4, 1, 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 9, 3, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 9 in the list of numbers 8, 4, 6, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "12"}
+{"problem": "How many modes are there in 9, 6, 1, 4, 10, 2, 3, 2, 9, 4, 7, 6, 3, 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 7, 1, 1, 2, 9, 1, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 6 in the list of numbers 5, 9, 7, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 6, 8, 10, 2, 9, 1, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 7, 4, 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "25"}
+{"problem": "How many modes are there in 6, 4, 4, 5, 2, 7, 6, 10, 6, 2, 5, 2, 6, 4, 5, 5, 4, 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 9, 8, 3, 9, 4, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 7 in the list of numbers 7, 7, 2, 7, 9, 7, 7, 8, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the median of the list 3, 6, 4, 4, 1, 1, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.5"}
+{"problem": "What is the average of the list 9, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 7, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many modes are there in 7, 8, 5, 2, 5, 8, 8, 8, 4, 3, 4, 8, 4, 10, 4, 2, 5, 8, 10, 10, 3, 4, 7, 7, 7, 7, 3, 8, 2, 7, 4, 7, 2, 2, 10, 10, 5, 2, 4, 10, 5, 5, 10, 3, 2, 3, 10, 5, 8, 5, 4, 3, 3, 7, 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 2, 6, 7, 7, 1, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 9 in the list of numbers 8, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 10, 3, 3, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.5"}
+{"problem": "What is the average of the list 9, 1, 5, 5, 9, 2, 3, 4, 2, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 2, 3, 9, 2, 9, 6, 6, 1, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "44"}
+{"problem": "How many modes are there in 1, 5, 7, 10, 5, 10, 1, 7, 8, 10, 5, 3, 7, 1, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 2, 10, 10, 5, 6, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 9 in the list of numbers 9, 4, 8, 7, 10, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 3, 1, 2, 8, 10, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.5"}
+{"problem": "What is the average of the list 2, 1, 9, 9, 4, 9, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 6, 5, 9, 5, 3, 1, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "34"}
+{"problem": "How many modes are there in 3, 10, 9, 4, 8, 3, 3, 9, 7, 7, 7, 9, 2, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 9, 6, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 4 in the list of numbers 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 7, 2, 10, 7, 3, 5, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 5, 10, 1, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 6, 2, 8, 2, 2, 7, 9, 4, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "48"}
+{"problem": "How many modes are there in 9, 1, 6, 1, 9, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 5, 9, 6, 9, 8, 4, 9, 9, 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 1 in the list of numbers 3, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 8, 5, 6, 9, 8, 10, 9, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.0"}
+{"problem": "What is the average of the list 1, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 8, 8, 8, 4, 6, 4, 8, 5, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "61"}
+{"problem": "How many modes are there in 5, 9, 2, 1, 6, 3, 4, 2, 4, 10, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 5, 1, 5, 9, 4, 7, 5, 3, 6, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 6 in the list of numbers 7, 4, 1, 10, 6, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 4, 2, 9, 1, 2, 1, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is the average of the list 5, 8, 6, 3, 7, 3, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many modes are there in 1, 1, 3, 8, 5, 4, 2, 5, 3, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 10, 8, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 10 in the list of numbers 3, 6, 5, 1, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.5"}
+{"problem": "What is the average of the list 6, 2, 4, 3, 9, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many modes are there in 5, 3, 1, 5, 2, 10, 7, 1, 2, 10, 10, 4, 8, 7, 5, 7, 3, 2, 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 2, 9, 5, 5, 3, 4, 5, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 10 in the list of numbers 6, 3, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "What is the average of the list 9, 1, 9, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 6, 10, 3, 6, 6, 6, 4, 10, 3, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "57"}
+{"problem": "How many modes are there in 8, 7, 7, 4, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 7, 10, 9, 9, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 4 in the list of numbers 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 4, 10, 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is the average of the list 7, 10, 5, 9, 5, 1, 5, 2, 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 7, 8, 10, 4, 5, 2, 2, 6, 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "48"}
+{"problem": "How many modes are there in 2, 6, 5, 2, 1, 8, 4, 6, 4, 5, 8, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 4, 3, 1, 8, 8, 8, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 7 in the list of numbers 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 3, 1, 2, 4, 6, 7, 7, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 8, 3, 10, 2, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 3, 7, 7, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "21"}
+{"problem": "How many modes are there in 3, 10, 10, 7, 9, 1, 2, 2, 1, 3, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 6, 10, 6, 9, 3, 6, 5, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 7 in the list of numbers 7, 7, 7, 5, 1, 2, 6, 7, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 8, 9, 1, 7, 5, 8, 8, 10, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 9, 5, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "28"}
+{"problem": "How many modes are there in 5, 6, 5, 9, 8, 6, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 4, 7, 6, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 9 in the list of numbers 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 3, 5, 5, 8, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 4, 4, 3, 9, 2, 9, 3, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 2, 8, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "17"}
+{"problem": "How many modes are there in 2, 1, 1, 10, 9, 9, 3, 5, 3, 6, 10, 5, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 7, 2, 10, 5, 9, 9, 9, 9, 9, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 9 in the list of numbers 7, 1, 2, 6, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 2, 4, 9, 10, 3, 9, 10, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.5"}
+{"problem": "What is the average of the list 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 4, 5, 1, 1, 6, 8, 7, 10, 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "52"}
+{"problem": "How many modes are there in 2, 5, 6, 2, 6, 9, 8, 3, 9, 6, 8, 2, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 9, 1, 1, 2, 1, 5, 8, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 3 in the list of numbers 5, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 10, 5, 6, 9, 8, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 3, 7, 8, 5, 4, 7, 7, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "50"}
+{"problem": "How many modes are there in 9, 4, 2, 3, 2, 2, 7, 7, 3, 7, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 6, 9, 2, 9, 7, 8, 5, 9, 3, 9, 9, 1, 10, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 9 in the list of numbers 4, 3, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 10, 5, 7, 7, 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 9, 6, 9, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "32"}
+{"problem": "How many modes are there in 7, 6, 10, 7, 2, 9, 10, 5, 6, 9, 4, 1, 2, 8, 5, 1, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is mode of 5, 2, 8, 2, 1, 3, 2, 4, 2, 9, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 6 in the list of numbers 2, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 10, 2, 10, 7, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 7, 10, 10, 6, 10, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.0"}
+{"problem": "What is sum of the list 7, 7, 1, 2, 1, 5, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "38"}
+{"problem": "How many modes are there in 8, 5, 2, 1, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 1, 3, 6, 4, 9, 6, 6, 6, 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 1 in the list of numbers 6, 9, 4, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 7, 3, 5, 7, 8, 5, 2, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 9, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 2, 8, 6, 1, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "22"}
+{"problem": "How many modes are there in 3, 5, 4, 3, 10, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 10, 9, 6, 6, 6, 6, 6, 6, 5, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 9 in the list of numbers 2, 5, 6, 1, 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 7, 2, 5, 2, 3, 1, 2, 7, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.5"}
+{"problem": "What is the average of the list 5, 8, 3, 7, 7, 2, 2, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 3, 3, 9, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "21"}
+{"problem": "How many modes are there in 1, 6, 3, 5, 6, 3, 10, 8, 8, 9, 10, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 4, 5, 4, 4, 3, 4, 4, 9, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 3 in the list of numbers 10, 3, 6, 9, 3, 7, 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 10, 6, 6, 10, 1, 4, 1, 8, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 8, 10, 9, 3, 1, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "48"}
+{"problem": "How many modes are there in 10, 3, 5, 1, 8, 6, 9, 10, 3, 8, 9, 6, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 3, 2, 3, 3, 3, 3, 10, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 2 in the list of numbers 1, 7, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 7, 6, 2, 6, 4, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 10, 3, 10, 2, 5, 3, 9, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 1, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many modes are there in 7, 2, 6, 2, 9, 9, 6, 8, 8, 6, 8, 6, 2, 7, 6, 1, 10, 8, 7, 3, 5, 2, 3, 9, 8, 4, 2, 2, 3, 7, 2, 3, 3, 3, 9, 7, 6, 8, 7, 3, 2, 9, 6, 8, 9, 7, 9, 7, 9, 8, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 1, 8, 8, 5, 8, 9, 3, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 7 in the list of numbers 4, 2, 10, 3, 6, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 9, 6, 4, 2, 9, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 6, 10, 4, 2, 6, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 2, 5, 10, 7, 9, 7, 8, 1, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "55"}
+{"problem": "How many modes are there in 9, 7, 2, 8, 5, 9, 6, 6, 5, 7, 1, 4, 1, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 4, 5, 8, 5, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 4 in the list of numbers 6, 8, 4, 3, 1, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 3, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 3, 9, 1, 5, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 2, 9, 5, 1, 9, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "36"}
+{"problem": "How many modes are there in 9, 2, 10, 10, 9, 10, 1, 10, 10, 2, 2, 2, 8, 9, 9, 9, 10, 6, 2, 2, 10, 10, 2, 9, 9, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 3, 3, 2, 3, 8, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 9 in the list of numbers 9, 9, 9, 9, 6, 4, 2, 10, 8, 9, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 2, 10, 6, 5, 2, 8, 1, 8, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 5, 2, 2, 4, 8, 9, 9, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "49"}
+{"problem": "How many modes are there in 3, 7, 3, 2, 2, 4, 4, 7, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 8, 6, 7, 9, 4, 10, 2, 9, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 9 in the list of numbers 10, 2, 8, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 7, 6, 1, 1, 10, 10, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 10, 4, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 4, 9, 3, 6, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "37"}
+{"problem": "How many modes are there in 3, 3, 10, 3, 7, 7, 7, 3, 7, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 9, 3, 8, 9, 9, 1, 9, 9, 10, 4, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 8 in the list of numbers 7, 9, 1, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 3, 8, 8, 4, 4, 5, 3, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 10, 2, 6, 3, 6, 2, 9, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "49"}
+{"problem": "How many modes are there in 6, 8, 9, 8, 7, 6, 5, 10, 1, 2, 5, 9, 2, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 4, 4, 4, 2, 5, 4, 3, 4, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 8 in the list of numbers 5, 7, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 10, 2, 9, 8, 1, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 10, 4, 6, 4, 4, 8, 5, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 6, 10, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "27"}
+{"problem": "How many modes are there in 6, 6, 9, 8, 2, 8, 9, 10, 6, 6, 10, 7, 3, 6, 9, 10, 9, 10, 8, 10, 10, 8, 10, 9, 6, 9, 8, 9, 6, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 9, 9, 9, 9, 2, 7, 5, 9, 4, 6, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 1 in the list of numbers 1, 7, 5, 10, 8, 1, 1, 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 10, 5, 2, 10, 9, 4, 2, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 8, 1, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "17"}
+{"problem": "How many modes are there in 9, 5, 5, 9, 10, 10, 10, 1, 1, 5, 1, 1, 8, 9, 1, 10, 9, 9, 5, 7, 6, 5, 1, 5, 10, 9, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 6, 1, 10, 7, 9, 10, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 10 in the list of numbers 5, 7, 6, 10, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 6, 4, 6, 1, 6, 8, 6, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 10, 3, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 4, 8, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "18"}
+{"problem": "How many modes are there in 6, 3, 2, 8, 2, 5, 6, 5, 5, 9, 8, 8, 1, 8, 1, 6, 1, 2, 2, 5, 1, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 2, 2, 8, 2, 2, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 7 in the list of numbers 4, 3, 8, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 2, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 2, 6, 10, 8, 8, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "40"}
+{"problem": "How many modes are there in 4, 7, 9, 9, 8, 3, 2, 2, 4, 6, 8, 3, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 8, 1, 8, 7, 2, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 6 in the list of numbers 5, 9, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 4, 5, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 4, 1, 2, 6, 7, 10, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 7, 3, 6, 1, 5, 4, 4, 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "35"}
+{"problem": "How many modes are there in 6, 8, 5, 9, 7, 5, 5, 10, 1, 1, 4, 8, 7, 7, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 4, 3, 10, 4, 5, 8, 4, 4, 4, 9, 4, 6, 1, 4, 4, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 8 in the list of numbers 7, 8, 8, 5, 8, 8, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the median of the list 7, 10, 2, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 4, 4, 3, 5, 1, 5, 7, 10, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many modes are there in 2, 3, 1, 2, 2, 1, 3, 3, 8, 1, 1, 1, 2, 3, 2, 3, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 5, 4, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 4 in the list of numbers 5, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 3, 3, 9, 3, 10, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 10, 10, 1, 9, 6, 10, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 1, 8, 6, 4, 3, 3, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "31"}
+{"problem": "How many modes are there in 6, 3, 1, 5, 5, 6, 3, 3, 3, 6, 5, 8, 1, 1, 5, 1, 4, 6, 3, 6, 7, 5, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 7, 8, 9, 8, 2, 8, 8, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 8 in the list of numbers 8, 5, 8, 8, 2, 3, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 1, 1, 2, 9, 10, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 5, 9, 8, 3, 6, 1, 1, 8, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 2, 7, 3, 4, 10, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "39"}
+{"problem": "How many modes are there in 9, 2, 1, 2, 9, 8, 3, 7, 8, 10, 6, 10, 8, 1, 10, 6, 7, 2, 3, 3, 7, 6, 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is mode of 3, 8, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 8 in the list of numbers 1, 9, 3, 4, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9.0"}
+{"problem": "What is the average of the list 4, 1, 9, 4, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 7, 2, 5, 1, 6, 10, 10, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "52"}
+{"problem": "How many modes are there in 1, 2, 9, 9, 9, 4, 4, 8, 6, 9, 5, 2, 2, 2, 4, 10, 7, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 6, 2, 8, 10, 5, 2, 2, 2, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 1 in the list of numbers 10, 1, 9, 1, 6, 5, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 3, 7, 10, 3, 4, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the average of the list 9, 9, 9, 4, 8, 5, 4, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 4, 4, 9, 9, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "35"}
+{"problem": "How many modes are there in 10, 9, 1, 6, 1, 10, 3, 6, 4, 8, 2, 8, 7, 2, 7, 4, 6, 10, 1, 4, 5, 10, 9, 3, 3, 1, 6, 2, 4, 9, 8, 8, 3, 2, 7, 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "What is mode of 8, 2, 4, 1, 7, 6, 7, 5, 7, 7, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 8 in the list of numbers 4, 2, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 1, 3, 2, 3, 3, 8, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 9, 9, 3, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 3, 10, 2, 1, 1, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "33"}
+{"problem": "How many modes are there in 6, 6, 5, 2, 7, 2, 5, 6, 2, 5, 1, 2, 6, 6, 7, 9, 5, 2, 7, 7, 2, 7, 7, 10, 5, 6, 3, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 8, 6, 6, 5, 9, 10, 6, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 3 in the list of numbers 10, 6, 9, 3, 3, 3, 3, 3, 7, 1, 3, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the median of the list 3, 9, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the average of the list 6, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many modes are there in 7, 7, 5, 2, 8, 10, 10, 2, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 6, 6, 8, 6, 3, 10, 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 10 in the list of numbers 5, 7, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 10, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 7, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "16"}
+{"problem": "How many modes are there in 9, 10, 5, 4, 3, 3, 2, 2, 4, 9, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 4, 3, 2, 1, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 9 in the list of numbers 5, 1, 2, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 4, 1, 7, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.5"}
+{"problem": "What is the average of the list 4, 3, 8, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 8, 10, 1, 10, 3, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "40"}
+{"problem": "How many modes are there in 2, 2, 2, 3, 2, 2, 3, 2, 3, 6, 3, 3, 3, 2, 3, 5, 2, 3, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 3, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 7 in the list of numbers 5, 3, 4, 10, 7, 7, 7, 7, 7, 7, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 5, 1, 8, 10, 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is the average of the list 6, 8, 6, 9, 8, 10, 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.0"}
+{"problem": "What is sum of the list 1, 9, 3, 3, 9, 9, 2, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "37"}
+{"problem": "How many modes are there in 9, 10, 1, 9, 1, 5, 1, 1, 5, 5, 4, 10, 5, 2, 2, 9, 2, 9, 10, 9, 2, 2, 7, 2, 9, 5, 10, 2, 10, 1, 5, 10, 10, 1, 5, 1, 8, 3, 9, 9, 1, 10, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 4, 9, 5, 4, 1, 4, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 7 in the list of numbers 7, 7, 7, 7, 7, 1, 7, 4, 10, 9, 2, 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 7, 9, 8, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 5, 10, 7, 8, 4, 6, 3, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "15"}
+{"problem": "How many modes are there in 7, 8, 1, 9, 1, 9, 4, 7, 2, 6, 5, 9, 6, 1, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 5, 8, 7, 3, 3, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 4 in the list of numbers 2, 5, 10, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 5, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 6, 4, 10, 7, 10, 4, 3, 7, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 7, 7, 7, 10, 2, 8, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "49"}
+{"problem": "How many modes are there in 2, 10, 10, 4, 4, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 8, 6, 2, 6, 3, 6, 4, 6, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 4 in the list of numbers 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 6, 5, 8, 4, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 5, 3, 10, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 9, 8, 10, 8, 1, 9, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "58"}
+{"problem": "How many modes are there in 1, 6, 9, 6, 4, 7, 9, 7, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 9, 4, 7, 5, 3, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 2 in the list of numbers 2, 4, 5, 2, 2, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 10, 7, 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 7, 1, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "18"}
+{"problem": "How many modes are there in 9, 9, 4, 10, 8, 9, 9, 5, 5, 5, 6, 4, 10, 5, 7, 9, 4, 10, 10, 9, 7, 5, 4, 6, 4, 6, 10, 5, 3, 9, 7, 6, 6, 7, 4, 10, 6, 10, 6, 5, 7, 1, 4, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 8, 9, 8, 8, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 4 in the list of numbers 8, 9, 10, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 10, 2, 10, 10, 2, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.5"}
+{"problem": "What is the average of the list 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 5, 6, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "16"}
+{"problem": "How many modes are there in 10, 4, 7, 8, 3, 10, 6, 6, 3, 8, 10, 6, 3, 7, 1, 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 7, 2, 2, 2, 2, 8, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 9 in the list of numbers 3, 2, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 7, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 8, 10, 6, 5, 4, 4, 5, 10, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "63"}
+{"problem": "How many modes are there in 7, 6, 5, 10, 1, 8, 3, 7, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 8, 8, 5, 8, 8, 8, 4, 2, 10, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 9 in the list of numbers 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 7, 9, 2, 3, 1, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 8, 4, 7, 6, 3, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 9, 2, 7, 8, 6, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "43"}
+{"problem": "How many modes are there in 2, 1, 2, 1, 3, 5, 9, 1, 5, 1, 10, 7, 7, 5, 10, 10, 3, 5, 10, 5, 5, 7, 9, 1, 2, 3, 1, 5, 9, 1, 10, 2, 7, 3, 2, 9, 3, 9, 10, 2, 2, 7, 3, 7, 10, 7, 9, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 4, 4, 5, 2, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 5 in the list of numbers 3, 5, 5, 6, 5, 4, 8, 1, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 10, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9.5"}
+{"problem": "What is the average of the list 3, 4, 9, 3, 4, 2, 1, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 10, 6, 6, 5, 10, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "49"}
+{"problem": "How many modes are there in 2, 2, 9, 8, 10, 4, 9, 8, 8, 8, 2, 4, 10, 10, 10, 9, 5, 2, 3, 4, 1, 9, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 1, 8, 4, 6, 9, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 7 in the list of numbers 8, 10, 9, 4, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 6, 2, 5, 4, 4, 8, 1, 1, 3, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is the average of the list 3, 10, 6, 9, 3, 9, 4, 7, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 1, 3, 7, 1, 3, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "32"}
+{"problem": "How many modes are there in 2, 8, 8, 9, 9, 4, 4, 3, 4, 4, 3, 9, 3, 5, 9, 3, 4, 8, 3, 4, 8, 10, 8, 9, 8, 3, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 4, 10, 10, 1, 8, 10, 3, 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 7 in the list of numbers 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the average of the list 2, 6, 10, 6, 4, 6, 2, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many modes are there in 3, 9, 9, 2, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 1, 5, 8, 6, 7, 7, 7, 7, 2, 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 1 in the list of numbers 1, 1, 1, 1, 1, 1, 8, 1, 10, 9, 1, 5, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the median of the list 8, 7, 3, 5, 10, 6, 5, 1, 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.5"}
+{"problem": "What is the average of the list 5, 6, 10, 5, 9, 1, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 6, 7, 3, 8, 2, 8, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "40"}
+{"problem": "How many modes are there in 5, 4, 4, 6, 9, 5, 3, 4, 9, 9, 9, 5, 5, 6, 7, 6, 6, 7, 4, 5, 5, 4, 2, 4, 9, 9, 6, 10, 7, 6, 7, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 6, 1, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 5 in the list of numbers 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 6, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 7, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 9, 10, 9, 4, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "45"}
+{"problem": "How many modes are there in 6, 1, 10, 8, 2, 10, 2, 1, 8, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 10, 10, 10, 8, 2, 10, 5, 1, 10, 4, 10, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 5 in the list of numbers 9, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 8, 4, 7, 10, 8, 5, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.5"}
+{"problem": "What is the average of the list 3, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 9, 8, 3, 6, 4, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "39"}
+{"problem": "How many modes are there in 1, 8, 5, 9, 8, 1, 9, 4, 1, 1, 9, 3, 5, 1, 9, 5, 9, 8, 5, 8, 8, 6, 5, 9, 5, 8, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 5, 7, 3, 9, 9, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 10 in the list of numbers 8, 6, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 1, 3, 2, 1, 10, 10, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.5"}
+{"problem": "What is the average of the list 8, 4, 5, 3, 9, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 10, 8, 8, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "34"}
+{"problem": "How many modes are there in 10, 7, 3, 4, 5, 4, 9, 3, 4, 6, 10, 3, 4, 3, 10, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 5, 5, 9, 5, 1, 5, 10, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 3 in the list of numbers 10, 3, 3, 3, 5, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the average of the list 6, 2, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 9, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "13"}
+{"problem": "How many modes are there in 1, 1, 4, 4, 2, 4, 6, 8, 5, 6, 4, 8, 8, 10, 1, 6, 9, 1, 9, 9, 8, 9, 6, 10, 10, 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 9, 1, 1, 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 8 in the list of numbers 2, 8, 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 10, 5, 6, 6, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 7, 1, 3, 9, 6, 3, 7, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 5, 5, 4, 5, 6, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "34"}
+{"problem": "How many modes are there in 1, 9, 4, 4, 6, 8, 8, 9, 5, 1, 9, 4, 8, 2, 6, 2, 1, 6, 4, 4, 6, 9, 2, 8, 5, 5, 3, 5, 1, 2, 8, 5, 7, 1, 9, 2, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 2, 1, 1, 1, 1, 1, 5, 1, 7, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 4 in the list of numbers 8, 7, 9, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 9, 9, 10, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 9, 3, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 4, 8, 9, 6, 6, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "43"}
+{"problem": "How many modes are there in 1, 5, 2, 8, 1, 4, 3, 2, 8, 10, 3, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 9, 4, 4, 6, 8, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 5 in the list of numbers 6, 3, 2, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 7, 8, 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.5"}
+{"problem": "What is the average of the list 9, 3, 6, 1, 6, 10, 7, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 7, 1, 7, 4, 3, 7, 4, 5, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "45"}
+{"problem": "How many modes are there in 2, 10, 6, 2, 10, 2, 1, 10, 3, 6, 7, 3, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 7, 8, 7, 1, 3, 9, 4, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 8 in the list of numbers 3, 8, 6, 8, 5, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 5, 2, 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.5"}
+{"problem": "What is the average of the list 5, 1, 2, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 6, 9, 1, 5, 4, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "30"}
+{"problem": "How many modes are there in 9, 5, 6, 1, 1, 2, 8, 1, 8, 6, 5, 6, 8, 10, 3, 2, 3, 5, 10, 10, 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 7, 6, 4, 10, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 5 in the list of numbers 9, 10, 4, 1, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 4, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 8, 2, 3, 3, 10, 10, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "39"}
+{"problem": "How many modes are there in 10, 1, 7, 2, 7, 7, 2, 5, 7, 7, 1, 2, 10, 1, 7, 1, 5, 10, 2, 5, 5, 5, 2, 1, 5, 10, 1, 1, 10, 2, 8, 5, 10, 7, 10, 2, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 7, 10, 3, 7, 8, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 7 in the list of numbers 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 6, 5, 1, 6, 1, 8, 4, 3, 3, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.5"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 7, 4, 8, 9, 10, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "51"}
+{"problem": "How many modes are there in 8, 10, 6, 8, 8, 2, 6, 8, 4, 2, 6, 6, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 7, 6, 4, 1, 6, 10, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 1 in the list of numbers 3, 5, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 7, 8, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.5"}
+{"problem": "What is the average of the list 9, 10, 6, 3, 5, 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 9, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "19"}
+{"problem": "How many modes are there in 3, 5, 5, 8, 5, 9, 5, 3, 3, 1, 4, 10, 7, 3, 3, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 7, 4, 8, 4, 4, 4, 4, 6, 4, 10, 5, 9, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 7 in the list of numbers 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 1, 4, 5, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 7, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "20"}
+{"problem": "How many modes are there in 6, 3, 6, 4, 8, 10, 8, 4, 8, 9, 6, 6, 4, 8, 1, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 4, 4, 4, 4, 4, 5, 1, 4, 6, 9, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 6 in the list of numbers 6, 5, 6, 6, 9, 2, 4, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the median of the list 3, 8, 10, 8, 1, 6, 8, 10, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 5, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 6, 8, 3, 2, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "30"}
+{"problem": "How many modes are there in 10, 9, 10, 2, 6, 7, 3, 5, 2, 3, 1, 6, 9, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 10, 8, 8, 8, 8, 6, 1, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 4 in the list of numbers 3, 1, 4, 6, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 8, 8, 1, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 2, 6, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 1, 3, 9, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "17"}
+{"problem": "How many modes are there in 7, 3, 4, 8, 7, 4, 4, 5, 6, 7, 8, 4, 6, 4, 6, 7, 8, 3, 6, 7, 10, 9, 3, 8, 3, 8, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 7, 6, 4, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 10 in the list of numbers 9, 5, 3, 6, 8, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 4, 3, 9, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.5"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 4, 6, 9, 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "26"}
+{"problem": "How many modes are there in 8, 3, 1, 1, 1, 7, 3, 6, 4, 1, 8, 9, 9, 4, 10, 7, 5, 4, 7, 9, 3, 8, 9, 7, 3, 8, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 1, 2, 1, 6, 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 5 in the list of numbers 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 10, 10, 4, 1, 5, 10, 2, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many modes are there in 2, 2, 6, 1, 1, 7, 7, 8, 2, 5, 1, 1, 5, 10, 6, 3, 2, 5, 7, 2, 1, 2, 5, 1, 2, 6, 1, 7, 6, 6, 7, 5, 6, 5, 7, 6, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 1, 1, 2, 8, 1, 1, 10, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 3 in the list of numbers 9, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 8, 7, 5, 4, 4, 3, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 2, 9, 4, 9, 10, 6, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 6, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "20"}
+{"problem": "How many modes are there in 6, 10, 4, 2, 5, 5, 5, 10, 6, 10, 9, 6, 8, 2, 5, 9, 2, 6, 9, 2, 6, 6, 10, 9, 6, 3, 5, 10, 10, 9, 2, 2, 9, 6, 2, 10, 5, 9, 2, 5, 9, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 7, 5, 9, 7, 2, 7, 7, 4, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 10 in the list of numbers 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 4, 2, 5, 8, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 7, 4, 8, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "30"}
+{"problem": "How many modes are there in 2, 4, 9, 9, 6, 7, 7, 9, 3, 7, 9, 9, 9, 9, 10, 3, 6, 8, 10, 6, 3, 6, 4, 4, 10, 6, 4, 10, 10, 7, 7, 9, 7, 3, 7, 7, 7, 6, 4, 5, 6, 10, 9, 3, 4, 10, 3, 4, 6, 3, 10, 9, 1, 4, 4, 6, 3, 10, 6, 3, 4, 10, 7, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 4, 2, 7, 1, 7, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 2 in the list of numbers 2, 2, 2, 2, 7, 2, 2, 10, 2, 8, 4, 2, 2, 2, 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "What is the median of the list 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 4, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 1, 9, 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "24"}
+{"problem": "How many modes are there in 4, 3, 1, 3, 9, 10, 8, 5, 7, 7, 9, 10, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 3, 2, 2, 2, 2, 2, 2, 5, 1, 2, 7, 2, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 3 in the list of numbers 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 1, 8, 7, 10, 1, 6, 5, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 7, 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 9, 4, 6, 8, 8, 4, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "55"}
+{"problem": "How many modes are there in 5, 6, 7, 2, 4, 9, 6, 5, 8, 8, 4, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 5, 10, 10, 10, 3, 10, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 4 in the list of numbers 3, 8, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 7, 1, 2, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is the average of the list 2, 8, 4, 2, 3, 1, 5, 8, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 6, 10, 5, 1, 2, 2, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "38"}
+{"problem": "How many modes are there in 10, 5, 7, 10, 5, 4, 3, 10, 3, 5, 4, 9, 9, 9, 3, 9, 10, 2, 3, 9, 4, 1, 5, 3, 3, 5, 5, 3, 4, 4, 4, 10, 9, 9, 5, 4, 10, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 1, 10, 1, 1, 9, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 8 in the list of numbers 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 5, 1, 7, 1, 9, 10, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 4, 7, 1, 6, 1, 8, 1, 2, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 9, 7, 4, 10, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "42"}
+{"problem": "How many modes are there in 10, 2, 3, 7, 4, 2, 2, 4, 4, 2, 3, 2, 3, 3, 2, 8, 4, 2, 3, 6, 2, 3, 4, 3, 4, 4, 5, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 10, 6, 7, 5, 5, 5, 5, 4, 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 8 in the list of numbers 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the average of the list 3, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 1, 8, 1, 7, 8, 2, 1, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "32"}
+{"problem": "How many modes are there in 7, 2, 7, 8, 6, 6, 3, 4, 8, 10, 4, 10, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 8, 8, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 1 in the list of numbers 1, 5, 6, 2, 1, 3, 1, 4, 10, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the median of the list 8, 6, 7, 8, 1, 4, 1, 9, 1, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 1, 6, 10, 6, 6, 9, 3, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 9, 8, 6, 2, 10, 3, 6, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "55"}
+{"problem": "How many modes are there in 1, 7, 6, 10, 3, 7, 3, 7, 3, 8, 2, 8, 9, 8, 8, 7, 1, 1, 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 5, 8, 3, 7, 1, 5, 4, 5, 5, 5, 5, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 2 in the list of numbers 4, 3, 6, 5, 8, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 4, 2, 10, 6, 6, 10, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 3, 8, 9, 8, 5, 8, 6, 10, 2, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many modes are there in 5, 9, 1, 7, 6, 3, 6, 10, 10, 3, 4, 8, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 5, 9, 5, 1, 8, 5, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 6 in the list of numbers 5, 6, 7, 10, 6, 6, 8, 6, 6, 3, 6, 6, 4, 6, 6, 9, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "What is the median of the list 3, 6, 5, 1, 4, 7, 7, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 6, 3, 6, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "12"}
+{"problem": "How many modes are there in 8, 8, 7, 10, 6, 7, 6, 3, 3, 9, 10, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 8, 9, 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 2 in the list of numbers 1, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 1, 7, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 2, 1, 9, 1, 4, 10, 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 7, 4, 5, 3, 3, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "35"}
+{"problem": "How many modes are there in 9, 10, 4, 9, 9, 1, 3, 4, 4, 5, 10, 3, 2, 3, 6, 3, 5, 4, 5, 10, 10, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 7, 2, 9, 7, 7, 7, 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 5 in the list of numbers 5, 1, 5, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "What is the average of the list 1, 9, 5, 3, 3, 3, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 8, 3, 4, 1, 9, 5, 5, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "44"}
+{"problem": "How many modes are there in 7, 5, 6, 2, 5, 6, 5, 1, 6, 5, 10, 8, 6, 5, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 3, 3, 6, 10, 7, 3, 3, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 1 in the list of numbers 1, 1, 10, 1, 7, 1, 3, 4, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 1, 9, 5, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 1, 9, 8, 6, 7, 2, 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 1, 7, 3, 7, 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "33"}
+{"problem": "How many modes are there in 5, 1, 10, 9, 10, 7, 1, 2, 9, 2, 3, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 8, 8, 2, 7, 5, 8, 8, 8, 8, 8, 8, 8, 3, 4, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 2 in the list of numbers 2, 9, 2, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 1, 10, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "What is the average of the list 6, 6, 3, 3, 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 3, 1, 5, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "17"}
+{"problem": "How many modes are there in 5, 2, 6, 10, 2, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 5, 7, 5, 5, 5, 2, 5, 8, 5, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 2 in the list of numbers 1, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 4, 2, 6, 3, 6, 8, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 7, 9, 4, 1, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many modes are there in 1, 2, 7, 4, 1, 5, 1, 1, 1, 4, 8, 10, 4, 8, 7, 8, 8, 8, 8, 7, 8, 7, 4, 7, 4, 1, 7, 7, 4, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 3, 10, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 4 in the list of numbers 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 6, 4, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 7, 9, 7, 3, 5, 2, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 3, 5, 5, 6, 5, 8, 4, 10, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "53"}
+{"problem": "How many modes are there in 4, 6, 6, 2, 8, 10, 8, 7, 10, 9, 2, 4, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 9, 6, 7, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 3 in the list of numbers 7, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 4, 1, 4, 9, 8, 2, 5, 6, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is the average of the list 1, 9, 10, 6, 2, 8, 7, 8, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 5, 8, 3, 9, 4, 6, 2, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "41"}
+{"problem": "How many modes are there in 10, 5, 1, 1, 10, 5, 2, 6, 8, 3, 3, 3, 1, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 2, 5, 1, 6, 2, 4, 7, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 2 in the list of numbers 10, 1, 3, 2, 2, 2, 5, 2, 9, 2, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 8, 1, 4, 2, 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.5"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 8, 3, 10, 2, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "29"}
+{"problem": "How many modes are there in 9, 6, 4, 8, 1, 7, 8, 5, 8, 2, 4, 7, 3, 6, 4, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 10, 5, 7, 4, 2, 5, 3, 1, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 10 in the list of numbers 7, 5, 3, 2, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 8, 10, 7, 6, 10, 10, 10, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "What is the average of the list 2, 3, 2, 1, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many modes are there in 8, 2, 5, 8, 1, 5, 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 9, 1, 7, 7, 7, 2, 10, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 5 in the list of numbers 9, 5, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 2, 4, 5, 5, 6, 8, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 4, 2, 2, 5, 4, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 7, 9, 5, 5, 7, 2, 1, 10, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "55"}
+{"problem": "How many modes are there in 1, 4, 3, 6, 5, 6, 4, 5, 3, 6, 1, 5, 5, 1, 1, 3, 4, 5, 5, 7, 3, 7, 3, 6, 1, 4, 3, 1, 5, 7, 5, 5, 6, 7, 10, 6, 3, 3, 4, 7, 1, 7, 4, 4, 6, 1, 1, 3, 7, 7, 8, 4, 6, 4, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 4, 4, 6, 7, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 7 in the list of numbers 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 10, 9, 1, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.0"}
+{"problem": "What is the average of the list 7, 8, 9, 6, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many modes are there in 5, 8, 6, 10, 6, 3, 7, 3, 6, 9, 6, 5, 5, 3, 3, 3, 6, 2, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 8, 5, 1, 4, 3, 10, 7, 5, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 2 in the list of numbers 6, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 1, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 9, 2, 7, 9, 5, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 6, 9, 10, 4, 5, 9, 1, 8, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "58"}
+{"problem": "How many modes are there in 4, 3, 1, 3, 6, 8, 1, 9, 6, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 2, 9, 9, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 4 in the list of numbers 4, 4, 2, 4, 9, 7, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 1, 2, 5, 9, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.5"}
+{"problem": "What is the average of the list 5, 5, 3, 7, 1, 7, 5, 3, 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 9, 8, 5, 3, 5, 6, 6, 8, 1, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "58"}
+{"problem": "How many modes are there in 6, 4, 5, 5, 8, 9, 7, 7, 4, 1, 6, 2, 2, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 10, 3, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 5 in the list of numbers 8, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 7, 10, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.5"}
+{"problem": "What is the average of the list 1, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 2, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "12"}
+{"problem": "How many modes are there in 6, 6, 8, 9, 3, 9, 3, 8, 10, 10, 4, 1, 5, 1, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 8, 6, 8, 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 8 in the list of numbers 3, 9, 1, 8, 8, 8, 7, 8, 2, 10, 8, 8, 8, 8, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the median of the list 2, 5, 4, 9, 2, 10, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 7, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 9, 7, 8, 2, 4, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "40"}
+{"problem": "How many modes are there in 4, 10, 5, 1, 10, 10, 7, 2, 3, 8, 9, 5, 2, 4, 2, 7, 8, 5, 8, 9, 7, 4, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 9, 8, 9, 9, 7, 1, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 9 in the list of numbers 3, 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the average of the list 9, 9, 10, 7, 1, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 1, 10, 9, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "26"}
+{"problem": "How many modes are there in 8, 5, 1, 5, 6, 3, 9, 6, 1, 7, 2, 5, 1, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 1, 7, 10, 7, 5, 7, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 9 in the list of numbers 5, 9, 9, 4, 9, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 8, 4, 3, 5, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 1, 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "18"}
+{"problem": "How many modes are there in 8, 2, 5, 10, 1, 1, 2, 10, 2, 2, 10, 10, 3, 1, 1, 10, 2, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 9, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 6 in the list of numbers 5, 7, 10, 8, 2, 6, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 1, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the average of the list 8, 8, 2, 6, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 8, 8, 7, 3, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "33"}
+{"problem": "How many modes are there in 1, 6, 9, 3, 8, 1, 4, 9, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 3, 3, 3, 1, 2, 5, 3, 9, 3, 3, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 8 in the list of numbers 10, 2, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 1, 8, 4, 8, 2, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the average of the list 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 10, 9, 10, 8, 4, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "49"}
+{"problem": "How many modes are there in 4, 2, 8, 3, 6, 5, 4, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 10, 4, 4, 4, 8, 4, 3, 2, 4, 4, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 7 in the list of numbers 8, 9, 3, 2, 1, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.0"}
+{"problem": "What is the average of the list 3, 2, 1, 8, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 2, 9, 4, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "22"}
+{"problem": "How many modes are there in 8, 4, 10, 1, 8, 5, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 1, 10, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 10 in the list of numbers 7, 6, 10, 1, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 5, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 6, 2, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 8, 1, 9, 2, 6, 8, 6, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "54"}
+{"problem": "How many modes are there in 3, 4, 5, 7, 9, 4, 5, 1, 4, 5, 7, 7, 4, 5, 6, 1, 3, 3, 7, 1, 6, 6, 3, 6, 1, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 6, 5, 2, 3, 5, 7, 5, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 3 in the list of numbers 3, 9, 6, 3, 2, 3, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 5, 4, 1, 4, 2, 2, 2, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "12"}
+{"problem": "How many modes are there in 6, 7, 3, 4, 4, 5, 9, 9, 5, 6, 5, 4, 6, 7, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 9, 4, 2, 2, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 1 in the list of numbers 2, 4, 1, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the average of the list 4, 3, 10, 4, 5, 10, 6, 2, 9, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "12"}
+{"problem": "How many modes are there in 10, 2, 4, 4, 10, 6, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 1, 1, 7, 1, 5, 1, 8, 6, 3, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 5 in the list of numbers 9, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 5, 7, 1, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 1, 2, 9, 1, 1, 10, 6, 8, 3, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "49"}
+{"problem": "How many modes are there in 10, 3, 10, 7, 5, 7, 10, 7, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 3, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 9 in the list of numbers 7, 4, 9, 6, 2, 9, 10, 5, 9, 9, 9, 9, 9, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "What is the median of the list 5, 5, 3, 7, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 4, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 1, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many modes are there in 4, 6, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 9, 3, 10, 10, 10, 5, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 5 in the list of numbers 5, 8, 5, 5, 5, 6, 5, 5, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the median of the list 9, 3, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 3, 6, 4, 10, 2, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 4, 7, 6, 2, 5, 8, 2, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "44"}
+{"problem": "How many modes are there in 10, 7, 7, 3, 10, 9, 7, 1, 9, 7, 8, 10, 8, 9, 8, 10, 8, 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 6, 5, 7, 1, 6, 6, 8, 6, 2, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 8 in the list of numbers 9, 2, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 8, 2, 8, 6, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 1, 5, 10, 8, 10, 3, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "45"}
+{"problem": "How many modes are there in 6, 8, 4, 2, 9, 4, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 2, 4, 4, 7, 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 3 in the list of numbers 8, 2, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 8, 2, 10, 7, 1, 6, 6, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "54"}
+{"problem": "How many modes are there in 8, 3, 10, 2, 3, 8, 3, 2, 6, 8, 10, 10, 2, 8, 1, 3, 2, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 2, 2, 8, 9, 2, 6, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 5 in the list of numbers 6, 3, 8, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 2, 3, 10, 6, 4, 10, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 8, 8, 8, 6, 8, 2, 6, 2, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many modes are there in 10, 1, 2, 10, 3, 3, 5, 7, 7, 1, 2, 1, 5, 10, 5, 3, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 3, 10, 6, 1, 9, 8, 6, 6, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 3 in the list of numbers 7, 1, 3, 3, 3, 2, 3, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the median of the list 9, 6, 8, 9, 8, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.0"}
+{"problem": "What is the average of the list 2, 2, 2, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "11"}
+{"problem": "How many modes are there in 6, 9, 4, 3, 3, 2, 1, 2, 8, 6, 3, 2, 9, 6, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 10, 6, 8, 9, 10, 5, 1, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 2 in the list of numbers 2, 4, 1, 2, 2, 2, 3, 6, 9, 2, 7, 2, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the median of the list 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.0"}
+{"problem": "What is the average of the list 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 4, 10, 5, 4, 4, 2, 3, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "41"}
+{"problem": "How many modes are there in 4, 9, 3, 7, 3, 4, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 1, 2, 7, 2, 10, 2, 2, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 9 in the list of numbers 4, 3, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 7, 5, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 1, 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many modes are there in 9, 7, 3, 4, 3, 5, 8, 9, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 8, 9, 7, 5, 4, 3, 2, 10, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 1 in the list of numbers 7, 3, 6, 5, 9, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 3, 2, 1, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 1, 1, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 10, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "22"}
+{"problem": "How many modes are there in 5, 10, 2, 10, 1, 3, 3, 2, 5, 2, 10, 5, 10, 4, 3, 1, 3, 1, 8, 5, 2, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 6, 6, 6, 10, 8, 6, 3, 9, 6, 1, 6, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "How many times is 7 in the list of numbers 1, 9, 10, 4, 6, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 9, 2, 7, 1, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 4, 6, 2, 7, 3, 1, 9, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 3, 7, 3, 9, 5, 1, 9, 7, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "54"}
+{"problem": "How many modes are there in 2, 8, 6, 9, 3, 2, 3, 9, 8, 5, 7, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 3, 2, 5, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 2 in the list of numbers 4, 5, 3, 8, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 10, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the average of the list 8, 10, 8, 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.0"}
+{"problem": "What is sum of the list 2, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many modes are there in 7, 7, 6, 2, 8, 9, 2, 7, 2, 9, 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 4, 1, 4, 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 7 in the list of numbers 4, 1, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 9, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is the average of the list 1, 2, 6, 5, 9, 9, 7, 8, 7, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 5, 6, 5, 6, 4, 2, 7, 10, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "56"}
+{"problem": "How many modes are there in 3, 1, 1, 10, 3, 2, 4, 10, 9, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 9, 7, 5, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 1 in the list of numbers 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 7, 4, 4, 9, 9, 9, 6, 6, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 9, 7, 4, 4, 10, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "43"}
+{"problem": "How many modes are there in 6, 6, 7, 5, 7, 8, 3, 6, 2, 4, 4, 3, 5, 4, 7, 1, 5, 7, 3, 5, 3, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 7, 10, 10, 10, 3, 6, 10, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 7 in the list of numbers 8, 9, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 4, 10, 2, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the average of the list 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 10, 10, 6, 4, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "38"}
+{"problem": "How many modes are there in 2, 9, 2, 10, 10, 4, 5, 9, 8, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 4, 7, 10, 9, 7, 3, 6, 7, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 8 in the list of numbers 6, 5, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 8, 10, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 2, 6, 9, 8, 9, 2, 9, 4, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many modes are there in 5, 5, 2, 10, 9, 1, 10, 9, 5, 10, 2, 8, 2, 9, 3, 2, 3, 5, 9, 1, 3, 4, 1, 9, 1, 10, 5, 1, 10, 2, 3, 5, 3, 9, 1, 7, 3, 2, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 8, 7, 2, 10, 3, 5, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 4 in the list of numbers 8, 4, 4, 4, 3, 4, 4, 2, 5, 4, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is the median of the list 2, 2, 2, 1, 9, 8, 4, 7, 2, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is the average of the list 5, 7, 5, 8, 3, 5, 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 2, 6, 9, 4, 2, 3, 3, 2, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "45"}
+{"problem": "How many modes are there in 10, 6, 6, 8, 9, 7, 7, 10, 9, 9, 2, 5, 8, 9, 5, 10, 7, 2, 6, 2, 5, 6, 5, 9, 4, 6, 5, 10, 2, 5, 2, 7, 7, 8, 10, 10, 10, 8, 6, 8, 9, 7, 9, 2, 8, 5, 7, 6, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "What is mode of 8, 10, 4, 4, 4, 4, 4, 4, 1, 4, 4, 7, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 2 in the list of numbers 10, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 8, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 4, 9, 4, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 10, 4, 7, 1, 6, 5, 5, 6, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "53"}
+{"problem": "How many modes are there in 1, 9, 9, 1, 2, 9, 2, 1, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 3, 3, 1, 3, 8, 3, 4, 3, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 9 in the list of numbers 7, 1, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 8, 1, 4, 5, 1, 9, 10, 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 7, 9, 2, 7, 3, 3, 1, 7, 7, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 2, 8, 4, 3, 6, 10, 8, 7, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "51"}
+{"problem": "How many modes are there in 10, 8, 10, 9, 1, 2, 1, 1, 9, 10, 8, 9, 8, 1, 9, 10, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 9, 10, 9, 6, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 9 in the list of numbers 8, 10, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 8, 5, 2, 7, 3, 10, 4, 7, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is the average of the list 5, 1, 4, 6, 7, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is sum of the list 6, 6, 1, 1, 3, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "26"}
+{"problem": "How many modes are there in 9, 6, 5, 1, 6, 5, 3, 6, 5, 5, 2, 5, 6, 4, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 1, 4, 10, 7, 3, 4, 5, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 9 in the list of numbers 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 6, 8, 10, 2, 10, 9, 7, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.5"}
+{"problem": "What is the average of the list 8, 10, 7, 2, 10, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 5, 7, 8, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "33"}
+{"problem": "How many modes are there in 3, 1, 4, 6, 7, 10, 7, 4, 10, 2, 2, 7, 4, 2, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 4, 4, 9, 2, 4, 3, 4, 7, 4, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 8 in the list of numbers 9, 1, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 1, 7, 2, 1, 6, 6, 4, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 3, 5, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "18"}
+{"problem": "How many modes are there in 1, 5, 10, 6, 6, 3, 1, 3, 6, 7, 10, 6, 3, 4, 3, 1, 1, 10, 4, 4, 10, 2, 5, 1, 10, 5, 3, 8, 4, 4, 5, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 1, 1, 1, 1, 3, 1, 10, 5, 1, 1, 4, 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 7 in the list of numbers 1, 8, 9, 3, 10, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 8, 3, 2, 6, 2, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is the average of the list 9, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 3, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "15"}
+{"problem": "How many modes are there in 7, 1, 6, 4, 5, 6, 3, 3, 1, 4, 10, 10, 8, 2, 5, 1, 7, 2, 4, 10, 1, 7, 6, 3, 2, 4, 2, 7, 10, 3, 5, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is mode of 7, 4, 7, 7, 7, 7, 7, 7, 10, 7, 2, 8, 6, 7, 1, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 6 in the list of numbers 6, 1, 2, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 6, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 9, 6, 4, 9, 9, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is sum of the list 2, 5, 7, 3, 6, 1, 6, 1, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "37"}
+{"problem": "How many modes are there in 10, 9, 2, 7, 7, 10, 8, 8, 1, 1, 2, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 6, 8, 8, 7, 8, 1, 4, 8, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 7 in the list of numbers 5, 2, 8, 4, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 7, 8, 2, 4, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the average of the list 8, 5, 6, 7, 5, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "18"}
+{"problem": "How many modes are there in 9, 5, 1, 4, 10, 7, 1, 1, 7, 10, 7, 6, 4, 4, 6, 4, 6, 2, 6, 7, 1, 10, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 5, 4, 5, 2, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 8 in the list of numbers 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 10, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 6, 8, 6, 2, 1, 10, 9, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 5, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "14"}
+{"problem": "How many modes are there in 5, 9, 5, 8, 8, 8, 4, 4, 4, 9, 6, 7, 9, 7, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 1, 5, 10, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 4 in the list of numbers 1, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 3, 4, 10, 1, 6, 4, 4, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.0"}
+{"problem": "What is the average of the list 1, 2, 4, 6, 4, 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is sum of the list 6, 10, 2, 4, 9, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "36"}
+{"problem": "How many modes are there in 10, 6, 7, 6, 4, 7, 10, 7, 1, 9, 10, 6, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 7, 3, 5, 4, 3, 8, 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "How many times is 3 in the list of numbers 3, 2, 8, 9, 6, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "What is the median of the list 3, 7, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the average of the list 2, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 1, 2, 4, 1, 1, 7, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "24"}
+{"problem": "How many modes are there in 6, 2, 6, 8, 10, 3, 9, 5, 4, 8, 1, 1, 5, 3, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 4, 10, 6, 1, 5, 10, 10, 10, 10, 3, 10, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "10"}
+{"problem": "How many times is 7 in the list of numbers 5, 7, 7, 1, 3, 4, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 5, 5, 1, 9, 4, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4.5"}
+{"problem": "What is the average of the list 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 4, 5, 10, 8, 1, 1, 5, 10, 5, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "56"}
+{"problem": "How many modes are there in 2, 6, 8, 7, 5, 3, 8, 4, 2, 3, 6, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 1, 4, 2, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1"}
+{"problem": "How many times is 1 in the list of numbers 4, 9, 1, 6, 10, 8, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is the median of the list 6, 1, 7, 4, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 5, 6, 10, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 3, 1, 6, 7, 6, 10, 9, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "60"}
+{"problem": "How many modes are there in 10, 7, 5, 1, 6, 7, 1, 5, 6, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 8, 1, 7, 2, 9, 8, 3, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 7 in the list of numbers 4, 1, 5, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 5, 10, 9, 7, 1, 6, 3, 6, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 3, 8, 10, 1, 1, 1, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "32"}
+{"problem": "How many modes are there in 3, 5, 5, 3, 10, 3, 10, 5, 4, 5, 10, 10, 8, 3, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 7, 9, 7, 1, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 9 in the list of numbers 7, 5, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 2, 3, 3, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3.0"}
+{"problem": "What is the average of the list 4, 4, 2, 9, 9, 1, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 2, 10, 6, 8, 4, 4, 5, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "45"}
+{"problem": "How many modes are there in 9, 7, 9, 10, 10, 9, 3, 3, 8, 10, 8, 6, 3, 6, 7, 7, 6, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6"}
+{"problem": "What is mode of 8, 8, 8, 8, 6, 1, 10, 8, 8, 7, 8, 9, 2, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "How many times is 2 in the list of numbers 9, 1, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 3, 2, 8, 4, 1, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is the average of the list 6, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 5, 6, 7, 10, 3, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "39"}
+{"problem": "How many modes are there in 7, 8, 1, 3, 4, 2, 8, 8, 5, 4, 8, 5, 5, 1, 3, 8, 4, 1, 3, 3, 8, 1, 5, 4, 5, 3, 1, 3, 1, 3, 4, 1, 4, 4, 5, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 6, 9, 9, 2, 7, 10, 4, 9, 9, 9, 9, 1, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 10 in the list of numbers 3, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 6, 9, 8, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8.5"}
+{"problem": "What is the average of the list 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "1.0"}
+{"problem": "What is sum of the list 6, 1, 2, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "16"}
+{"problem": "How many modes are there in 6, 7, 2, 3, 1, 1, 1, 7, 10, 7, 8, 4, 6, 3, 1, 7, 6, 6, 3, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "What is mode of 9, 1, 10, 9, 3, 9, 9, 6, 9, 9, 9 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9"}
+{"problem": "How many times is 1 in the list of numbers 7, 10, 8, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 9, 3, 10 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "9.0"}
+{"problem": "What is the average of the list 5, 9, 6, 4, 7, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 3, 8, 5, 6, 4, 1, 2, 5, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "35"}
+{"problem": "How many modes are there in 3, 7, 6, 1, 2, 10, 3, 1, 1, 7, 3, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is mode of 5, 5, 5, 8, 6, 5, 5, 4, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "How many times is 5 in the list of numbers 9, 8, 3, 2 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 4, 1, 10, 8, 6, 9, 8, 8, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "8"}
+{"problem": "What is the average of the list 3, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2.0"}
+{"problem": "What is sum of the list 4, 4, 9, 3 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "20"}
+{"problem": "How many modes are there in 2, 6, 6, 5, 8, 8, 10, 6, 4, 6, 6, 8, 1, 8, 8, 6, 6, 8, 8 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "What is mode of 9, 4, 4, 4, 5, 8, 6, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "4"}
+{"problem": "How many times is 3 in the list of numbers 9, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
+{"problem": "What is the median of the list 9, 10, 5, 4, 4, 5, 5, 4, 9, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is the average of the list 5, 8, 2, 6, 6, 5, 1, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5.0"}
+{"problem": "What is sum of the list 10, 5 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "15"}
+{"problem": "How many modes are there in 10, 3, 3, 3, 6, 6, 3, 3, 10, 4, 5, 5, 10, 1, 10, 10, 10, 10, 7, 6, 10, 6, 1, 10, 5, 1, 5, 6, 5, 1, 6, 5, 3, 5, 5, 1, 1, 9, 6, 3, 3, 1, 6, 1, 1, 5, 3, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 2, 3, 8, 2, 2, 4 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "2"}
+{"problem": "How many times is 5 in the list of numbers 8, 5, 7, 5, 2, 4, 5, 9, 10, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "3"}
+{"problem": "What is the median of the list 4, 9, 8, 6 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7.0"}
+{"problem": "What is the average of the list 4, 10, 5, 9, 8, 10, 6, 1, 1 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "6.0"}
+{"problem": "What is sum of the list 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "15"}
+{"problem": "How many modes are there in 10, 3, 10, 7, 5, 3, 6, 7, 3, 3, 6, 10, 5, 7, 7, 5, 6, 9, 5, 6, 10, 3, 6, 5, 10, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "5"}
+{"problem": "What is mode of 8, 9, 6, 7, 4, 3, 7, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "7"}
+{"problem": "How many times is 3 in the list of numbers 4, 10, 1, 8, 7 ? Let's think step by step and output the final answer within \\boxed{}.", "answer": "0"}
