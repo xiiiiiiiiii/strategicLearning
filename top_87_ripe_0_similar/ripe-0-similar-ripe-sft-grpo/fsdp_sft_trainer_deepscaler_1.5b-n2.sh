@@ -1,10 +1,10 @@
-# Tested with 4 GPUs.
+# Tested with 2 & 4 GPUs.
 # ulysses_sequence_parallel_size should be equal on number of GPUs on the node.
 
 MODEL_PATH="agentica-org/DeepScaleR-1.5B-Preview"
 EXPERIMENT_NAME="deepscaler-sft-1.5b"
 
-nproc_per_node=4
+nproc_per_node=2
 
 torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
      -m verl.trainer.fsdp_sft_trainer \
@@ -24,6 +24,6 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     trainer.experiment_name="${EXPERIMENT_NAME}" \
     trainer.total_epochs=100 \
     trainer.logger=['console','wandb'] \
-    ulysses_sequence_parallel_size=4 \
+    ulysses_sequence_parallel_size=2 \
     use_remove_padding=true \
     trainer.default_hdfs_dir=null
