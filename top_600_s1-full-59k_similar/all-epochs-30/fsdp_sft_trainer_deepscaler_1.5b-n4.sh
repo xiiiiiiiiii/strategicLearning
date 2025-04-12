@@ -8,7 +8,7 @@ nproc_per_node=4
 torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
      -m verl.trainer.fsdp_sft_trainer \
     data.train_files=./train.parquet \
-    data.val_files=../../data/aime.parquet \
+    data.val_files=./train.parquet \
     data.max_length=24576 \
     data.train_batch_size=4 \
     data.micro_batch_size=4 \
