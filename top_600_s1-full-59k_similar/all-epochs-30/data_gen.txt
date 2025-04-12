@@ -1,0 +1,2 @@
+python ../../gen_sft_grpo_tweak_dataset.py --dataset_file_path ../tweak_dataset.jsonl
+
