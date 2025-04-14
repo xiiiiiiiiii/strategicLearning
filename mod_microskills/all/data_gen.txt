@@ -1,0 +1,2 @@
+python ../../gen_tweak_dataset.py --dataset_file_path ../tweak_dataset.jsonl
+python ../../gen_tweak_dataset.py --dataset_file_path ../val_dataset.jsonl --output_base_name val_dataset

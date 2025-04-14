@@ -81,23 +81,29 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Process datasets for DeepScaler training')
     parser.add_argument('--dataset_file_path', default='./grpo.jsonl',
                        help='Path to the dataset file')
+    parser.add_argument('--output_base_name', default='train',
+                       help='Base file name to output data, if "train" then output train.parquet and train.jsonl')
     args = parser.parse_args()
 
     dataset_file_path = args.dataset_file_path
+    output_base_name = args.output_base_name
 
     # Initialize datasets
-    train_dataset = load_dataset(dataset_file_path)
+    a_dataset = load_dataset(dataset_file_path)
 
     # Process training data
-    train_data: List[Dict[str, Any]] = []
+    some_data: List[Dict[str, Any]] = []
     process_fn = make_map_fn('train')
-    for idx, example in enumerate(train_dataset):
+    for idx, example in enumerate(a_dataset):
         processed_example = process_fn(example, idx)
         if processed_example is not None:
-            train_data.append(processed_example)
+            some_data.append(processed_example)
 
-    # Save training dataset
-    print("train data size:", len(train_data))
-    train_df = pd.DataFrame(train_data)
-    train_df.to_parquet('train.parquet')
-    train_df.to_json('train.jsonl', orient='records', lines=True)
+    # Save the dataset
+    print("train data size:", len(some_data))
+    data_df = pd.DataFrame(some_data)
+    
+    # Save with consistent naming
+    data_df.to_parquet(f'{output_base_name}.parquet')
+    data_df.to_json(f'{output_base_name}.jsonl', orient='records', lines=True)
+    print(f"Saved output to {output_base_name}.parquet and {output_base_name}.jsonl")
