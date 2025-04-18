@@ -14,7 +14,7 @@ deepspeed src/train.py \
     --finetuning_type full \
     --sequence_parallel_size 8 \
     --gradient_checkpointing True \
-    --flash_attn fa2  \
+    --flash_attn fa1  \
     --pref_beta 0.3 \
     --pref_loss nca_pair \
     --cache_dir .cache \
@@ -35,7 +35,7 @@ deepspeed src/train.py \
     --plot_loss \
     --seed 42 \
     --do_eval false \
-    --deepspeed ./examples/deepspeed/ds_z3_offload_config.json \
+    --deepspeed ./examples/deepspeed/ds_z0_config.json \
     --report_to wandb \
     --overwrite_output_dir \
     --ddp_timeout 180000000 \
