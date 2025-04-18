@@ -14,7 +14,7 @@ deepspeed src/train.py \
     --finetuning_type full \
     --sequence_parallel_size 8 \
     --gradient_checkpointing True \
-    --flash_attn fa1  \
+    --flash_attn auto  \
     --pref_beta 0.3 \
     --pref_loss nca_pair \
     --cache_dir .cache \
