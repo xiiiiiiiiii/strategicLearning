@@ -25,10 +25,10 @@ deepspeed --num_gpus=8 src/train.py \
     --gradient_accumulation_steps 1 \
     --lr_scheduler_type constant \
     --save_strategy steps \
-    --save_steps 2 \
+    --save_steps 50 \
     --logging_steps 1 \
     --warmup_ratio 0.0 \
-    --save_total_limit 10 \
+    --save_total_limit 150 \
     --learning_rate 5e-7 \
     --save_only_model True \
     --num_train_epochs 3.0 \
