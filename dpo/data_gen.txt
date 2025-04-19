@@ -1,0 +1,2 @@
+python ../gen_tweak_dataset.py --dataset_file_path ../DeepScaleR-eval/ripe_clean_dataset.jsonl
+python ../gen_tweak_dataset.py --dataset_file_path ../data/aime_single_row.jsonl --output_base_name val_dataset
