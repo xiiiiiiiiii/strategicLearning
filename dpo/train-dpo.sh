@@ -3,7 +3,7 @@ MODEL_PATH="agentica-org/DeepScaleR-1.5B-Preview"
 EXPERIMENT_NAME="deepscaler-dpo-finetune-1.5b-24k"
 
 # Light-R1 DPO used 360-LLaMA-Factory directly
-deepspeed --num_gpus=2 src/train.py \
+deepspeed --num_gpus=4 src/train.py \
     --stage dpo \
     --do_train \
     --max_steps -1 \
