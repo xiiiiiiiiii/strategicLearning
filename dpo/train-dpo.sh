@@ -12,7 +12,7 @@ deepspeed --num_gpus=2 src/train.py \
     --dataset r1-similar-ripe-dpo \
     --preprocessing_num_workers 2 \
     --finetuning_type full \
-    --sequence_parallel_size 2 \
+    --sequence_parallel_size 5 \
     --gradient_checkpointing True \
     --flash_attn auto  \
     --pref_beta 0.3 \
