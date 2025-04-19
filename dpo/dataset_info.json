@@ -10,7 +10,7 @@
     }
   },
   "r1-similar-ripe-dpo": {
-    "hf_hub_url": "./dpo_dsr1_tweak_dataset.jsonl",
+    "file_name": "dpo_dsr1_tweak_dataset.jsonl",
     "ranking": true,
     "formatting": "sharegpt",
     "columns": {
