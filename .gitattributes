@@ -4,3 +4,4 @@ data/deepscaler_aime_sample_eval_check/**/* filter=lfs diff=lfs merge=lfs -text
 data/top_87_ripe_0_DeepScaleR_1_5_B_results/**/* filter=lfs diff=lfs merge=lfs -text
 data/top_600_DeepScaleR_1_5_B_results/*.jsonl filter=lfs diff=lfs merge=lfs -text
 data/light_r1_dpo_DeepScaleR_1_5_B_results_5000_plus/*.jsonl filter=lfs diff=lfs merge=lfs -text
+data/light_r1_dpo_DeepScaleR_1_5_B_results_820/*.jsonl filter=lfs diff=lfs merge=lfs -text
