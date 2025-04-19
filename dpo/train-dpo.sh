@@ -9,10 +9,10 @@ deepspeed --num_gpus=8 src/train.py \
     --max_steps -1 \
     --model_name_or_path $MODEL_PATH \
     --template qwen \
-    --dataset light-r1-dpo \
-    --preprocessing_num_workers 8 \
+    --dataset r1-similar-ripe-dpo \
+    --preprocessing_num_workers 5 \
     --finetuning_type full \
-    --sequence_parallel_size 8 \
+    --sequence_parallel_size 5 \
     --gradient_checkpointing True \
     --flash_attn auto  \
     --pref_beta 0.3 \
@@ -25,10 +25,10 @@ deepspeed --num_gpus=8 src/train.py \
     --gradient_accumulation_steps 1 \
     --lr_scheduler_type constant \
     --save_strategy steps \
-    --save_steps 50 \
+    --save_steps 10 \
     --logging_steps 1 \
     --warmup_ratio 0.0 \
-    --save_total_limit 150 \
+    --save_total_limit 200 \
     --learning_rate 5e-7 \
     --save_only_model True \
     --num_train_epochs 3.0 \

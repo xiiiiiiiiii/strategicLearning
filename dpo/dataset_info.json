@@ -9,6 +9,16 @@
       "rejected": "rejected"
     }
   },
+  "r1-similar-ripe-dpo": {
+    "hf_hub_url": "./dpo_dsr1_tweak_dataset.jsonl",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "identity": {
     "file_name": "identity.json"
   },
