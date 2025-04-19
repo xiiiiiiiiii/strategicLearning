@@ -16,7 +16,7 @@ export VLLM_ATTENTION_BACKEND=XFORMERS
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
     data.train_files=./train.parquet \
-    data.val_files=./train.parquet \
+    data.val_files=./val_dataset.parquet \
     data.train_batch_size=16 \
     data.val_batch_size=16 \
     data.max_prompt_length=1024 \
@@ -50,7 +50,7 @@ python3 -m verl.trainer.main_ppo \
     trainer.project_name='deepscaler-finetune' \
     trainer.experiment_name="${EXPERIMENT_NAME}" \
     +trainer.val_before_train=True \
-    trainer.n_gpus_per_node=4 \
+    trainer.n_gpus_per_node=5 \
     trainer.nnodes=1 \
     trainer.save_freq=2 \
     trainer.test_freq=2 \
