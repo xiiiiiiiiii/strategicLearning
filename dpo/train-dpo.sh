@@ -10,7 +10,7 @@ deepspeed --num_gpus=2 src/train.py \
     --model_name_or_path $MODEL_PATH \
     --template qwen \
     --dataset r1-similar-ripe-dpo \
-    --preprocessing_num_workers 2 \
+    --preprocessing_num_workers 5 \
     --finetuning_type full \
     --sequence_parallel_size 5 \
     --gradient_checkpointing True \
