@@ -19,7 +19,7 @@ deepspeed --num_gpus=4 src/train.py \
     --pref_loss nca_pair \
     --cache_dir .cache \
     --overwrite_cache \
-    --cutoff_len 31743 \
+    --cutoff_len 31740 \
     --output_dir $EXPERIMENT_NAME \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 1 \
