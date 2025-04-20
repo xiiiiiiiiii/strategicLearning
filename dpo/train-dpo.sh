@@ -19,7 +19,7 @@ deepspeed --num_gpus=4 src/train.py \
     --pref_loss nca_pair \
     --cache_dir .cache \
     --overwrite_cache \
-    --cutoff_len 24576 \
+    --cutoff_len 31743 \
     --output_dir $EXPERIMENT_NAME \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 1 \
@@ -31,7 +31,7 @@ deepspeed --num_gpus=4 src/train.py \
     --save_total_limit 50 \
     --learning_rate 5e-7 \
     --save_only_model True \
-    --num_train_epochs 30.0 \
+    --num_train_epochs 3.0 \
     --plot_loss \
     --seed 42 \
     --do_eval false \
