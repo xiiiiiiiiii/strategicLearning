@@ -31,7 +31,7 @@ deepspeed --num_gpus=4 src/train.py \
     --save_total_limit 50 \
     --learning_rate 5e-7 \
     --save_only_model True \
-    --num_train_epochs 9.0 \
+    --num_train_epochs 30.0 \
     --plot_loss \
     --seed 42 \
     --do_eval false \
