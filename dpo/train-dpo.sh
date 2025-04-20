@@ -6,7 +6,7 @@ EXPERIMENT_NAME="deepscaler-dpo-finetune-1.5b-24k"
 deepspeed --num_gpus=4 src/train.py \
     --stage dpo \
     --do_train \
-    --max_steps -1 \
+    --max_steps 10000 \
     --model_name_or_path $MODEL_PATH \
     --template qwen \
     --dataset r1-similar-ripe-dpo \
@@ -25,10 +25,10 @@ deepspeed --num_gpus=4 src/train.py \
     --gradient_accumulation_steps 1 \
     --lr_scheduler_type constant \
     --save_strategy steps \
-    --save_steps 10 \
+    --save_steps 50 \
     --logging_steps 1 \
     --warmup_ratio 0.0 \
-    --save_total_limit 200 \
+    --save_total_limit 50 \
     --learning_rate 5e-7 \
     --save_only_model True \
     --num_train_epochs 3.0 \
