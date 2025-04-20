@@ -3,23 +3,23 @@ MODEL_PATH="agentica-org/DeepScaleR-1.5B-Preview"
 EXPERIMENT_NAME="deepscaler-dpo-finetune-1.5b-24k"
 
 # Light-R1 DPO used 360-LLaMA-Factory directly
-deepspeed --num_gpus=4 src/train.py \
+deepspeed --num_gpus=8 src/train.py \
     --stage dpo \
     --do_train \
     --max_steps -1 \
     --model_name_or_path $MODEL_PATH \
     --template qwen \
     --dataset r1-similar-ripe-dpo \
-    --preprocessing_num_workers 4 \
+    --preprocessing_num_workers 8 \
     --finetuning_type full \
-    --sequence_parallel_size 4 \
+    --sequence_parallel_size 8 \
     --gradient_checkpointing True \
     --flash_attn auto  \
     --pref_beta 0.3 \
     --pref_loss nca_pair \
     --cache_dir .cache \
     --overwrite_cache \
-    --cutoff_len 31740 \
+    --cutoff_len 32768 \
     --output_dir $EXPERIMENT_NAME \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 1 \
